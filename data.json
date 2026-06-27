@@ -7,14 +7,12 @@
       "status": "Aktiv",
       "progress": 36,
       "stand": "Multi-Case-Auswertung läuft",
-      "members": [
-        "mqwpomvaecep"
-      ],
+      "members": [],
       "tasks": [
         {
           "id": "mqwpomvaqwp5",
           "text": "Multi-Case Statistik auswerten",
-          "assignee": "mqwpomvaecep",
+          "assignee": "me",
           "due": "2026-07-03",
           "done": false,
           "prio": "Mittel"
@@ -45,9 +43,7 @@
       "status": "Aktiv",
       "progress": 85,
       "stand": "Pituitary-ROI in Integration",
-      "members": [
-        "mqwpomva41co"
-      ],
+      "members": [],
       "tasks": [
         {
           "id": "mqwpomvauk6f",
@@ -60,7 +56,7 @@
         {
           "id": "mqwpomvajjzv",
           "text": "Study-Panel UI bauen",
-          "assignee": "mqwpomva41co",
+          "assignee": "me",
           "due": "",
           "done": false,
           "prio": "Mittel"
@@ -249,28 +245,6 @@
   ],
   "phds": [
     {
-      "id": "mqwpomvaecep",
-      "name": "Doktorand/in 2",
-      "initials": "D2",
-      "photo": "",
-      "topic": "VLM-basierte Neuro-Onkologie-Diagnose",
-      "year": "2. Jahr · seit Apr 2024",
-      "progress": 45,
-      "needs": "Annotierte MRT-Fälle (min. 20) · Methodenberatung",
-      "milestones": "x Exposé genehmigt\nx VLM-Pilotstudie (Arm A/B)\n> Multi-Case Erweiterung\n- Klinische Reader-Studie\n- Abgabe: Q4 2027"
-    },
-    {
-      "id": "mqwpomva41co",
-      "name": "Doktorand/in 3",
-      "initials": "D3",
-      "photo": "",
-      "topic": "Brain-Age Biomarker in Neurologie",
-      "year": "1. Jahr · seit Jan 2026",
-      "progress": 20,
-      "needs": "Zugang klinische Kohorte · Exposé-Feedback bis Ende Juli",
-      "milestones": "x Einarbeitung abgeschlossen\n> Exposé in Bearbeitung\n- Pilotstudie Brain-Age Kohorte\n- Paper #1 einreichen\n- Abgabe: Q2 2029"
-    },
-    {
       "name": "Philipe Ebert",
       "initials": "PE",
       "topic": "Automatisierte LLM gestützte Extraktion klinischer Daten",
@@ -291,6 +265,28 @@
       "milestones": "x Paper publiziert\n> Dissertation einreichen",
       "photo": "",
       "id": "mqwqo2q07rx3"
+    },
+    {
+      "id": "mqwpomva41co",
+      "name": "Doktorand/in 3",
+      "initials": "D3",
+      "photo": "",
+      "topic": "Brain-Age Biomarker in Neurologie",
+      "year": "1. Jahr · seit Jan 2026",
+      "progress": 20,
+      "needs": "Zugang klinische Kohorte · Exposé-Feedback bis Ende Juli",
+      "milestones": "x Einarbeitung abgeschlossen\n> Exposé in Bearbeitung\n- Pilotstudie Brain-Age Kohorte\n- Paper #1 einreichen\n- Abgabe: Q2 2029"
+    },
+    {
+      "id": "mqwpomvaecep",
+      "name": "Doktorand/in 2",
+      "initials": "D2",
+      "photo": "",
+      "topic": "VLM-basierte Neuro-Onkologie-Diagnose",
+      "year": "2. Jahr · seit Apr 2024",
+      "progress": 45,
+      "needs": "Annotierte MRT-Fälle (min. 20) · Methodenberatung",
+      "milestones": "x Exposé genehmigt\nx VLM-Pilotstudie (Arm A/B)\n> Multi-Case Erweiterung\n- Klinische Reader-Studie\n- Abgabe: Q4 2027"
     },
     {
       "id": "mqwpomvaz1io",
@@ -579,5 +575,5 @@
       ]
     }
   ],
-  "_syncTs": 1782588390990
+  "_syncTs": 1782588453521
 }
