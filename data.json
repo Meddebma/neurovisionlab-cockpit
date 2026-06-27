@@ -5,7 +5,7 @@
       "name": "Agentic VLM Studie",
       "desc": "Anatomy-augmented VLM für Neuro-Onkologie. Arm A/B/C. Endpunkte: Lateralität, Lokalisation, Mass Effect.",
       "status": "Aktiv",
-      "progress": 68,
+      "progress": 36,
       "stand": "Multi-Case-Auswertung läuft",
       "members": [
         "mqwpomvaecep"
@@ -294,6 +294,17 @@
       "milestones": "x Paper publiziert\n> Manuskript geschrieben\n- Dissertation einreichen",
       "photo": "",
       "id": "mqwpqnob5gvv"
+    },
+    {
+      "name": "Lara Reiner",
+      "initials": "LR",
+      "topic": "LLM assisted Protocol Generation in Neuroradiology ",
+      "year": "06/2024",
+      "progress": 0,
+      "needs": "Manuskript lesen von Michael Scheel",
+      "milestones": "x Paper publiziert\n> Dissertation einreichen",
+      "photo": "",
+      "id": "mqwqo2q07rx3"
     }
   ],
   "pubs": [
@@ -571,5 +582,5 @@
       ]
     }
   ],
-  "_syncTs": 1782586795843
+  "_syncTs": 1782587662134
 }
