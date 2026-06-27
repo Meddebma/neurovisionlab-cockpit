@@ -429,29 +429,67 @@ async function ghGetSha(){
   if(r.status===404)return null;if(!r.ok)return undefined;return(await r.json()).sha;}catch(e){return undefined;}
 }
 
+const GH_ARR_KEYS=['projects','todos','phds','pubs','funding','datasets','links','ideas','goals','meetings'];
+
+function ghMerge(local,remote){
+  /* Union by ID: items only on remote get added; local version wins for shared IDs */
+  const localIds=new Set((local||[]).map(x=>x.id).filter(Boolean));
+  const merged=[...(local||[])];
+  (remote||[]).forEach(item=>{if(item.id&&!localIds.has(item.id))merged.push(item);});
+  return merged;
+}
+
+async function ghFetchRaw(){
+  try{
+    const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/${GH_FILE}?t=${Date.now()}`);
+    if(!r.ok)return null;return await r.json();
+  }catch(e){return null;}
+}
+
 async function ghPush(){
   const pat=ghPat();if(!pat)return;
   ghSetDot('syncing');
   try{
+    /* 1. Pull current GitHub state */
+    const ghData=await ghFetchRaw();
+    if(ghData){
+      /* 2. Merge: union of local + GitHub arrays */
+      GH_ARR_KEYS.forEach(k=>{state[k]=ghMerge(state[k],ghData[k]);});
+      state._syncTs=Date.now();
+      try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
+      renderAll();
+    }
+    /* 3. Push merged result */
     const sha=await ghGetSha();if(sha===undefined){ghSetDot('error');return;}
     const body={message:'sync '+new Date().toISOString(),content:ghB64(JSON.stringify(state,null,2))};
     if(sha!==null)body.sha=sha;
     const r=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,{method:'PUT',headers:{'Authorization':'Bearer '+pat,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'},body:JSON.stringify(body)});
-    ghSetDot(r.ok?'ok':'error');
+    if(!r.ok&&r.status===409){
+      /* SHA conflict: retry once with fresh SHA */
+      const sha2=await ghGetSha();if(!sha2){ghSetDot('error');return;}
+      body.sha=sha2;
+      const r2=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,{method:'PUT',headers:{'Authorization':'Bearer '+pat,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'},body:JSON.stringify(body)});
+      ghSetDot(r2.ok?'ok':'error');
+    }else{ghSetDot(r.ok?'ok':'error');}
   }catch(e){ghSetDot('error');}
 }
 
 async function syncFromGitHub(){
   ghSetDot('syncing');
   try{
-    const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/${GH_FILE}?t=${Date.now()}`);
-    if(!r.ok){ghSetDot(ghPat()?'error':'idle');return;}
-    const ghData=await r.json();
-    const localTs=state._syncTs||0,ghTs=ghData._syncTs||0;
-    if(ghTs>localTs){
-      state=ghData;normalize();
+    const ghData=await ghFetchRaw();
+    if(!ghData){ghSetDot(ghPat()?'error':'idle');return;}
+    /* Merge: union of GitHub + local arrays */
+    let changed=false;
+    GH_ARR_KEYS.forEach(k=>{
+      const before=JSON.stringify(state[k]||[]);
+      state[k]=ghMerge(state[k],ghData[k]);
+      if(JSON.stringify(state[k])!==before)changed=true;
+    });
+    if(changed){
+      normalize();
       try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
-      renderAll();toast('☁️ Neuere Daten von GitHub geladen ✓');
+      renderAll();toast('☁️ Daten synchronisiert ✓');
     }
     ghSetDot('ok');
   }catch(e){ghSetDot(ghPat()?'error':'idle');}
