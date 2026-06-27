@@ -432,10 +432,12 @@ async function ghGetSha(){
 const GH_ARR_KEYS=['projects','todos','phds','pubs','funding','datasets','links','ideas','goals','meetings'];
 
 function ghMerge(local,remote){
-  /* Union by ID: items only on remote get added; local version wins for shared IDs */
+  /* Union by ID: items only on remote get added; local version wins for shared IDs.
+     Items whose ID is in state._deleted are never re-added from remote. */
+  const deleted=new Set(state._deleted||[]);
   const localIds=new Set((local||[]).map(x=>x.id).filter(Boolean));
   const merged=[...(local||[])];
-  (remote||[]).forEach(item=>{if(item.id&&!localIds.has(item.id))merged.push(item);});
+  (remote||[]).forEach(item=>{if(item.id&&!localIds.has(item.id)&&!deleted.has(item.id))merged.push(item);});
   return merged;
 }
 
@@ -453,7 +455,8 @@ async function ghPush(){
     /* 1. Pull current GitHub state */
     const ghData=await ghFetchRaw();
     if(ghData){
-      /* 2. Merge: union of local + GitHub arrays */
+      /* 2. Merge _deleted first, then arrays */
+      state._deleted=[...new Set([...(state._deleted||[]),...(ghData._deleted||[])])];
       GH_ARR_KEYS.forEach(k=>{state[k]=ghMerge(state[k],ghData[k]);});
       state._syncTs=Date.now();
       try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
@@ -479,6 +482,9 @@ async function syncFromGitHub(){
   try{
     const ghData=await ghFetchRaw();
     if(!ghData){ghSetDot(ghPat()?'error':'idle');return;}
+    /* Merge _deleted first so ghMerge respects remote deletions too */
+    const mergedDeleted=[...new Set([...(state._deleted||[]),...(ghData._deleted||[])])];
+    state._deleted=mergedDeleted;
     /* Merge: union of GitHub + local arrays */
     let changed=false;
     GH_ARR_KEYS.forEach(k=>{
@@ -616,7 +622,7 @@ DEFAULTS.meetings=[
 ];
 
 let state;
-function normalize(){['pubs','funding','datasets','meetings','links','ideas','goals','phds','todos','projects'].forEach(k=>{if(!state[k])state[k]=[];});state.projects.forEach(p=>{if(!p.tasks)p.tasks=[];if(!p.members)p.members=[];p.tasks.forEach(t=>{if(t.due===undefined)t.due='';if(t.prio===undefined)t.prio='Mittel';});});state.todos.forEach(t=>{if(t.due===undefined)t.due='';if(t.prio===undefined)t.prio='Mittel';});state.meetings.forEach(m=>{if(!m.participants)m.participants=m.phdId?[m.phdId]:[];if(!m.items){m.items=(m.actions||'').split('\n').map(s=>s.trim()).filter(Boolean).map(x=>({id:uid(),text:x,assignee:'me',prio:'Mittel',due:'',done:false}));}});}
+function normalize(){if(!state._deleted)state._deleted=[];['pubs','funding','datasets','meetings','links','ideas','goals','phds','todos','projects'].forEach(k=>{if(!state[k])state[k]=[];});state.projects.forEach(p=>{if(!p.tasks)p.tasks=[];if(!p.members)p.members=[];p.tasks.forEach(t=>{if(t.due===undefined)t.due='';if(t.prio===undefined)t.prio='Mittel';});});state.todos.forEach(t=>{if(t.due===undefined)t.due='';if(t.prio===undefined)t.prio='Mittel';});state.meetings.forEach(m=>{if(!m.participants)m.participants=m.phdId?[m.phdId]:[];if(!m.items){m.items=(m.actions||'').split('\n').map(s=>s.trim()).filter(Boolean).map(x=>({id:uid(),text:x,assignee:'me',prio:'Mittel',due:'',done:false}));}});}
 function loadState(){let ok=false;try{const raw=HAS_LS?localStorage.getItem(KEY):mem;if(raw){state=JSON.parse(raw);ok=true;}}catch(e){}if(!ok)state=JSON.parse(JSON.stringify(DEFAULTS));normalize();}
 function save(s){state._syncTs=Date.now();const raw=JSON.stringify(state);try{if(HAS_LS)localStorage.setItem(KEY,raw);else mem=raw;}catch(e){mem=raw;toast('Speicher voll – evtl. zu große Fotos',true);}pushHistory(raw);if(!s)toast(HAS_LS?'Gespeichert ✓':'Gespeichert (Sitzung) ✓');if(ghPat())ghPush();}
 
@@ -824,7 +830,7 @@ function renderMeetings(){let list=applyTF('meetings',state.meetings,['title','n
 /* CRUD */
 function toggleTodo(id){const t=byId('todos',id);if(t){t.done=!t.done;save(true);renderAll();}}
 function toggleTask(pid,id){const p=byId('projects',pid);if(!p)return;const t=(p.tasks||[]).find(x=>x.id===id);if(t){t.done=!t.done;save(true);renderAll();}}
-function delItem(type,id){if(!confirm('Wirklich löschen?'))return;state[type]=state[type].filter(x=>x.id!==id);if(type==='phds'){state.projects.forEach(p=>{if(p.members)p.members=p.members.filter(m=>m!==id);if(p.tasks)p.tasks.forEach(t=>{if(t.assignee===id)t.assignee='me';});});state.meetings.forEach(m=>{if(m.phdId===id)m.phdId='';});}save();renderAll();if(modalCtx)closeModal();}
+function delItem(type,id){if(!confirm('Wirklich löschen?'))return;if(!state._deleted)state._deleted=[];state._deleted.push(id);state[type]=state[type].filter(x=>x.id!==id);if(type==='phds'){state.projects.forEach(p=>{if(p.members)p.members=p.members.filter(m=>m!==id);if(p.tasks)p.tasks.forEach(t=>{if(t.assignee===id)t.assignee='me';});});state.meetings.forEach(m=>{if(m.phdId===id)m.phdId='';});}save();renderAll();if(modalCtx)closeModal();}
 
 /* TASK / IMG EDITORS */
 function taskRowHtml(t){t=t||{};const opts=`<option value="me" ${t.assignee==='me'?'selected':''}>Ich</option>`+state.phds.map(p=>`<option value="${p.id}" ${t.assignee===p.id?'selected':''}>${esc(p.name)}</option>`).join('');const prio=t.prio||'Mittel';return `<div class="task-row" data-id="${t.id||''}" data-done="${t.done?1:0}"><input class="t-text" type="text" value="${esc(t.text||'')}" placeholder="Aufgabe…"><select class="t-asg" title="Verantwortlich">${opts}</select><select class="t-prio" title="Dringlichkeit">${['Hoch','Mittel','Niedrig'].map(o=>`<option ${o===prio?'selected':''}>${o}</option>`).join('')}</select><input class="t-due" type="date" value="${t.due||''}"><div class="t-rm" onclick="this.closest('.task-row').remove()">✕</div></div>`;}
