@@ -476,6 +476,13 @@
     {
       "id": "mqwrjlarnwzl",
       "type": "Paper",
+      "title": "https://www.ejrai.com/article/S3050-5771(26)00042-3/fulltext",
+      "url": "",
+      "desc": "Vision-language foundation models for 3D neuroradiological interpretation: A systematic review"
+    },
+    {
+      "id": "mqwrow032803",
+      "type": "Paper",
       "title": "",
       "url": "",
       "desc": ""
@@ -588,7 +595,7 @@
       ]
     }
   ],
-  "_syncTs": 1782589132706,
+  "_syncTs": 1782589379425,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
