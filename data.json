@@ -83,6 +83,17 @@
         }
       ],
       "notes": "Nächste Schritte: VS-Fall laden · Dice/Detection."
+    },
+    {
+      "id": "mqwrbhs9cw7a",
+      "name": "ICANS Paper ",
+      "status": "Geplant",
+      "progress": 0,
+      "stand": "",
+      "desc": "",
+      "notes": "",
+      "members": [],
+      "tasks": []
     }
   ],
   "goals": [
@@ -247,7 +258,7 @@
     {
       "name": "Philipe Ebert",
       "initials": "PE",
-      "topic": "Automatisierte LLM gestützte Extraktion klinischer Daten",
+      "topic": "Automated  LLM assisted exctraction of clinical data",
       "year": "03/2024",
       "progress": 63,
       "needs": "",
@@ -271,7 +282,7 @@
       "initials": "RS",
       "topic": "Agentic AI for neurooncological tumor board",
       "year": "05/2026",
-      "progress": 0,
+      "progress": 16,
       "needs": "Rama soll die Doktorarbeit anmelden",
       "milestones": "x 30 first patients included\n> data collection",
       "photo": "",
@@ -553,7 +564,7 @@
       ]
     }
   ],
-  "_syncTs": 1782588703279,
+  "_syncTs": 1782588766568,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
