@@ -315,6 +315,17 @@
       "milestones": "x Data collection (130 patients)\n> inference and benchmark of different LLMs",
       "photo": "",
       "id": "mqwrv4iffqzf"
+    },
+    {
+      "name": "Moudather Chelbi",
+      "initials": "MC",
+      "topic": "Deep Learning based detection of HIE and outcome prediction",
+      "year": "06/2024",
+      "progress": 60,
+      "needs": "External validation fo newest inference",
+      "milestones": "x Data collection\nx Data from Reims\n> DL Training  ",
+      "photo": "",
+      "id": "mqwrzhu6y2ge"
     }
   ],
   "pubs": [
@@ -606,7 +617,7 @@
       ]
     }
   ],
-  "_syncTs": 1782589731800,
+  "_syncTs": 1782589874230,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
