@@ -86,14 +86,31 @@
     },
     {
       "id": "mqwrbhs9cw7a",
-      "name": "ICANS Paper ",
-      "status": "Geplant",
-      "progress": 0,
+      "name": "ICANS Paper I",
+      "status": "Aktiv",
+      "progress": 10,
       "stand": "",
       "desc": "",
       "notes": "",
       "members": [],
-      "tasks": []
+      "tasks": [
+        {
+          "id": "mqwrc87nerwg",
+          "text": "2 ratings from Ahmed and Nima missing",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-07-05",
+          "done": false
+        },
+        {
+          "id": "mqwrd4pv75e2",
+          "text": "",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        }
+      ]
     }
   ],
   "goals": [
@@ -564,7 +581,7 @@
       ]
     }
   ],
-  "_syncTs": 1782588766568,
+  "_syncTs": 1782588830795,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
