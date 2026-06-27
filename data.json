@@ -1,0 +1,563 @@
+{
+  "projects": [
+    {
+      "id": "mqwpiks9ob32",
+      "name": "Agentic VLM Studie",
+      "desc": "Anatomy-augmented VLM für Neuro-Onkologie. Arm A/B/C. Endpunkte: Lateralität, Lokalisation, Mass Effect.",
+      "status": "Aktiv",
+      "progress": 72,
+      "stand": "Multi-Case-Auswertung läuft",
+      "members": [
+        "mqwpiks9icfj"
+      ],
+      "tasks": [
+        {
+          "id": "mqwpiks92bmj",
+          "text": "Multi-Case Statistik auswerten",
+          "assignee": "mqwpiks9icfj",
+          "due": "2026-07-03",
+          "done": false,
+          "prio": "Mittel"
+        },
+        {
+          "id": "mqwpiks9yl92",
+          "text": "Paper-Methodik-Abschnitt schreiben",
+          "assignee": "me",
+          "due": "2026-07-06",
+          "done": false,
+          "prio": "Mittel"
+        },
+        {
+          "id": "mqwpiks9g7fe",
+          "text": "Pituitary ROI vorbereiten",
+          "assignee": "me",
+          "due": "",
+          "done": false,
+          "prio": "Mittel"
+        }
+      ],
+      "notes": "Nächste Schritte: Pituitary-Atlas ROI · Multi-Case Statistik · Deformation-field MLS. Ziel: MICCAI 2026."
+    },
+    {
+      "id": "mqwpiks9jnym",
+      "name": "neuro-label Plattform",
+      "desc": "MRI Segmentierungs- & Analyseplattform. Engines: SynthSeg+, BrainAgeNeXt, VS-Seg, GoAT/BraTS, SAM-Med3D.",
+      "status": "Aktiv",
+      "progress": 85,
+      "stand": "Pituitary-ROI in Integration",
+      "members": [
+        "mqwpiks91xix",
+        "mqwpiks9qi85"
+      ],
+      "tasks": [
+        {
+          "id": "mqwpiks989lv",
+          "text": "Pituitary ROI integrieren",
+          "assignee": "me",
+          "due": "",
+          "done": false,
+          "prio": "Mittel"
+        },
+        {
+          "id": "mqwpiks9vwjo",
+          "text": "Study-Panel UI bauen",
+          "assignee": "mqwpiks9qi85",
+          "due": "",
+          "done": false,
+          "prio": "Mittel"
+        }
+      ],
+      "notes": "Stack: FastAPI · React/TS · PyTorch · FreeSurfer · ANTs."
+    },
+    {
+      "id": "mqwpiks92iey",
+      "name": "VS-Seg Validierung",
+      "desc": "Klinische Validierung des VS-Seg UNet2d5 Modells auf vestibulären Schwannomen.",
+      "status": "Review",
+      "progress": 40,
+      "stand": "Wartet auf VS-Fälle",
+      "members": [
+        "mqwpiks91xix"
+      ],
+      "tasks": [
+        {
+          "id": "mqwpiks969lw",
+          "text": "VS-Fall auf Disk laden",
+          "assignee": "mqwpiks91xix",
+          "due": "",
+          "done": false,
+          "prio": "Mittel"
+        }
+      ],
+      "notes": "Nächste Schritte: VS-Fall laden · Dice/Detection."
+    }
+  ],
+  "goals": [
+    {
+      "id": "mqwpiks9t7uj",
+      "title": "Anatomy-augmented Agentic VLM – Paper",
+      "detail": "Arme A/B/C · MICCAI 2026",
+      "cat": "📄 Paper",
+      "date": "2026-07-10",
+      "priority": "Hoch"
+    },
+    {
+      "id": "mqwpiks920t3",
+      "title": "DFG – KI-gestützte Neuronavigation",
+      "detail": "Sachbeihilfe · Vollantrag Aug 2026",
+      "cat": "💰 Antrag",
+      "date": "2026-08-31",
+      "priority": "Hoch"
+    },
+    {
+      "id": "mqwpiks9481i",
+      "title": "VS-Seg Validierung – Schwannoma",
+      "detail": "Dice/Detection klinische Kohorte",
+      "cat": "📄 Paper",
+      "date": "2026-10-31",
+      "priority": "Mittel"
+    },
+    {
+      "id": "mqwpiks9wxdj",
+      "title": "Study Panel UI – Blinded Reader",
+      "detail": "Verblindete Reader-Studie",
+      "cat": "🔬 Projekt",
+      "date": "2026-09-30",
+      "priority": "Mittel"
+    },
+    {
+      "id": "mqwpiks95970",
+      "title": "EU Horizon – Multimodal Neuroimaging",
+      "detail": "Konsortium · Call HORIZON-HLTH-2027",
+      "cat": "💰 Antrag",
+      "date": "2027-01-15",
+      "priority": "Niedrig"
+    }
+  ],
+  "ideas": [
+    {
+      "id": "mqwpiks9nanr",
+      "title": "Agentic VLM für Neurochirurgie-Planung",
+      "desc": "OP-Planung: Resektion, fMRI, DTI. Radiologen vs. VLM.",
+      "type": "Dissertation",
+      "status": "Empfohlen",
+      "skills": "Python · ML · MRT"
+    },
+    {
+      "id": "mqwpiks9gx47",
+      "title": "Foundation Model für Hirntumor-Segmentierung",
+      "desc": "Universelles Modell auf allen BraTS Tasks + klinische Validierung.",
+      "type": "Dissertation",
+      "status": "Offen",
+      "skills": "Deep Learning · CUDA"
+    },
+    {
+      "id": "mqwpiks9hj1q",
+      "title": "Sellar & Pituitary Pathologie",
+      "desc": "Atlas + Segmentierung für Sellar-Region.",
+      "type": "Dissertation",
+      "status": "Offen",
+      "skills": "Atlas · MRT · Klinik"
+    },
+    {
+      "id": "mqwpiks9go6z",
+      "title": "MLS via Deformationsfeld",
+      "desc": "Präzisere Midline-Shift-Quantifizierung. Validierung auf 50+ Fällen.",
+      "type": "Masterarbeit",
+      "status": "Prio",
+      "skills": "ANTs · Python"
+    },
+    {
+      "id": "mqwpiks97n2g",
+      "title": "Blinded-Reader UI für VLM-Evaluation",
+      "desc": "Web-Interface für verblindete Leser-Studie.",
+      "type": "Masterarbeit",
+      "status": "Offen",
+      "skills": "React · FastAPI"
+    },
+    {
+      "id": "mqwpiks9nue6",
+      "title": "BrainAge-Pipeline für klinische Kohorte",
+      "desc": "Brain-Age-Schätzung + Korrelation klinischer Parameter.",
+      "type": "Bachelorarbeit",
+      "status": "Empfohlen",
+      "skills": "Python · Stats"
+    },
+    {
+      "id": "mqwpiks9ynv6",
+      "title": "Automatische QC für MRT-Segmentierung",
+      "desc": "Klassifikator erkennt Segmentierungsfehler ohne Ground Truth.",
+      "type": "Bachelorarbeit",
+      "status": "Offen",
+      "skills": "ML · Python"
+    }
+  ],
+  "todos": [
+    {
+      "id": "mqwpiks9e598",
+      "text": "VLM Paper Draft finalisieren – Arm A/B/C",
+      "tag": "Dringend",
+      "due": "2026-07-05",
+      "done": false,
+      "prio": "Mittel"
+    },
+    {
+      "id": "mqwpiks91gtp",
+      "text": "DFG Antrag Outline erstellen (Kapitel 1-3)",
+      "tag": "Dringend",
+      "due": "2026-07-15",
+      "done": false,
+      "prio": "Mittel"
+    },
+    {
+      "id": "mqwpiks915sb",
+      "text": "Pituitary gland: sellar atlas ROI via MNI-Reg",
+      "tag": "Code",
+      "due": "",
+      "done": false,
+      "prio": "Mittel"
+    },
+    {
+      "id": "mqwpiks94dj7",
+      "text": "Multi-Case Statistik für VLM-Studie (≥10)",
+      "tag": "Paper",
+      "due": "",
+      "done": false,
+      "prio": "Mittel"
+    },
+    {
+      "id": "mqwpiks9vuwe",
+      "text": "VS-Fall laden & VS-Seg Dice validieren",
+      "tag": "Paper",
+      "due": "",
+      "done": false,
+      "prio": "Mittel"
+    },
+    {
+      "id": "mqwpiks94l27",
+      "text": "Arm C (Lesion Branch) implementieren",
+      "tag": "Code",
+      "due": "",
+      "done": true,
+      "prio": "Mittel"
+    },
+    {
+      "id": "mqwpiks94lqc",
+      "text": "SynthSeg arm64 FreeSurfer 8.1 installieren",
+      "tag": "Code",
+      "due": "",
+      "done": true,
+      "prio": "Mittel"
+    }
+  ],
+  "phds": [
+    {
+      "id": "mqwpiks91xix",
+      "name": "Doktorand/in 1",
+      "initials": "D1",
+      "photo": "",
+      "topic": "Foundation Models für Hirntumor-Seg.",
+      "year": "3. Jahr · seit Okt 2023",
+      "progress": 65,
+      "needs": "Feedback zu Kapitel 3 · GPU-Zugang",
+      "milestones": "x Literaturarbeit abgeschlossen\nx Datenbasis (BraTS + intern)\n> Kapitel 3: Modellentwicklung\n- Validierung klinische Kohorte\n- Abgabe: Q2 2027"
+    },
+    {
+      "id": "mqwpiks9icfj",
+      "name": "Doktorand/in 2",
+      "initials": "D2",
+      "photo": "",
+      "topic": "VLM-basierte Neuro-Onkologie-Diagnose",
+      "year": "2. Jahr · seit Apr 2024",
+      "progress": 45,
+      "needs": "Annotierte MRT-Fälle (min. 20) · Methodenberatung",
+      "milestones": "x Exposé genehmigt\nx VLM-Pilotstudie (Arm A/B)\n> Multi-Case Erweiterung\n- Klinische Reader-Studie\n- Abgabe: Q4 2027"
+    },
+    {
+      "id": "mqwpiks9qi85",
+      "name": "Doktorand/in 3",
+      "initials": "D3",
+      "photo": "",
+      "topic": "Brain-Age Biomarker in Neurologie",
+      "year": "1. Jahr · seit Jan 2026",
+      "progress": 20,
+      "needs": "Zugang klinische Kohorte · Exposé-Feedback bis Ende Juli",
+      "milestones": "x Einarbeitung abgeschlossen\n> Exposé in Bearbeitung\n- Pilotstudie Brain-Age Kohorte\n- Paper #1 einreichen\n- Abgabe: Q2 2029"
+    }
+  ],
+  "pubs": [
+    {
+      "id": "mqwpiks96t9m",
+      "title": "Anatomy-augmented Agentic VLM",
+      "journal": "MICCAI 2026",
+      "authors": "Meddeb et al.",
+      "stand": "Methodik geschrieben",
+      "stage": "In Arbeit"
+    },
+    {
+      "id": "mqwpiks9ay6p",
+      "title": "neuro-label Open-Source Plattform",
+      "journal": "JOSS",
+      "authors": "Meddeb et al.",
+      "stand": "Repo + Paper-Draft",
+      "stage": "In Arbeit"
+    },
+    {
+      "id": "mqwpiks9sm4d",
+      "title": "VS-Seg Validierung Schwannoma",
+      "journal": "NeuroImage: Clinical",
+      "authors": "AG NeurovisionLab",
+      "stand": "Konzept",
+      "stage": "Idee"
+    },
+    {
+      "id": "mqwpiks9omrl",
+      "title": "BrainAge als klinischer Biomarker",
+      "journal": "Frontiers in Neuroscience",
+      "authors": "—",
+      "stand": "Idee",
+      "stage": "Idee"
+    },
+    {
+      "id": "mqwpiks9gvoe",
+      "title": "Deep Learning Glioma Grading",
+      "journal": "Radiology: AI",
+      "authors": "Meddeb et al.",
+      "stand": "Bei Editor eingereicht",
+      "stage": "Submitted"
+    },
+    {
+      "id": "mqwpiks91f85",
+      "title": "SynthSeg in der klinischen Routine",
+      "journal": "European Radiology",
+      "authors": "Meddeb et al.",
+      "stand": "Reviewer-Kommentare offen",
+      "stage": "Under Review"
+    },
+    {
+      "id": "mqwpiks9jw22",
+      "title": "Automatisierte MRT-Qualitätskontrolle",
+      "journal": "Diagnostics (MDPI)",
+      "authors": "Meddeb et al.",
+      "stand": "Camera-ready",
+      "stage": "Accepted"
+    }
+  ],
+  "funding": [
+    {
+      "id": "mqwpiks9sgoh",
+      "name": "DFG Sachbeihilfe – KI-Neuronavigation",
+      "agency": "DFG",
+      "total": 420000,
+      "spent": 0,
+      "start": "2026-09-01",
+      "end": "2029-08-31",
+      "status": "Beantragt"
+    },
+    {
+      "id": "mqwpiks9ci00",
+      "name": "Charité Clinician Scientist Programm",
+      "agency": "Charité",
+      "total": 120000,
+      "spent": 48000,
+      "start": "2025-01-01",
+      "end": "2027-12-31",
+      "status": "Laufend"
+    },
+    {
+      "id": "mqwpiks9etwd",
+      "name": "BMBF Verbundprojekt NeuroAI",
+      "agency": "BMBF",
+      "total": 680000,
+      "spent": 210000,
+      "start": "2024-04-01",
+      "end": "2027-03-31",
+      "status": "Laufend"
+    },
+    {
+      "id": "mqwpiks9dp4b",
+      "name": "EU Horizon – Multimodal Neuroimaging",
+      "agency": "EU",
+      "total": 1500000,
+      "spent": 0,
+      "start": "2027-01-01",
+      "end": "2030-12-31",
+      "status": "Beantragt"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "mqwpiks92l03",
+      "name": "Glioma MRT Kohorte (intern)",
+      "cases": 218,
+      "ethics": "Bewilligt",
+      "dsgvo": "Konform",
+      "location": "PACS / neuro-label Server",
+      "sharing": "Intern"
+    },
+    {
+      "id": "mqwpiks9e70a",
+      "name": "BraTS 2024 (öffentlich)",
+      "cases": 1470,
+      "ethics": "N/A",
+      "dsgvo": "Anonymisiert",
+      "location": "NAS /data/brats",
+      "sharing": "Öffentlich"
+    },
+    {
+      "id": "mqwpiks9mb2g",
+      "name": "Vestibular Schwannoma Kohorte",
+      "cases": 0,
+      "ethics": "Ausstehend",
+      "dsgvo": "Offen",
+      "location": "—",
+      "sharing": "Geplant"
+    },
+    {
+      "id": "mqwpiks9wur8",
+      "name": "Tunis Validierung (extern)",
+      "cases": 60,
+      "ethics": "In Antrag",
+      "dsgvo": "DTA nötig",
+      "location": "Extern (Tunis)",
+      "sharing": "Kooperation"
+    }
+  ],
+  "links": [
+    {
+      "id": "mqwpiks9mtlp",
+      "type": "Tool",
+      "title": "SynthSeg (BBillot)",
+      "url": "https://github.com/BBillot/SynthSeg",
+      "desc": "Domain-randomisierte Segmentierung – Basis des Whole-Brain-Moduls."
+    },
+    {
+      "id": "mqwpiks95ts6",
+      "type": "Dataset",
+      "title": "BraTS 2024 Challenge",
+      "url": "https://www.synapse.org/brats",
+      "desc": "Multimodale Glioma-MRT mit Annotationen."
+    },
+    {
+      "id": "mqwpiks9iaed",
+      "type": "Tool",
+      "title": "MONAI Label",
+      "url": "https://github.com/Project-MONAI/MONAILabel",
+      "desc": "Active-Learning Annotation, Backend von neuro-label."
+    },
+    {
+      "id": "mqwpiks9a2p0",
+      "type": "Paper",
+      "title": "BrainAgeNeXt",
+      "url": "https://github.com/MIDIconsortium/BrainAge",
+      "desc": "Brain-Age Schätzung, in die Pipeline integriert."
+    }
+  ],
+  "meetings": [
+    {
+      "id": "mqwpiks9wila",
+      "type": "1:1",
+      "phdId": "",
+      "participants": [
+        "mqwpiks91xix"
+      ],
+      "date": "2026-06-22",
+      "title": "Kapitel 3 – Modellentwicklung Review",
+      "notes": "Architektur des Foundation-Modells durchgesprochen. Encoder-Wahl überzeugend, Validierungsdesign schärfen. GPU-Engpass diskutiert.",
+      "items": [
+        {
+          "id": "mqwpiks91yk1",
+          "text": "Draft Kapitel 3 bis 30.06. überarbeiten",
+          "assignee": "mqwpiks91xix",
+          "prio": "Hoch",
+          "due": "2026-06-30",
+          "done": false
+        },
+        {
+          "id": "mqwpiks9dite",
+          "text": "GPU-Kontingent beim RZ anfragen",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        },
+        {
+          "id": "mqwpiks9hs7o",
+          "text": "Baseline-Vergleich mit nnU-Net ergänzen",
+          "assignee": "mqwpiks91xix",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "mqwpiks9k7mm",
+      "type": "Team",
+      "phdId": "",
+      "participants": [
+        "mqwpiks91xix",
+        "mqwpiks9icfj",
+        "mqwpiks9qi85"
+      ],
+      "date": "2026-06-18",
+      "title": "Wöchentliches Lab-Meeting",
+      "notes": "Statusrunde aller Projekte. VLM auf Kurs für MICCAI. VS-Seg wartet auf Fälle.",
+      "items": [
+        {
+          "id": "mqwpiks9r593",
+          "text": "VLM Multi-Case-Lauf bis KW27",
+          "assignee": "me",
+          "prio": "Hoch",
+          "due": "",
+          "done": false
+        },
+        {
+          "id": "mqwpiks96bvy",
+          "text": "Datensatz-Register aktualisieren",
+          "assignee": "mqwpiks9icfj",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        },
+        {
+          "id": "mqwpiks900dk",
+          "text": "Journal-Club Thema festlegen",
+          "assignee": "me",
+          "prio": "Niedrig",
+          "due": "",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "mqwpiks9qvu3",
+      "type": "1:1",
+      "phdId": "",
+      "participants": [
+        "mqwpiks9qi85"
+      ],
+      "date": "2026-06-15",
+      "title": "Exposé-Besprechung",
+      "notes": "Forschungsfrage Brain-Age als Biomarker konkretisiert. Kohortenzugang klären.",
+      "items": [
+        {
+          "id": "mqwpiks95kof",
+          "text": "Exposé-Entwurf bis Ende Juli",
+          "assignee": "mqwpiks9qi85",
+          "prio": "Hoch",
+          "due": "2026-07-31",
+          "done": false
+        },
+        {
+          "id": "mqwpiks9p7on",
+          "text": "Datenzugang klinische Kohorte beantragen",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        }
+      ]
+    }
+  ]
+}
