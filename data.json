@@ -46,7 +46,6 @@
       "progress": 85,
       "stand": "Pituitary-ROI in Integration",
       "members": [
-        "mqwpomvaz1io",
         "mqwpomva41co"
       ],
       "tasks": [
@@ -76,14 +75,12 @@
       "status": "Review",
       "progress": 40,
       "stand": "Wartet auf VS-Fälle",
-      "members": [
-        "mqwpomvaz1io"
-      ],
+      "members": [],
       "tasks": [
         {
           "id": "mqwpomvah77i",
           "text": "VS-Fall auf Disk laden",
-          "assignee": "mqwpomvaz1io",
+          "assignee": "me",
           "due": "",
           "done": false,
           "prio": "Mittel"
@@ -252,17 +249,6 @@
   ],
   "phds": [
     {
-      "id": "mqwpomvaz1io",
-      "name": "Doktorand/in 1",
-      "initials": "D1",
-      "photo": "",
-      "topic": "Foundation Models für Hirntumor-Seg.",
-      "year": "3. Jahr · seit Okt 2023",
-      "progress": 65,
-      "needs": "Feedback zu Kapitel 3 · GPU-Zugang",
-      "milestones": "x Literaturarbeit abgeschlossen\nx Datenbasis (BraTS + intern)\n> Kapitel 3: Modellentwicklung\n- Validierung klinische Kohorte\n- Abgabe: Q2 2027"
-    },
-    {
       "id": "mqwpomvaecep",
       "name": "Doktorand/in 2",
       "initials": "D2",
@@ -300,11 +286,22 @@
       "initials": "LR",
       "topic": "LLM assisted Protocol Generation in Neuroradiology ",
       "year": "06/2024",
-      "progress": 0,
+      "progress": 61,
       "needs": "Manuskript lesen von Michael Scheel",
       "milestones": "x Paper publiziert\n> Dissertation einreichen",
       "photo": "",
       "id": "mqwqo2q07rx3"
+    },
+    {
+      "id": "mqwpomvaz1io",
+      "name": "Doktorand/in 1",
+      "initials": "D1",
+      "photo": "",
+      "topic": "Foundation Models für Hirntumor-Seg.",
+      "year": "3. Jahr · seit Okt 2023",
+      "progress": 65,
+      "needs": "Feedback zu Kapitel 3 · GPU-Zugang",
+      "milestones": "x Literaturarbeit abgeschlossen\nx Datenbasis (BraTS + intern)\n> Kapitel 3: Modellentwicklung\n- Validierung klinische Kohorte\n- Abgabe: Q2 2027"
     }
   ],
   "pubs": [
@@ -582,5 +579,5 @@
       ]
     }
   ],
-  "_syncTs": 1782587662134
+  "_syncTs": 1782588390990
 }
