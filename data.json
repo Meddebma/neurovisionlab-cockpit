@@ -267,26 +267,15 @@
       "id": "mqwqo2q07rx3"
     },
     {
-      "id": "mqwpomva41co",
-      "name": "Doktorand/in 3",
-      "initials": "D3",
+      "name": "Rama Sarhan",
+      "initials": "RS",
+      "topic": "Agentic AI for neurooncological tumor board",
+      "year": "05/2026",
+      "progress": 0,
+      "needs": "Rama soll die Doktorarbeit anmelden",
+      "milestones": "x 30 first patients included\n> data collection",
       "photo": "",
-      "topic": "Brain-Age Biomarker in Neurologie",
-      "year": "1. Jahr · seit Jan 2026",
-      "progress": 20,
-      "needs": "Zugang klinische Kohorte · Exposé-Feedback bis Ende Juli",
-      "milestones": "x Einarbeitung abgeschlossen\n> Exposé in Bearbeitung\n- Pilotstudie Brain-Age Kohorte\n- Paper #1 einreichen\n- Abgabe: Q2 2029"
-    },
-    {
-      "id": "mqwpomvaecep",
-      "name": "Doktorand/in 2",
-      "initials": "D2",
-      "photo": "",
-      "topic": "VLM-basierte Neuro-Onkologie-Diagnose",
-      "year": "2. Jahr · seit Apr 2024",
-      "progress": 45,
-      "needs": "Annotierte MRT-Fälle (min. 20) · Methodenberatung",
-      "milestones": "x Exposé genehmigt\nx VLM-Pilotstudie (Arm A/B)\n> Multi-Case Erweiterung\n- Klinische Reader-Studie\n- Abgabe: Q4 2027"
+      "id": "mqwrae6zh407"
     }
   ],
   "pubs": [
@@ -564,8 +553,10 @@
       ]
     }
   ],
-  "_syncTs": 1782588595899,
+  "_syncTs": 1782588703279,
   "_deleted": [
-    "mqwpomvaz1io"
+    "mqwpomvaz1io",
+    "mqwpomva41co",
+    "mqwpomvaecep"
   ]
 }
