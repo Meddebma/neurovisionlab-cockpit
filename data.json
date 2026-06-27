@@ -289,7 +289,7 @@
       "initials": "PE",
       "topic": "Automatisierte LLM gestützte Extraktion klinischer Daten",
       "year": "03/2024",
-      "progress": 80,
+      "progress": 63,
       "needs": "",
       "milestones": "x Paper publiziert\n> Manuskript geschrieben\n- Dissertation einreichen",
       "photo": "",
@@ -571,5 +571,5 @@
       ]
     }
   ],
-  "_syncTs": 1782586102619
+  "_syncTs": 1782586287564
 }
