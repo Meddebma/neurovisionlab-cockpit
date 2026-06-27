@@ -287,17 +287,6 @@
       "progress": 45,
       "needs": "Annotierte MRT-Fälle (min. 20) · Methodenberatung",
       "milestones": "x Exposé genehmigt\nx VLM-Pilotstudie (Arm A/B)\n> Multi-Case Erweiterung\n- Klinische Reader-Studie\n- Abgabe: Q4 2027"
-    },
-    {
-      "id": "mqwpomvaz1io",
-      "name": "Doktorand/in 1",
-      "initials": "D1",
-      "photo": "",
-      "topic": "Foundation Models für Hirntumor-Seg.",
-      "year": "3. Jahr · seit Okt 2023",
-      "progress": 65,
-      "needs": "Feedback zu Kapitel 3 · GPU-Zugang",
-      "milestones": "x Literaturarbeit abgeschlossen\nx Datenbasis (BraTS + intern)\n> Kapitel 3: Modellentwicklung\n- Validierung klinische Kohorte\n- Abgabe: Q2 2027"
     }
   ],
   "pubs": [
@@ -575,5 +564,8 @@
       ]
     }
   ],
-  "_syncTs": 1782588453521
+  "_syncTs": 1782588595899,
+  "_deleted": [
+    "mqwpomvaz1io"
+  ]
 }
