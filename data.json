@@ -1,26 +1,26 @@
 {
   "projects": [
     {
-      "id": "mqwc6go0zuhn",
+      "id": "mqwpomv9kx2l",
       "name": "Agentic VLM Studie",
       "desc": "Anatomy-augmented VLM für Neuro-Onkologie. Arm A/B/C. Endpunkte: Lateralität, Lokalisation, Mass Effect.",
       "status": "Aktiv",
       "progress": 72,
       "stand": "Multi-Case-Auswertung läuft",
       "members": [
-        "mqwc6go0idgm"
+        "mqwpomvaecep"
       ],
       "tasks": [
         {
-          "id": "mqwc6go0ejvm",
+          "id": "mqwpomvaqwp5",
           "text": "Multi-Case Statistik auswerten",
-          "assignee": "mqwc6go0idgm",
+          "assignee": "mqwpomvaecep",
           "due": "2026-07-03",
           "done": false,
           "prio": "Mittel"
         },
         {
-          "id": "mqwc6go0jgwr",
+          "id": "mqwpomva9c7y",
           "text": "Paper-Methodik-Abschnitt schreiben",
           "assignee": "me",
           "due": "2026-07-06",
@@ -28,7 +28,7 @@
           "prio": "Mittel"
         },
         {
-          "id": "mqwc6go0qb1v",
+          "id": "mqwpomvary4n",
           "text": "Pituitary ROI vorbereiten",
           "assignee": "me",
           "due": "",
@@ -39,19 +39,19 @@
       "notes": "Nächste Schritte: Pituitary-Atlas ROI · Multi-Case Statistik · Deformation-field MLS. Ziel: MICCAI 2026."
     },
     {
-      "id": "mqwc6go0tbz5",
+      "id": "mqwpomval5dv",
       "name": "neuro-label Plattform",
       "desc": "MRI Segmentierungs- & Analyseplattform. Engines: SynthSeg+, BrainAgeNeXt, VS-Seg, GoAT/BraTS, SAM-Med3D.",
       "status": "Aktiv",
       "progress": 85,
       "stand": "Pituitary-ROI in Integration",
       "members": [
-        "mqwc6go0i9y0",
-        "mqwc6go0ewyr"
+        "mqwpomvaz1io",
+        "mqwpomva41co"
       ],
       "tasks": [
         {
-          "id": "mqwc6go0lrw9",
+          "id": "mqwpomvauk6f",
           "text": "Pituitary ROI integrieren",
           "assignee": "me",
           "due": "",
@@ -59,9 +59,9 @@
           "prio": "Mittel"
         },
         {
-          "id": "mqwc6go0usdy",
+          "id": "mqwpomvajjzv",
           "text": "Study-Panel UI bauen",
-          "assignee": "mqwc6go0ewyr",
+          "assignee": "mqwpomva41co",
           "due": "",
           "done": false,
           "prio": "Mittel"
@@ -70,20 +70,20 @@
       "notes": "Stack: FastAPI · React/TS · PyTorch · FreeSurfer · ANTs."
     },
     {
-      "id": "mqwc6go04ta2",
+      "id": "mqwpomva7z7y",
       "name": "VS-Seg Validierung",
       "desc": "Klinische Validierung des VS-Seg UNet2d5 Modells auf vestibulären Schwannomen.",
       "status": "Review",
       "progress": 40,
       "stand": "Wartet auf VS-Fälle",
       "members": [
-        "mqwc6go0i9y0"
+        "mqwpomvaz1io"
       ],
       "tasks": [
         {
-          "id": "mqwc6go0whwl",
+          "id": "mqwpomvah77i",
           "text": "VS-Fall auf Disk laden",
-          "assignee": "mqwc6go0i9y0",
+          "assignee": "mqwpomvaz1io",
           "due": "",
           "done": false,
           "prio": "Mittel"
@@ -94,7 +94,7 @@
   ],
   "goals": [
     {
-      "id": "mqwc6go06d9i",
+      "id": "mqwpomvar9pq",
       "title": "Anatomy-augmented Agentic VLM – Paper",
       "detail": "Arme A/B/C · MICCAI 2026",
       "cat": "📄 Paper",
@@ -102,7 +102,7 @@
       "priority": "Hoch"
     },
     {
-      "id": "mqwc6go0eief",
+      "id": "mqwpomvar7cg",
       "title": "DFG – KI-gestützte Neuronavigation",
       "detail": "Sachbeihilfe · Vollantrag Aug 2026",
       "cat": "💰 Antrag",
@@ -110,7 +110,7 @@
       "priority": "Hoch"
     },
     {
-      "id": "mqwc6go086f1",
+      "id": "mqwpomvaq45k",
       "title": "VS-Seg Validierung – Schwannoma",
       "detail": "Dice/Detection klinische Kohorte",
       "cat": "📄 Paper",
@@ -118,7 +118,7 @@
       "priority": "Mittel"
     },
     {
-      "id": "mqwc6go05u31",
+      "id": "mqwpomvauqmz",
       "title": "Study Panel UI – Blinded Reader",
       "detail": "Verblindete Reader-Studie",
       "cat": "🔬 Projekt",
@@ -126,7 +126,7 @@
       "priority": "Mittel"
     },
     {
-      "id": "mqwc6go0hmdc",
+      "id": "mqwpomvalkk3",
       "title": "EU Horizon – Multimodal Neuroimaging",
       "detail": "Konsortium · Call HORIZON-HLTH-2027",
       "cat": "💰 Antrag",
@@ -136,7 +136,7 @@
   ],
   "ideas": [
     {
-      "id": "mqwc6go0cev5",
+      "id": "mqwpomvah8kx",
       "title": "Agentic VLM für Neurochirurgie-Planung",
       "desc": "OP-Planung: Resektion, fMRI, DTI. Radiologen vs. VLM.",
       "type": "Dissertation",
@@ -144,7 +144,7 @@
       "skills": "Python · ML · MRT"
     },
     {
-      "id": "mqwc6go0qitp",
+      "id": "mqwpomvauq82",
       "title": "Foundation Model für Hirntumor-Segmentierung",
       "desc": "Universelles Modell auf allen BraTS Tasks + klinische Validierung.",
       "type": "Dissertation",
@@ -152,7 +152,7 @@
       "skills": "Deep Learning · CUDA"
     },
     {
-      "id": "mqwc6go0djdm",
+      "id": "mqwpomvas99h",
       "title": "Sellar & Pituitary Pathologie",
       "desc": "Atlas + Segmentierung für Sellar-Region.",
       "type": "Dissertation",
@@ -160,7 +160,7 @@
       "skills": "Atlas · MRT · Klinik"
     },
     {
-      "id": "mqwc6go03qpz",
+      "id": "mqwpomvaj388",
       "title": "MLS via Deformationsfeld",
       "desc": "Präzisere Midline-Shift-Quantifizierung. Validierung auf 50+ Fällen.",
       "type": "Masterarbeit",
@@ -168,7 +168,7 @@
       "skills": "ANTs · Python"
     },
     {
-      "id": "mqwc6go03h9w",
+      "id": "mqwpomvaoyzv",
       "title": "Blinded-Reader UI für VLM-Evaluation",
       "desc": "Web-Interface für verblindete Leser-Studie.",
       "type": "Masterarbeit",
@@ -176,7 +176,7 @@
       "skills": "React · FastAPI"
     },
     {
-      "id": "mqwc6go0eggo",
+      "id": "mqwpomvaiqo6",
       "title": "BrainAge-Pipeline für klinische Kohorte",
       "desc": "Brain-Age-Schätzung + Korrelation klinischer Parameter.",
       "type": "Bachelorarbeit",
@@ -184,7 +184,7 @@
       "skills": "Python · Stats"
     },
     {
-      "id": "mqwc6go0xtuh",
+      "id": "mqwpomvals5k",
       "title": "Automatische QC für MRT-Segmentierung",
       "desc": "Klassifikator erkennt Segmentierungsfehler ohne Ground Truth.",
       "type": "Bachelorarbeit",
@@ -194,7 +194,7 @@
   ],
   "todos": [
     {
-      "id": "mqwc6go0p7wd",
+      "id": "mqwpomvai373",
       "text": "VLM Paper Draft finalisieren – Arm A/B/C",
       "tag": "Dringend",
       "due": "2026-07-05",
@@ -202,7 +202,7 @@
       "prio": "Mittel"
     },
     {
-      "id": "mqwc6go012mj",
+      "id": "mqwpomvaf6my",
       "text": "DFG Antrag Outline erstellen (Kapitel 1-3)",
       "tag": "Dringend",
       "due": "2026-07-15",
@@ -210,7 +210,7 @@
       "prio": "Mittel"
     },
     {
-      "id": "mqwc6go0wo7d",
+      "id": "mqwpomvatgux",
       "text": "Pituitary gland: sellar atlas ROI via MNI-Reg",
       "tag": "Code",
       "due": "",
@@ -218,7 +218,7 @@
       "prio": "Mittel"
     },
     {
-      "id": "mqwc6go0t6ui",
+      "id": "mqwpomvalxjt",
       "text": "Multi-Case Statistik für VLM-Studie (≥10)",
       "tag": "Paper",
       "due": "",
@@ -226,7 +226,7 @@
       "prio": "Mittel"
     },
     {
-      "id": "mqwc6go00vn7",
+      "id": "mqwpomva2zg7",
       "text": "VS-Fall laden & VS-Seg Dice validieren",
       "tag": "Paper",
       "due": "",
@@ -234,7 +234,7 @@
       "prio": "Mittel"
     },
     {
-      "id": "mqwc6go0d8hg",
+      "id": "mqwpomvazwym",
       "text": "Arm C (Lesion Branch) implementieren",
       "tag": "Code",
       "due": "",
@@ -242,7 +242,7 @@
       "prio": "Mittel"
     },
     {
-      "id": "mqwc6go0yc1p",
+      "id": "mqwpomvamsov",
       "text": "SynthSeg arm64 FreeSurfer 8.1 installieren",
       "tag": "Code",
       "due": "",
@@ -252,18 +252,18 @@
   ],
   "phds": [
     {
-      "id": "mqwc6go0i9y0",
-      "name": "Lara Reiner",
-      "initials": "LR",
+      "id": "mqwpomvaz1io",
+      "name": "Doktorand/in 1",
+      "initials": "D1",
       "photo": "",
-      "topic": "LLM based MRI Protocols ",
-      "year": "06/24",
-      "progress": 80,
-      "needs": "Einreichung Dissertation ",
-      "milestones": "x Paper eingereicht und erfolgreich publiziert\n> Manuskript zum lesen bei Michael Scheel\n> Agentic Ai for Neurooncology EA geschrieben\n- Abgabe: Q2 2027"
+      "topic": "Foundation Models für Hirntumor-Seg.",
+      "year": "3. Jahr · seit Okt 2023",
+      "progress": 65,
+      "needs": "Feedback zu Kapitel 3 · GPU-Zugang",
+      "milestones": "x Literaturarbeit abgeschlossen\nx Datenbasis (BraTS + intern)\n> Kapitel 3: Modellentwicklung\n- Validierung klinische Kohorte\n- Abgabe: Q2 2027"
     },
     {
-      "id": "mqwc6go0idgm",
+      "id": "mqwpomvaecep",
       "name": "Doktorand/in 2",
       "initials": "D2",
       "photo": "",
@@ -274,7 +274,7 @@
       "milestones": "x Exposé genehmigt\nx VLM-Pilotstudie (Arm A/B)\n> Multi-Case Erweiterung\n- Klinische Reader-Studie\n- Abgabe: Q4 2027"
     },
     {
-      "id": "mqwc6go0ewyr",
+      "id": "mqwpomva41co",
       "name": "Doktorand/in 3",
       "initials": "D3",
       "photo": "",
@@ -283,11 +283,22 @@
       "progress": 20,
       "needs": "Zugang klinische Kohorte · Exposé-Feedback bis Ende Juli",
       "milestones": "x Einarbeitung abgeschlossen\n> Exposé in Bearbeitung\n- Pilotstudie Brain-Age Kohorte\n- Paper #1 einreichen\n- Abgabe: Q2 2029"
+    },
+    {
+      "name": "Philipe Ebert",
+      "initials": "PE",
+      "topic": "Automatisierte LLM gestützte Extraktion klinischer Daten",
+      "year": "03/2024",
+      "progress": 80,
+      "needs": "",
+      "milestones": "x Paper publiziert\n> Manuskript geschrieben\n- Dissertation einreichen",
+      "photo": "",
+      "id": "mqwpqnob5gvv"
     }
   ],
   "pubs": [
     {
-      "id": "mqwc6go0fajq",
+      "id": "mqwpomvare4p",
       "title": "Anatomy-augmented Agentic VLM",
       "journal": "MICCAI 2026",
       "authors": "Meddeb et al.",
@@ -295,7 +306,7 @@
       "stage": "In Arbeit"
     },
     {
-      "id": "mqwc6go08zl9",
+      "id": "mqwpomvaib63",
       "title": "neuro-label Open-Source Plattform",
       "journal": "JOSS",
       "authors": "Meddeb et al.",
@@ -303,7 +314,7 @@
       "stage": "In Arbeit"
     },
     {
-      "id": "mqwc6go00k6j",
+      "id": "mqwpomval08y",
       "title": "VS-Seg Validierung Schwannoma",
       "journal": "NeuroImage: Clinical",
       "authors": "AG NeurovisionLab",
@@ -311,7 +322,7 @@
       "stage": "Idee"
     },
     {
-      "id": "mqwc6go08nuu",
+      "id": "mqwpomvalhfe",
       "title": "BrainAge als klinischer Biomarker",
       "journal": "Frontiers in Neuroscience",
       "authors": "—",
@@ -319,7 +330,7 @@
       "stage": "Idee"
     },
     {
-      "id": "mqwc6go087vo",
+      "id": "mqwpomva5ox8",
       "title": "Deep Learning Glioma Grading",
       "journal": "Radiology: AI",
       "authors": "Meddeb et al.",
@@ -327,7 +338,7 @@
       "stage": "Submitted"
     },
     {
-      "id": "mqwc6go0d7qi",
+      "id": "mqwpomvaaz2l",
       "title": "SynthSeg in der klinischen Routine",
       "journal": "European Radiology",
       "authors": "Meddeb et al.",
@@ -335,7 +346,7 @@
       "stage": "Under Review"
     },
     {
-      "id": "mqwc6go0zbzq",
+      "id": "mqwpomvar5y7",
       "title": "Automatisierte MRT-Qualitätskontrolle",
       "journal": "Diagnostics (MDPI)",
       "authors": "Meddeb et al.",
@@ -345,7 +356,7 @@
   ],
   "funding": [
     {
-      "id": "mqwc6go0iyuw",
+      "id": "mqwpomva4rs2",
       "name": "DFG Sachbeihilfe – KI-Neuronavigation",
       "agency": "DFG",
       "total": 420000,
@@ -355,7 +366,7 @@
       "status": "Beantragt"
     },
     {
-      "id": "mqwc6go0i1nu",
+      "id": "mqwpomva4hk0",
       "name": "Charité Clinician Scientist Programm",
       "agency": "Charité",
       "total": 120000,
@@ -365,7 +376,7 @@
       "status": "Laufend"
     },
     {
-      "id": "mqwc6go0hcur",
+      "id": "mqwpomvar0zh",
       "name": "BMBF Verbundprojekt NeuroAI",
       "agency": "BMBF",
       "total": 680000,
@@ -375,7 +386,7 @@
       "status": "Laufend"
     },
     {
-      "id": "mqwc6go0f95k",
+      "id": "mqwpomva14i5",
       "name": "EU Horizon – Multimodal Neuroimaging",
       "agency": "EU",
       "total": 1500000,
@@ -387,7 +398,7 @@
   ],
   "datasets": [
     {
-      "id": "mqwc6go0rmr7",
+      "id": "mqwpomvaqi0p",
       "name": "Glioma MRT Kohorte (intern)",
       "cases": 218,
       "ethics": "Bewilligt",
@@ -396,7 +407,7 @@
       "sharing": "Intern"
     },
     {
-      "id": "mqwc6go07hww",
+      "id": "mqwpomva8kjr",
       "name": "BraTS 2024 (öffentlich)",
       "cases": 1470,
       "ethics": "N/A",
@@ -405,7 +416,7 @@
       "sharing": "Öffentlich"
     },
     {
-      "id": "mqwc6go0vkua",
+      "id": "mqwpomvaw54k",
       "name": "Vestibular Schwannoma Kohorte",
       "cases": 0,
       "ethics": "Ausstehend",
@@ -414,7 +425,7 @@
       "sharing": "Geplant"
     },
     {
-      "id": "mqwc6go0nmf1",
+      "id": "mqwpomvaa7i2",
       "name": "Tunis Validierung (extern)",
       "cases": 60,
       "ethics": "In Antrag",
@@ -425,28 +436,28 @@
   ],
   "links": [
     {
-      "id": "mqwc6go0euhl",
+      "id": "mqwpomvatno7",
       "type": "Tool",
       "title": "SynthSeg (BBillot)",
       "url": "https://github.com/BBillot/SynthSeg",
       "desc": "Domain-randomisierte Segmentierung – Basis des Whole-Brain-Moduls."
     },
     {
-      "id": "mqwc6go03nz2",
+      "id": "mqwpomva1amz",
       "type": "Dataset",
       "title": "BraTS 2024 Challenge",
       "url": "https://www.synapse.org/brats",
       "desc": "Multimodale Glioma-MRT mit Annotationen."
     },
     {
-      "id": "mqwc6go0skzn",
+      "id": "mqwpomvalb3v",
       "type": "Tool",
       "title": "MONAI Label",
       "url": "https://github.com/Project-MONAI/MONAILabel",
       "desc": "Active-Learning Annotation, Backend von neuro-label."
     },
     {
-      "id": "mqwc6go0nq1f",
+      "id": "mqwpomva2onh",
       "type": "Paper",
       "title": "BrainAgeNeXt",
       "url": "https://github.com/MIDIconsortium/BrainAge",
@@ -455,26 +466,26 @@
   ],
   "meetings": [
     {
-      "id": "mqwc6go031l1",
+      "id": "mqwpomvaw6nz",
       "type": "1:1",
       "phdId": "",
       "participants": [
-        "mqwc6go0i9y0"
+        "mqwpomvaz1io"
       ],
       "date": "2026-06-22",
       "title": "Kapitel 3 – Modellentwicklung Review",
       "notes": "Architektur des Foundation-Modells durchgesprochen. Encoder-Wahl überzeugend, Validierungsdesign schärfen. GPU-Engpass diskutiert.",
       "items": [
         {
-          "id": "mqwc6go0kabr",
+          "id": "mqwpomvab63z",
           "text": "Draft Kapitel 3 bis 30.06. überarbeiten",
-          "assignee": "mqwc6go0i9y0",
+          "assignee": "mqwpomvaz1io",
           "prio": "Hoch",
           "due": "2026-06-30",
           "done": false
         },
         {
-          "id": "mqwc6go07pd4",
+          "id": "mqwpomvaas1z",
           "text": "GPU-Kontingent beim RZ anfragen",
           "assignee": "me",
           "prio": "Mittel",
@@ -482,9 +493,9 @@
           "done": false
         },
         {
-          "id": "mqwc6go09e71",
+          "id": "mqwpomvaxt9p",
           "text": "Baseline-Vergleich mit nnU-Net ergänzen",
-          "assignee": "mqwc6go0i9y0",
+          "assignee": "mqwpomvaz1io",
           "prio": "Mittel",
           "due": "",
           "done": false
@@ -492,20 +503,20 @@
       ]
     },
     {
-      "id": "mqwc6go0fs2y",
+      "id": "mqwpomva4qou",
       "type": "Team",
       "phdId": "",
       "participants": [
-        "mqwc6go0i9y0",
-        "mqwc6go0idgm",
-        "mqwc6go0ewyr"
+        "mqwpomvaz1io",
+        "mqwpomvaecep",
+        "mqwpomva41co"
       ],
       "date": "2026-06-18",
       "title": "Wöchentliches Lab-Meeting",
       "notes": "Statusrunde aller Projekte. VLM auf Kurs für MICCAI. VS-Seg wartet auf Fälle.",
       "items": [
         {
-          "id": "mqwc6go05m9g",
+          "id": "mqwpomvao9uu",
           "text": "VLM Multi-Case-Lauf bis KW27",
           "assignee": "me",
           "prio": "Hoch",
@@ -513,15 +524,15 @@
           "done": false
         },
         {
-          "id": "mqwc6go0yfml",
+          "id": "mqwpomvasmct",
           "text": "Datensatz-Register aktualisieren",
-          "assignee": "mqwc6go0idgm",
+          "assignee": "mqwpomvaecep",
           "prio": "Mittel",
           "due": "",
           "done": false
         },
         {
-          "id": "mqwc6go0qz4f",
+          "id": "mqwpomvalp5b",
           "text": "Journal-Club Thema festlegen",
           "assignee": "me",
           "prio": "Niedrig",
@@ -531,26 +542,26 @@
       ]
     },
     {
-      "id": "mqwc6go0lxdr",
+      "id": "mqwpomva1z08",
       "type": "1:1",
       "phdId": "",
       "participants": [
-        "mqwc6go0ewyr"
+        "mqwpomva41co"
       ],
       "date": "2026-06-15",
       "title": "Exposé-Besprechung",
       "notes": "Forschungsfrage Brain-Age als Biomarker konkretisiert. Kohortenzugang klären.",
       "items": [
         {
-          "id": "mqwc6go00a85",
+          "id": "mqwpomvakbm1",
           "text": "Exposé-Entwurf bis Ende Juli",
-          "assignee": "mqwc6go0ewyr",
+          "assignee": "mqwpomva41co",
           "prio": "Hoch",
           "due": "2026-07-31",
           "done": false
         },
         {
-          "id": "mqwc6go0i0yb",
+          "id": "mqwpomvarexc",
           "text": "Datenzugang klinische Kohorte beantragen",
           "assignee": "me",
           "prio": "Mittel",
@@ -559,5 +570,6 @@
         }
       ]
     }
-  ]
+  ],
+  "_syncTs": 1782586102619
 }
