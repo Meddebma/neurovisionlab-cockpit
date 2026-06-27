@@ -89,8 +89,8 @@
       "name": "ICANS Paper I",
       "status": "Aktiv",
       "progress": 10,
-      "stand": "",
-      "desc": "",
+      "stand": "waiting for 2 last ratings",
+      "desc": "Rating of ICANS Patients of Berlin",
       "notes": "",
       "members": [],
       "tasks": [
@@ -104,10 +104,10 @@
         },
         {
           "id": "mqwrd4pv75e2",
-          "text": "",
+          "text": "Calibration session",
           "assignee": "me",
           "prio": "Mittel",
-          "due": "",
+          "due": "2026-07-12",
           "done": false
         }
       ]
@@ -581,7 +581,7 @@
       ]
     }
   ],
-  "_syncTs": 1782588830795,
+  "_syncTs": 1782588904467,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
