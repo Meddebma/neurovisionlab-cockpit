@@ -310,7 +310,7 @@
       "initials": "JF",
       "topic": "Agentic AI in Emergency Radiology: LLM-Based Automated Selection of the Appropriate Imaging Modality and Formulation of the Clinical Question in the Emergency Department",
       "year": "02/2026",
-      "progress": 12,
+      "progress": 23,
       "needs": "Aymen has to review the latest results",
       "milestones": "x Data collection (130 patients)\n> inference and benchmark of different LLMs",
       "photo": "",
@@ -617,7 +617,7 @@
       ]
     }
   ],
-  "_syncTs": 1782590109619,
+  "_syncTs": 1782591087791,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
