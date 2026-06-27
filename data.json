@@ -98,7 +98,7 @@
           "id": "mqwrc87nerwg",
           "text": "2 ratings from Ahmed and Nima missing",
           "assignee": "me",
-          "prio": "Mittel",
+          "prio": "Hoch",
           "due": "2026-07-05",
           "done": false
         },
@@ -617,7 +617,7 @@
       ]
     }
   ],
-  "_syncTs": 1782591087791,
+  "_syncTs": 1782591635217,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
