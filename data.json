@@ -401,8 +401,8 @@
       "id": "mqwpomva4hk0",
       "name": "Charité Clinician Scientist Programm",
       "agency": "Charité",
-      "total": 120000,
-      "spent": 48000,
+      "total": 0,
+      "spent": 0,
       "start": "2025-01-01",
       "end": "2027-12-31",
       "status": "Laufend"
@@ -411,8 +411,8 @@
       "id": "mqwpomvar0zh",
       "name": "BMBF Verbundprojekt NeuroAI",
       "agency": "BMBF",
-      "total": 680000,
-      "spent": 210000,
+      "total": 0,
+      "spent": 0,
       "start": "2024-04-01",
       "end": "2027-03-31",
       "status": "Laufend"
@@ -421,7 +421,7 @@
       "id": "mqwpomva14i5",
       "name": "EU Horizon – Multimodal Neuroimaging",
       "agency": "EU",
-      "total": 1500000,
+      "total": 0,
       "spent": 0,
       "start": "2027-01-01",
       "end": "2030-12-31",
@@ -505,7 +505,7 @@
     {
       "id": "mqwrow032803",
       "type": "Tool",
-      "title": "",
+      "title": "MedSeg",
       "url": "https://www.medseg.ai/",
       "desc": "Interesting segmentation tool"
     }
@@ -617,7 +617,7 @@
       ]
     }
   ],
-  "_syncTs": 1782589942666,
+  "_syncTs": 1782590109619,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
