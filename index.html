@@ -273,6 +273,11 @@
 
   <div class="side-foot">
     <button class="foot-btn" onclick="toggleTheme()"><span id="theme-ic">🌙</span> <span id="theme-tip">Light Mode</span></button>
+    <button class="foot-btn" id="gh-btn" onclick="openGhSettings()" title="GitHub Sync" style="justify-content:flex-start;gap:9px;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.39-1.32-1.76-1.32-1.76-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.79 1.29 3.47.99.1-.77.41-1.29.75-1.59-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.01 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 22.3 24 17.8 24 12.5 24 5.87 18.63.5 12 .5z"/></svg>
+      <span style="font-size:11.5px;font-weight:600">GitHub Sync</span>
+      <span id="gh-dot" style="margin-left:auto;font-size:10px;font-weight:700;color:#5a5f72"></span>
+    </button>
     <div class="foot-row">
       <button class="foot-btn" onclick="exportData()" title="Backup exportieren">⬇</button>
       <button class="foot-btn" onclick="document.getElementById('imp').click()" title="Backup importieren">⬆</button>
@@ -395,6 +400,11 @@
   <div class="mb" id="hist-body"></div>
 </div></div>
 
+<div class="ov" id="gh-ov"><div class="modal" style="width:460px">
+  <div class="mh"><h3>☁️ GitHub Sync</h3><button class="mx" onclick="document.getElementById('gh-ov').classList.remove('show')">×</button></div>
+  <div class="mb" id="gh-body"></div>
+</div></div>
+
 <div class="cmdk-ov" id="cmdk-ov"><div class="cmdk">
   <input class="cmdk-in" id="cmdk-in" placeholder="Suchen oder Aktion… (z. B. Projekt, Paper, Doktorand)" oninput="cmdkRender(this.value)" onkeydown="cmdkKey(event)">
   <div class="cmdk-res" id="cmdk-res"></div>
@@ -405,7 +415,87 @@
 
 <script>
 const KEY='neurovisionlab_dashboard_v3', TKEY='nvl_theme', HKEY='nvl_history', BKEY='nvl_lastbackup';
+const GH_REPO='Meddebma/neurovisionlab-cockpit', GH_FILE='data.json', GH_PAT_KEY='nvl_gh_pat';
 let mem=null;
+
+/* ── GITHUB SYNC ────────────────────────────────────────────────── */
+function ghPat(){try{return localStorage.getItem(GH_PAT_KEY)||'';}catch(e){return '';}}
+function ghSetDot(st){const el=document.getElementById('gh-dot');if(!el)return;const m={idle:{c:'#5a5f72',t:''},syncing:{c:'#f59e0b',t:'↻'},ok:{c:'#22c55e',t:'✓'},error:{c:'#ef4444',t:'!'}};const s=m[st]||m.idle;el.style.color=s.c;el.textContent=s.t;}
+function ghB64(str){return btoa(unescape(encodeURIComponent(str)));}
+
+async function ghGetSha(){
+  const pat=ghPat();if(!pat)return null;
+  try{const r=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,{headers:{'Authorization':'Bearer '+pat,'Accept':'application/vnd.github.v3+json'}});
+  if(r.status===404)return null;if(!r.ok)return undefined;return(await r.json()).sha;}catch(e){return undefined;}
+}
+
+async function ghPush(){
+  const pat=ghPat();if(!pat)return;
+  ghSetDot('syncing');
+  try{
+    const sha=await ghGetSha();if(sha===undefined){ghSetDot('error');return;}
+    const body={message:'sync '+new Date().toISOString(),content:ghB64(JSON.stringify(state,null,2))};
+    if(sha!==null)body.sha=sha;
+    const r=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,{method:'PUT',headers:{'Authorization':'Bearer '+pat,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'},body:JSON.stringify(body)});
+    ghSetDot(r.ok?'ok':'error');
+  }catch(e){ghSetDot('error');}
+}
+
+async function syncFromGitHub(){
+  ghSetDot('syncing');
+  try{
+    const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/${GH_FILE}?t=${Date.now()}`);
+    if(!r.ok){ghSetDot(ghPat()?'error':'idle');return;}
+    const ghData=await r.json();
+    const localTs=state._syncTs||0,ghTs=ghData._syncTs||0;
+    if(ghTs>localTs){
+      state=ghData;normalize();
+      try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
+      renderAll();toast('☁️ Neuere Daten von GitHub geladen ✓');
+    }
+    ghSetDot('ok');
+  }catch(e){ghSetDot(ghPat()?'error':'idle');}
+}
+
+function openGhSettings(){
+  const pat=ghPat();const configured=!!pat;
+  document.getElementById('gh-body').innerHTML=`
+    <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6">
+      Speichert deine Daten automatisch in deinem GitHub-Repo – so bleiben Handy und Laptop immer synchron.
+    </p>
+    <div style="background:var(--panel2);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;margin-bottom:16px;font-size:12.5px">
+      <b>Status:</b> ${configured?'<span style="color:#22c55e">✓ Verbunden (PAT gespeichert)</span>':'<span style="color:var(--muted)">Nicht eingerichtet</span>'}<br>
+      <b>Repo:</b> <code style="background:var(--line);padding:1px 6px;border-radius:5px">${GH_REPO}</code>
+    </div>
+    <label style="font-size:12px;font-weight:700;display:block;margin-bottom:7px">GitHub Personal Access Token (classic)</label>
+    <input id="gh-pat-in" type="password" value="${configured?'••••••••••••••••':''}" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off"
+      style="width:100%;padding:10px 13px;border-radius:9px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-family:monospace;font-size:13px;outline:none;margin-bottom:10px">
+    <p style="font-size:11.5px;color:var(--muted);margin-bottom:18px;line-height:1.6">
+      Token erstellen: <b>github.com → Settings → Developer settings → Personal access tokens → Tokens (classic)</b><br>
+      Erforderlicher Scope: <code style="background:var(--line);padding:1px 5px;border-radius:4px">repo</code> (oder <code style="background:var(--line);padding:1px 5px;border-radius:4px">public_repo</code>)
+    </p>
+    <div style="display:flex;gap:9px">
+      <button class="btn btn-dark" style="flex:1" onclick="saveGhPat()">💾 Speichern & verbinden</button>
+      ${configured?'<button class="btn btn-light" style="color:#dc2626" onclick="removeGhPat()">Trennen</button>':''}
+    </div>`;
+  document.getElementById('gh-ov').classList.add('show');
+}
+
+async function saveGhPat(){
+  const inp=document.getElementById('gh-pat-in');let v=inp.value.trim();
+  if(!v||v.startsWith('•')){toast('Bitte gültiges Token eingeben',true);return;}
+  try{localStorage.setItem(GH_PAT_KEY,v);}catch(e){toast('Speichern fehlgeschlagen',true);return;}
+  inp.value='••••••••••••••••';toast('Token gespeichert – verbinde…');
+  document.getElementById('gh-ov').classList.remove('show');
+  await syncFromGitHub();
+  if(ghPat())ghPush();
+}
+
+function removeGhPat(){
+  if(!confirm('GitHub Sync deaktivieren? Deine lokalen Daten bleiben erhalten.'))return;
+  try{localStorage.removeItem(GH_PAT_KEY);}catch(e){}
+  ghSetDot('idle');document.getElementById('gh-ov').classList.remove('show');toast('GitHub Sync deaktiviert');
+}
 function lsOk(){try{localStorage.setItem('__t','1');localStorage.removeItem('__t');return true;}catch(e){return false;}}
 const HAS_LS=lsOk();
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
@@ -490,7 +580,7 @@ DEFAULTS.meetings=[
 let state;
 function normalize(){['pubs','funding','datasets','meetings','links','ideas','goals','phds','todos','projects'].forEach(k=>{if(!state[k])state[k]=[];});state.projects.forEach(p=>{if(!p.tasks)p.tasks=[];if(!p.members)p.members=[];p.tasks.forEach(t=>{if(t.due===undefined)t.due='';if(t.prio===undefined)t.prio='Mittel';});});state.todos.forEach(t=>{if(t.due===undefined)t.due='';if(t.prio===undefined)t.prio='Mittel';});state.meetings.forEach(m=>{if(!m.participants)m.participants=m.phdId?[m.phdId]:[];if(!m.items){m.items=(m.actions||'').split('\n').map(s=>s.trim()).filter(Boolean).map(x=>({id:uid(),text:x,assignee:'me',prio:'Mittel',due:'',done:false}));}});}
 function loadState(){let ok=false;try{const raw=HAS_LS?localStorage.getItem(KEY):mem;if(raw){state=JSON.parse(raw);ok=true;}}catch(e){}if(!ok)state=JSON.parse(JSON.stringify(DEFAULTS));normalize();}
-function save(s){const raw=JSON.stringify(state);try{if(HAS_LS)localStorage.setItem(KEY,raw);else mem=raw;}catch(e){mem=raw;toast('Speicher voll – evtl. zu große Fotos',true);}pushHistory(raw);if(!s)toast(HAS_LS?'Gespeichert ✓':'Gespeichert (Sitzung) ✓');}
+function save(s){state._syncTs=Date.now();const raw=JSON.stringify(state);try{if(HAS_LS)localStorage.setItem(KEY,raw);else mem=raw;}catch(e){mem=raw;toast('Speicher voll – evtl. zu große Fotos',true);}pushHistory(raw);if(!s)toast(HAS_LS?'Gespeichert ✓':'Gespeichert (Sitzung) ✓');if(ghPat())ghPush();}
 
 /* HISTORY / BACKUPS */
 function pushHistory(raw){if(!HAS_LS)return;try{let h=JSON.parse(localStorage.getItem(HKEY)||'[]');const now=Date.now();if(h[0]&&now-h[0].ts<5*60000)return;h.unshift({ts:now,data:raw||JSON.stringify(state)});h=h.slice(0,5);localStorage.setItem(HKEY,JSON.stringify(h));}catch(e){try{localStorage.removeItem(HKEY);}catch(_){}}}
@@ -766,6 +856,8 @@ function resetData(){if(!confirm('Alle Daten zurücksetzen? Aktueller Stand geht
 /* INIT */
 let th='light';try{th=localStorage.getItem(TKEY)||'light';}catch(e){}applyTheme(th);
 loadState();renderAll();
+document.getElementById('gh-ov').addEventListener('click',e=>{if(e.target.id==='gh-ov')e.currentTarget.classList.remove('show');});
+if(ghPat())syncFromGitHub();else ghSetDot('idle');
 document.getElementById('today').textContent=new Date().toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+' · Forschungs-Cockpit';
 document.getElementById('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeModal();});
 document.getElementById('hist-ov').addEventListener('click',e=>{if(e.target.id==='hist-ov')e.currentTarget.classList.remove('show');});
