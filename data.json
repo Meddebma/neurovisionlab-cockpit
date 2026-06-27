@@ -321,7 +321,7 @@
       "initials": "MC",
       "topic": "Deep Learning based detection of HIE and outcome prediction",
       "year": "06/2024",
-      "progress": 60,
+      "progress": 42,
       "needs": "External validation fo newest inference",
       "milestones": "x Data collection\nx Data from Reims\n> DL Training  ",
       "photo": "",
@@ -391,7 +391,7 @@
       "id": "mqwpomva4rs2",
       "name": "DFG Sachbeihilfe – KI-Neuronavigation",
       "agency": "DFG",
-      "total": 420000,
+      "total": 0,
       "spent": 0,
       "start": "2026-09-01",
       "end": "2029-08-31",
@@ -617,7 +617,7 @@
       ]
     }
   ],
-  "_syncTs": 1782589874230,
+  "_syncTs": 1782589942666,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
