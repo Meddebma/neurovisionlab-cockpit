@@ -278,7 +278,7 @@
       "topic": "Automated  LLM assisted exctraction of clinical data",
       "year": "03/2024",
       "progress": 63,
-      "needs": "",
+      "needs": "Dissertation soll bald zu Jawed geschickt werden",
       "milestones": "x Paper publiziert\n> Manuskript geschrieben\n- Dissertation einreichen",
       "photo": "",
       "id": "mqwpqnob5gvv"
@@ -289,7 +289,7 @@
       "topic": "LLM assisted Protocol Generation in Neuroradiology ",
       "year": "06/2024",
       "progress": 61,
-      "needs": "Manuskript lesen von Michael Scheel",
+      "needs": "Michael Scheel soll die Dissertation lesen",
       "milestones": "x Paper publiziert\n> Dissertation einreichen",
       "photo": "",
       "id": "mqwqo2q07rx3"
@@ -310,7 +310,7 @@
       "initials": "JF",
       "topic": "Agentic AI in Emergency Radiology: LLM-Based Automated Selection of the Appropriate Imaging Modality and Formulation of the Clinical Question in the Emergency Department",
       "year": "02/2026",
-      "progress": 0,
+      "progress": 12,
       "needs": "Aymen has to review the latest results",
       "milestones": "x Data collection (130 patients)\n> inference and benchmark of different LLMs",
       "photo": "",
@@ -606,7 +606,7 @@
       ]
     }
   ],
-  "_syncTs": 1782589670542,
+  "_syncTs": 1782589731800,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
