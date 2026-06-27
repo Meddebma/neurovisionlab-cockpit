@@ -304,6 +304,17 @@
       "milestones": "x 30 first patients included\n> data collection",
       "photo": "",
       "id": "mqwrae6zh407"
+    },
+    {
+      "name": "Joanna Farnicka",
+      "initials": "JF",
+      "topic": "Agentic AI in Emergency Radiology: LLM-Based Automated Selection of the Appropriate Imaging Modality and Formulation of the Clinical Question in the Emergency Department",
+      "year": "02/2026",
+      "progress": 0,
+      "needs": "Aymen has to review the latest results",
+      "milestones": "x Data collection (130 patients)\n> inference and benchmark of different LLMs",
+      "photo": "",
+      "id": "mqwrv4iffqzf"
     }
   ],
   "pubs": [
@@ -482,10 +493,10 @@
     },
     {
       "id": "mqwrow032803",
-      "type": "Paper",
+      "type": "Tool",
       "title": "",
-      "url": "",
-      "desc": ""
+      "url": "https://www.medseg.ai/",
+      "desc": "Interesting segmentation tool"
     }
   ],
   "meetings": [
@@ -595,7 +606,7 @@
       ]
     }
   ],
-  "_syncTs": 1782589379425,
+  "_syncTs": 1782589670542,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
