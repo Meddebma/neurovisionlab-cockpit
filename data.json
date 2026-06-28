@@ -114,14 +114,23 @@
     },
     {
       "id": "mqybplev7ivk",
-      "name": "",
-      "status": "Geplant",
-      "progress": 0,
+      "name": "Agentic AI for neurooncological Tumor board",
+      "status": "Aktiv",
+      "progress": 12,
       "stand": "",
       "desc": "",
       "notes": "",
       "members": [],
-      "tasks": []
+      "tasks": [
+        {
+          "id": "mqybqk41ds2p",
+          "text": "Daten sammeln",
+          "assignee": "mqwrae6zh407",
+          "prio": "Mittel",
+          "due": "2026-08-02",
+          "done": false
+        }
+      ]
     }
   ],
   "goals": [
@@ -630,7 +639,7 @@
       ]
     }
   ],
-  "_syncTs": 1782683471059,
+  "_syncTs": 1782683539506,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
