@@ -129,6 +129,22 @@
           "prio": "Mittel",
           "due": "2026-08-02",
           "done": false
+        },
+        {
+          "id": "mqybri8081nk",
+          "text": "Pipeline vorbereiten",
+          "assignee": "mqwrzhu6y2ge",
+          "prio": "Mittel",
+          "due": "",
+          "done": true
+        },
+        {
+          "id": "mqybsfz58v0x",
+          "text": "",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
         }
       ]
     }
@@ -639,7 +655,7 @@
       ]
     }
   ],
-  "_syncTs": 1782683539506,
+  "_syncTs": 1782683603720,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
