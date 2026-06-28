@@ -109,6 +109,22 @@
           "prio": "Mittel",
           "due": "2026-07-12",
           "done": false
+        },
+        {
+          "id": "mqxi8jsk2ddq",
+          "text": "Statistische Auswertung",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        },
+        {
+          "id": "mqxi8w3zk8n2",
+          "text": "Philipe schreibt paper",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
         }
       ]
     }
@@ -454,7 +470,7 @@
       "name": "Vestibular Schwannoma Kohorte",
       "cases": 0,
       "ethics": "Ausstehend",
-      "dsgvo": "Offen",
+      "dsgvo": "Konform",
       "location": "—",
       "sharing": "Geplant"
     },
@@ -619,7 +635,7 @@
       ]
     }
   ],
-  "_syncTs": 1782633925473,
+  "_syncTs": 1782633995015,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
