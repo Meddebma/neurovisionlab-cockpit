@@ -215,14 +215,6 @@
   ],
   "todos": [
     {
-      "id": "mqwpomvai373",
-      "text": "VLM Paper Draft finalisieren – Arm A/B/C",
-      "tag": "Dringend",
-      "due": "2026-07-05",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
       "id": "mqwpomvaf6my",
       "text": "DFG Antrag Outline erstellen (Kapitel 1-3)",
       "tag": "Dringend",
@@ -426,6 +418,16 @@
       "start": "2027-01-01",
       "end": "2030-12-31",
       "status": "Beantragt"
+    },
+    {
+      "id": "mqxi5uj83nb4",
+      "name": "",
+      "agency": "",
+      "total": 0,
+      "spent": 0,
+      "start": "",
+      "end": "",
+      "status": "Beantragt"
     }
   ],
   "datasets": [
@@ -617,10 +619,11 @@
       ]
     }
   ],
-  "_syncTs": 1782591635217,
+  "_syncTs": 1782633840829,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
-    "mqwpomvaecep"
+    "mqwpomvaecep",
+    "mqwpomvai373"
   ]
 }
