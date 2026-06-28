@@ -118,7 +118,7 @@
       "status": "Aktiv",
       "progress": 12,
       "stand": "",
-      "desc": "",
+      "desc": "Agentic AI for simulation of neurooncological tumor board and decision support",
       "notes": "",
       "members": [],
       "tasks": [
@@ -140,6 +140,14 @@
         },
         {
           "id": "mqybsfz58v0x",
+          "text": "Prompts verbessern",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-07-12",
+          "done": false
+        },
+        {
+          "id": "mqycses7fqtt",
           "text": "",
           "assignee": "me",
           "prio": "Mittel",
@@ -655,7 +663,7 @@
       ]
     }
   ],
-  "_syncTs": 1782683603720,
+  "_syncTs": 1782685282025,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
