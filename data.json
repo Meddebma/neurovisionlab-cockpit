@@ -421,9 +421,9 @@
     },
     {
       "id": "mqxi5uj83nb4",
-      "name": "",
-      "agency": "",
-      "total": 0,
+      "name": "Wilhelm Sander Stiftung",
+      "agency": "Stiftung",
+      "total": 166000,
       "spent": 0,
       "start": "",
       "end": "",
@@ -445,7 +445,7 @@
       "name": "BraTS 2024 (öffentlich)",
       "cases": 1470,
       "ethics": "N/A",
-      "dsgvo": "Anonymisiert",
+      "dsgvo": "Konform",
       "location": "NAS /data/brats",
       "sharing": "Öffentlich"
     },
@@ -619,7 +619,7 @@
       ]
     }
   ],
-  "_syncTs": 1782633840829,
+  "_syncTs": 1782633925473,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
