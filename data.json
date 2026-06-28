@@ -116,7 +116,7 @@
       "id": "mqybplev7ivk",
       "name": "Agentic AI for neurooncological Tumor board",
       "status": "Aktiv",
-      "progress": 12,
+      "progress": 19,
       "stand": "",
       "desc": "Agentic AI for simulation of neurooncological tumor board and decision support",
       "notes": "",
@@ -148,10 +148,18 @@
         },
         {
           "id": "mqycses7fqtt",
-          "text": "",
+          "text": "Reviewer Tabelle verbessern",
           "assignee": "me",
           "prio": "Mittel",
           "due": "",
+          "done": true
+        },
+        {
+          "id": "mqyct3z0mzx8",
+          "text": "Reviewer Tabelle durch Charlotte und Rama ausfüllen lassen",
+          "assignee": "mqwrae6zh407",
+          "prio": "Mittel",
+          "due": "2026-07-12",
           "done": false
         }
       ]
@@ -663,7 +671,7 @@
       ]
     }
   ],
-  "_syncTs": 1782685282025,
+  "_syncTs": 1782685365959,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
