@@ -109,24 +109,19 @@
           "prio": "Mittel",
           "due": "2026-07-12",
           "done": false
-        },
-        {
-          "id": "mqxi8jsk2ddq",
-          "text": "Statistische Auswertung",
-          "assignee": "me",
-          "prio": "Mittel",
-          "due": "",
-          "done": false
-        },
-        {
-          "id": "mqxi8w3zk8n2",
-          "text": "Philipe schreibt paper",
-          "assignee": "me",
-          "prio": "Mittel",
-          "due": "",
-          "done": false
         }
       ]
+    },
+    {
+      "id": "mqybplev7ivk",
+      "name": "",
+      "status": "Geplant",
+      "progress": 0,
+      "stand": "",
+      "desc": "",
+      "notes": "",
+      "members": [],
+      "tasks": []
     }
   ],
   "goals": [
@@ -461,7 +456,7 @@
       "name": "BraTS 2024 (öffentlich)",
       "cases": 1470,
       "ethics": "N/A",
-      "dsgvo": "Konform",
+      "dsgvo": "Anonymisiert",
       "location": "NAS /data/brats",
       "sharing": "Öffentlich"
     },
@@ -470,7 +465,7 @@
       "name": "Vestibular Schwannoma Kohorte",
       "cases": 0,
       "ethics": "Ausstehend",
-      "dsgvo": "Konform",
+      "dsgvo": "Offen",
       "location": "—",
       "sharing": "Geplant"
     },
@@ -635,7 +630,7 @@
       ]
     }
   ],
-  "_syncTs": 1782633995015,
+  "_syncTs": 1782683471059,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
