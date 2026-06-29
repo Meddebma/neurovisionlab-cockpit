@@ -163,6 +163,17 @@
           "done": false
         }
       ]
+    },
+    {
+      "id": "mqyu4i8xnkky",
+      "name": "",
+      "status": "Geplant",
+      "progress": 0,
+      "stand": "",
+      "desc": "",
+      "notes": "",
+      "members": [],
+      "tasks": []
     }
   ],
   "goals": [
@@ -671,7 +682,7 @@
       ]
     }
   ],
-  "_syncTs": 1782685365959,
+  "_syncTs": 1782714399897,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
