@@ -168,7 +168,7 @@
       "id": "mqyu4i8xnkky",
       "name": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
       "status": "Geplant",
-      "progress": 4,
+      "progress": 8,
       "stand": "",
       "desc": "The goal of this project is to integrate hormone exposure data and sex-specific differences into clinical datasets to develop AI prediction models for meningioma growth and recurrence.",
       "notes": "",
@@ -176,6 +176,30 @@
       "tasks": [
         {
           "id": "mqyueglom5c7",
+          "text": "Antrag schreiben",
+          "assignee": "me",
+          "prio": "Hoch",
+          "due": "2026-07-12",
+          "done": false
+        },
+        {
+          "id": "mqyueve68qna",
+          "text": "Frau Barth kontaktieren",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": true
+        },
+        {
+          "id": "mqyuf4mvxay2",
+          "text": "Güliz Acker Projekt vorstellen",
+          "assignee": "me",
+          "prio": "Hoch",
+          "due": "2026-07-04",
+          "done": false
+        },
+        {
+          "id": "mqyug28q3i3q",
           "text": "",
           "assignee": "me",
           "prio": "Mittel",
@@ -691,7 +715,7 @@
       ]
     }
   ],
-  "_syncTs": 1782714864200,
+  "_syncTs": 1782714938755,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
