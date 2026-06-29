@@ -169,7 +169,7 @@
       "name": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
       "status": "Geplant",
       "progress": 8,
-      "stand": "",
+      "stand": "Meetings mit Güliz und Caroline am 02.07. sowie mit Frau Prof Barth.",
       "desc": "The goal of this project is to integrate hormone exposure data and sex-specific differences into clinical datasets to develop AI prediction models for meningioma growth and recurrence.",
       "notes": "",
       "members": [],
@@ -196,7 +196,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "2026-07-04",
-          "done": false
+          "done": true
         },
         {
           "id": "mqyug28q3i3q",
@@ -213,7 +213,7 @@
       "name": "NeuvisionLab x LIH",
       "status": "Geplant",
       "progress": 27,
-      "stand": "",
+      "stand": "Update von Salah",
       "desc": "",
       "notes": "",
       "members": [],
@@ -224,7 +224,7 @@
       "name": "NeuvisionLab x Deepspin",
       "status": "Geplant",
       "progress": 0,
-      "stand": "",
+      "stand": "Meeting with Phillip Brunnbauer",
       "desc": "MRT Forschung und Untwicklung eines low-field MRT für Kopf",
       "notes": "",
       "members": [],
@@ -756,7 +756,7 @@
       ]
     }
   ],
-  "_syncTs": 1782723119189,
+  "_syncTs": 1782732127352,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
