@@ -200,13 +200,24 @@
         },
         {
           "id": "mqyug28q3i3q",
-          "text": "",
+          "text": "DIZ Datennutzung klären",
           "assignee": "me",
-          "prio": "Mittel",
-          "due": "",
+          "prio": "Hoch",
+          "due": "2026-07-05",
           "done": false
         }
       ]
+    },
+    {
+      "id": "mqyz9r413dox",
+      "name": "",
+      "status": "Geplant",
+      "progress": 0,
+      "stand": "",
+      "desc": "",
+      "notes": "",
+      "members": [],
+      "tasks": []
     }
   ],
   "goals": [
@@ -524,6 +535,16 @@
       "start": "",
       "end": "",
       "status": "Beantragt"
+    },
+    {
+      "id": "mqyugque9mr2",
+      "name": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
+      "agency": "BFMTR",
+      "total": 0,
+      "spent": 0,
+      "start": "",
+      "end": "",
+      "status": "Beantragt"
     }
   ],
   "datasets": [
@@ -715,7 +736,7 @@
       ]
     }
   ],
-  "_syncTs": 1782714938755,
+  "_syncTs": 1782723042494,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
