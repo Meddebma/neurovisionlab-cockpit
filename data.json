@@ -168,12 +168,21 @@
       "id": "mqyu4i8xnkky",
       "name": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
       "status": "Geplant",
-      "progress": 0,
+      "progress": 4,
       "stand": "",
-      "desc": "",
+      "desc": "The goal of this project is to integrate hormone exposure data and sex-specific differences into clinical datasets to develop AI prediction models for meningioma growth and recurrence.",
       "notes": "",
       "members": [],
-      "tasks": []
+      "tasks": [
+        {
+          "id": "mqyueglom5c7",
+          "text": "",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        }
+      ]
     }
   ],
   "goals": [
@@ -682,7 +691,7 @@
       ]
     }
   ],
-  "_syncTs": 1782714670033,
+  "_syncTs": 1782714864200,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
