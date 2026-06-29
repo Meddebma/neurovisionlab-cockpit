@@ -117,7 +117,7 @@
       "name": "Agentic AI for neurooncological Tumor board",
       "status": "Aktiv",
       "progress": 19,
-      "stand": "",
+      "stand": "Review first run",
       "desc": "Agentic AI for simulation of neurooncological tumor board and decision support",
       "notes": "",
       "members": [],
@@ -247,14 +247,6 @@
       "detail": "Arme A/B/C · MICCAI 2026",
       "cat": "📄 Paper",
       "date": "2026-07-10",
-      "priority": "Hoch"
-    },
-    {
-      "id": "mqwpomvar7cg",
-      "title": "DFG – KI-gestützte Neuronavigation",
-      "detail": "Sachbeihilfe · Vollantrag Aug 2026",
-      "cat": "💰 Antrag",
-      "date": "2026-08-31",
       "priority": "Hoch"
     },
     {
@@ -764,11 +756,12 @@
       ]
     }
   ],
-  "_syncTs": 1782732451611,
+  "_syncTs": 1782735057123,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
     "mqwpomvaecep",
-    "mqwpomvai373"
+    "mqwpomvai373",
+    "mqwpomvar7cg"
   ]
 }
