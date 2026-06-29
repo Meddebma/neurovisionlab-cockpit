@@ -210,14 +210,34 @@
     },
     {
       "id": "mqyz9r413dox",
-      "name": "",
+      "name": "NeuvisionLab x LIH",
       "status": "Geplant",
-      "progress": 0,
+      "progress": 27,
       "stand": "",
       "desc": "",
       "notes": "",
       "members": [],
       "tasks": []
+    },
+    {
+      "id": "mqyz9zsbluvx",
+      "name": "NeuvisionLab x Deepspin",
+      "status": "Geplant",
+      "progress": 0,
+      "stand": "",
+      "desc": "MRT Forschung und Untwicklung eines low-field MRT für Kopf",
+      "notes": "",
+      "members": [],
+      "tasks": [
+        {
+          "id": "mqyzbear7l1m",
+          "text": "Meeting mit Philipe (CTO Deepspin)",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        }
+      ]
     }
   ],
   "goals": [
@@ -736,7 +756,7 @@
       ]
     }
   ],
-  "_syncTs": 1782723042494,
+  "_syncTs": 1782723119189,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
