@@ -280,6 +280,14 @@
       "cat": "💰 Antrag",
       "date": "2027-01-15",
       "priority": "Niedrig"
+    },
+    {
+      "title": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
+      "detail": "Antrag beim BMFTR",
+      "cat": "💰 Antrag",
+      "date": "2026-07-31",
+      "priority": "Hoch",
+      "id": "mqz4vf49c9f4"
     }
   ],
   "ideas": [
@@ -756,7 +764,7 @@
       ]
     }
   ],
-  "_syncTs": 1782732127352,
+  "_syncTs": 1782732451611,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
