@@ -445,6 +445,17 @@
       "milestones": "x Data collection\nx Data from Reims\n> DL Training  ",
       "photo": "",
       "id": "mqwrzhu6y2ge"
+    },
+    {
+      "name": "Amélie Thalhauser",
+      "initials": "AT",
+      "topic": "noch offen",
+      "year": "",
+      "progress": 0,
+      "needs": "Famulatur 15 Aug-15 sep\nErasmus Januar-April ",
+      "milestones": "",
+      "photo": "",
+      "id": "mr0on6ovxihe"
     }
   ],
   "pubs": [
@@ -756,7 +767,7 @@
       ]
     }
   ],
-  "_syncTs": 1782735057123,
+  "_syncTs": 1782826125766,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
