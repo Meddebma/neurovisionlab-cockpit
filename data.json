@@ -223,7 +223,7 @@
       "id": "mqyz9zsbluvx",
       "name": "NeuvisionLab x Deepspin",
       "status": "Geplant",
-      "progress": 0,
+      "progress": 5,
       "stand": "Meeting with Phillip Brunnbauer",
       "desc": "MRT Forschung und Untwicklung eines low-field MRT für Kopf",
       "notes": "",
@@ -235,20 +235,33 @@
           "assignee": "me",
           "prio": "Mittel",
           "due": "",
+          "done": true
+        },
+        {
+          "id": "mr3ms5no6wxb",
+          "text": "One pager schreiben und an Philipp schicken",
+          "assignee": "me",
+          "prio": "Hoch",
+          "due": "2026-07-06",
+          "done": false
+        },
+        {
+          "id": "mr3mskuzdpgk",
+          "text": "Grants suchen",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-08-30",
+          "done": false
+        },
+        {
+          "id": "mr3mt21r3z4f",
+          "text": "Meeting with the management of Deepspin",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
           "done": false
         }
       ]
-    },
-    {
-      "id": "mr3mrxunekjx",
-      "name": "",
-      "status": "Geplant",
-      "progress": 0,
-      "stand": "",
-      "desc": "",
-      "notes": "",
-      "members": [],
-      "tasks": []
     }
   ],
   "goals": [
@@ -778,12 +791,13 @@
       ]
     }
   ],
-  "_syncTs": 1783004386913,
+  "_syncTs": 1783004447652,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
     "mqwpomvaecep",
     "mqwpomvai373",
-    "mqwpomvar7cg"
+    "mqwpomvar7cg",
+    "mr3mrxunekjx"
   ]
 }
