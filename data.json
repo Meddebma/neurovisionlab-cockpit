@@ -243,7 +243,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "2026-07-06",
-          "done": false
+          "done": true
         },
         {
           "id": "mr3mskuzdpgk",
@@ -791,7 +791,7 @@
       ]
     }
   ],
-  "_syncTs": 1783004447652,
+  "_syncTs": 1783006804656,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
