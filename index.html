@@ -745,7 +745,15 @@ function renderOverview(){
     <div class="stat"><div class="lbl">💰 Drittmittel gesichert</div><div class="val">${money(secured)}</div><div class="sub">${state.funding.length} Förderungen</div></div>
     <div class="stat"><div class="lbl">✅ Offene Todos</div><div class="val">${openT}</div><div class="sub">${urg} dringend · ${activePub} Papers aktiv</div></div>`;
   document.getElementById('ov-projects').innerHTML=state.projects.slice(0,4).map((p,i)=>`<div class="li" onclick="openProject('${p.id}')"><div class="li-top"><div><div class="li-name">${esc(p.name)}</div><div class="li-desc">${esc((p.desc||'').slice(0,64))}${(p.desc||'').length>64?'…':''}</div></div>${pill(p.status)}</div><div style="margin-top:9px"><div class="bar-lbl"><span>${esc(p.stand||'Fortschritt')}</span><span>${p.progress||0}%</span></div><div class="bar"><div style="width:${p.progress||0}%;background:${PFILL[i%4]}"></div></div></div></div>`).join('')||'<div class="empty">Noch keine Projekte</div>';
-  const ut=state.todos.filter(t=>!t.done&&t.prio==='Hoch').slice(0,3),sh=ut.length?ut:state.todos.filter(t=>!t.done).slice(0,3);
+  const MIN_SLOTS=6;
+  const hochOpen=state.todos.filter(t=>!t.done&&t.prio==='Hoch');
+  let sh=hochOpen.slice();
+  if(sh.length<MIN_SLOTS){
+    const byDue=(a,b)=>{if(!a.due&&!b.due)return 0;if(!a.due)return 1;if(!b.due)return -1;return a.due.localeCompare(b.due);};
+    const mittelOpen=state.todos.filter(t=>!t.done&&t.prio==='Mittel').sort(byDue);
+    sh=sh.concat(mittelOpen.slice(0,MIN_SLOTS-sh.length));
+  }
+  if(!sh.length)sh=state.todos.filter(t=>!t.done).slice(0,MIN_SLOTS);
   document.getElementById('ov-todos').innerHTML=sh.map(todoRow).join('')||'<div class="empty">Alles erledigt 🎉</div>';
   const up=[...state.goals].filter(g=>daysUntil(g.date)!=null).sort((a,b)=>new Date(a.date)-new Date(b.date));
   document.getElementById('ov-goals').innerHTML=up.slice(0,3).map(g=>`<div class="grow" style="padding:11px" onclick="navigate('goals')"><div class="ic">${(g.cat||'🎯').split(' ')[0]}</div><div class="body"><div class="t">${esc(g.title)}</div><div class="d">${esc((g.detail||'').slice(0,46))}</div></div><div class="right"><span class="date">${fmtDate(g.date)}</span>${pill(g.priority)}</div></div>`).join('')||'<div class="empty">Keine Deadlines</div>';
