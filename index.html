@@ -93,6 +93,16 @@
   .section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--faint);margin:4px 0 12px;}
 
   .today-box{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);margin-bottom:16px;}
+
+  .hero-vault{position:relative;height:200px;border-radius:var(--r);overflow:hidden;background:radial-gradient(ellipse at center,#0e0f1a 0%,#07070c 75%);box-shadow:var(--shadow-pop);margin-bottom:16px;}
+  .hero-vault canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
+  .hero-tag{position:absolute;top:14px;left:18px;font-size:9.5px;letter-spacing:2.2px;color:#8b90a8;text-transform:uppercase;display:flex;align-items:center;gap:7px;font-weight:700;z-index:2;}
+  .hero-tag .dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;animation:heropulse 2s infinite;}
+  @keyframes heropulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .hero-clock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;z-index:2;}
+  .hero-clock .time{font-family:'SF Mono','Courier New',monospace;font-size:46px;font-weight:700;color:#f2f3ff;letter-spacing:5px;text-shadow:0 0 22px rgba(140,170,255,.55);}
+  .hero-clock .date{font-size:10.5px;color:#9aa3c0;letter-spacing:2.2px;text-transform:uppercase;margin-top:5px;font-weight:600;}
+  .hero-brand{position:absolute;bottom:14px;right:18px;font-size:9.5px;letter-spacing:1.6px;color:#666e8c;text-transform:uppercase;z-index:2;font-weight:700;}
   .today-flag{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:12.5px;}
   .today-flag .fdot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0;}
   .today-over div:first-child{color:#dc2626;}
@@ -324,6 +334,12 @@
         <div><h1>NeurovisionLab Cockpit</h1><div class="sub" id="today"></div></div>
       </div>
       <div class="head-actions"><button class="btn btn-light" onclick="openCmdk()">🔍 Suchen ⌘K</button><button class="btn btn-dark" onclick="navigate('goals')">Ziele ansehen</button></div>
+    </div>
+    <div class="hero-vault">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-tag"><span class="dot"></span> NEUROVISIONLAB · ONLINE</div>
+      <div class="hero-clock"><div class="time" id="hero-time">00:00:00</div><div class="date" id="hero-date"></div></div>
+      <div class="hero-brand">COCKPIT · LIVE</div>
     </div>
     <div class="today-box" id="today-box"></div>
     <div class="stats" id="ov-stats"></div>
@@ -940,9 +956,55 @@ function exportData(){const b=new Blob([JSON.stringify(state,null,2)],{type:'app
 function importData(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.projects||!d.todos)throw new Error('Ungültiges Format');state=d;normalize();save();renderAll();toast('Daten importiert ✓');}catch(err){toast('Import fehlgeschlagen: '+err.message,true);}};r.readAsText(f);e.target.value='';}
 function resetData(){if(!confirm('Alle Daten zurücksetzen? Aktueller Stand geht verloren (vorher ggf. exportieren).'))return;state=JSON.parse(JSON.stringify(DEFAULTS));normalize();save();renderAll();toast('Zurückgesetzt');}
 
+/* HERO PARTICLE GLOBE + CLOCK */
+let heroCanvas,heroCtx,heroPts=[],heroLinks=[],heroT=0;
+function heroResize(){if(!heroCanvas)return;const box=heroCanvas.parentElement.getBoundingClientRect();const dpr=window.devicePixelRatio||1;heroCanvas.width=box.width*dpr;heroCanvas.height=box.height*dpr;heroCanvas.style.width=box.width+'px';heroCanvas.style.height=box.height+'px';}
+function heroInit(){
+  heroCanvas=document.getElementById('hero-canvas');if(!heroCanvas)return;
+  heroCtx=heroCanvas.getContext('2d');
+  heroResize();
+  const N=140;heroPts=[];
+  for(let i=0;i<N;i++){const y=1-(i/(N-1))*2;const r=Math.sqrt(Math.max(0,1-y*y));const theta=Math.PI*(3-Math.sqrt(5))*i;heroPts.push({x:Math.cos(theta)*r,y,z:Math.sin(theta)*r,side:Math.cos(theta)*r<0?0:1});}
+  heroLinks=[];
+  for(let i=0;i<heroPts.length;i++){
+    const d=[];
+    for(let j=0;j<heroPts.length;j++){if(i===j)continue;const a=heroPts[i],b=heroPts[j];d.push([(a.x-b.x)**2+(a.y-b.y)**2+(a.z-b.z)**2,j]);}
+    d.sort((a,b)=>a[0]-b[0]);
+    for(let k=0;k<3;k++){if(d[k][0]<0.09&&d[k][1]>i)heroLinks.push([i,d[k][1]]);}
+  }
+  window.addEventListener('resize',heroResize);
+  requestAnimationFrame(heroLoop);
+}
+function heroLoop(){
+  requestAnimationFrame(heroLoop);
+  const active=document.getElementById('page-overview')&&document.getElementById('page-overview').classList.contains('active');
+  if(!active||!heroCtx||!heroCanvas.width)return;
+  heroT+=0.0032;
+  const w=heroCanvas.width,h=heroCanvas.height,cx=w/2,cy=h/2,R=Math.min(w,h)*0.46;
+  heroCtx.clearRect(0,0,w,h);
+  const cosT=Math.cos(heroT),sinT=Math.sin(heroT),wob=Math.sin(heroT*0.6)*0.22,cosW=Math.cos(wob),sinW=Math.sin(wob);
+  const proj=heroPts.map(p=>{
+    const x=p.x*cosT-p.z*sinT,z=p.x*sinT+p.z*cosT,y=p.y;
+    const y2=y*cosW-z*sinW,z2=y*sinW+z*cosW;
+    const focal=2.6,scale=focal/(focal+z2);
+    return{sx:cx+x*R*scale,sy:cy+y2*R*scale,z:z2,scale,side:p.side};
+  });
+  const dpr=window.devicePixelRatio||1;
+  heroCtx.lineWidth=dpr;
+  heroLinks.forEach(([i,j])=>{const a=proj[i],b=proj[j];const depth=(a.z+b.z)/2,op=Math.max(0,0.16+depth*0.22);heroCtx.strokeStyle=`rgba(150,180,255,${op})`;heroCtx.beginPath();heroCtx.moveTo(a.sx,a.sy);heroCtx.lineTo(b.sx,b.sy);heroCtx.stroke();});
+  proj.forEach(p=>{const op=Math.max(0.15,0.5+p.z*0.5);const col=p.side?`rgba(215,111,182,${op})`:`rgba(92,179,234,${op})`;heroCtx.fillStyle=col;heroCtx.beginPath();heroCtx.arc(p.sx,p.sy,(1.5+p.scale*1.7)*dpr,0,Math.PI*2);heroCtx.fill();});
+}
+function heroClockTick(){
+  const te=document.getElementById('hero-time');if(!te)return;
+  const d=new Date(),pad=n=>String(n).padStart(2,'0');
+  te.textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+  const de=document.getElementById('hero-date');if(de)de.textContent=d.toLocaleDateString('de-DE',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+}
+
 /* INIT */
 let th='light';try{th=localStorage.getItem(TKEY)||'light';}catch(e){}applyTheme(th);
 loadState();renderAll();
+heroInit();heroClockTick();setInterval(heroClockTick,1000);
 document.getElementById('gh-ov').addEventListener('click',e=>{if(e.target.id==='gh-ov')e.currentTarget.classList.remove('show');});
 if(ghPat())syncFromGitHub();else ghSetDot('idle');
 document.getElementById('today').textContent=new Date().toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+' · Forschungs-Cockpit';
