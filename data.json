@@ -5,16 +5,14 @@
       "name": "Agentic VLM Studie",
       "desc": "Anatomy-augmented VLM für Neuro-Onkologie. Arm A/B/C. Endpunkte: Lateralität, Lokalisation, Mass Effect.",
       "status": "Aktiv",
-      "progress": 72,
+      "progress": 36,
       "stand": "Multi-Case-Auswertung läuft",
-      "members": [
-        "mqwpomvaecep"
-      ],
+      "members": [],
       "tasks": [
         {
           "id": "mqwpomvaqwp5",
           "text": "Multi-Case Statistik auswerten",
-          "assignee": "mqwpomvaecep",
+          "assignee": "me",
           "due": "2026-07-03",
           "done": false,
           "prio": "Mittel"
@@ -45,10 +43,7 @@
       "status": "Aktiv",
       "progress": 85,
       "stand": "Pituitary-ROI in Integration",
-      "members": [
-        "mqwpomvaz1io",
-        "mqwpomva41co"
-      ],
+      "members": [],
       "tasks": [
         {
           "id": "mqwpomvauk6f",
@@ -61,7 +56,7 @@
         {
           "id": "mqwpomvajjzv",
           "text": "Study-Panel UI bauen",
-          "assignee": "mqwpomva41co",
+          "assignee": "me",
           "due": "",
           "done": false,
           "prio": "Mittel"
@@ -76,14 +71,12 @@
       "status": "Review",
       "progress": 40,
       "stand": "Wartet auf VS-Fälle",
-      "members": [
-        "mqwpomvaz1io"
-      ],
+      "members": [],
       "tasks": [
         {
           "id": "mqwpomvah77i",
           "text": "VS-Fall auf Disk laden",
-          "assignee": "mqwpomvaz1io",
+          "assignee": "me",
           "due": "",
           "done": false,
           "prio": "Mittel"
@@ -224,13 +217,22 @@
       "desc": "",
       "notes": "",
       "members": [],
-      "tasks": []
+      "tasks": [
+        {
+          "id": "mr68nwhy03h5",
+          "text": "",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        }
+      ]
     },
     {
       "id": "mqyz9zsbluvx",
       "name": "NeuvisionLab x Deepspin",
-      "status": "Aktiv",
-      "progress": 0,
+      "status": "Geplant",
+      "progress": 5,
       "stand": "Meeting with Phillip Brunnbauer",
       "desc": "MRT Forschung und Untwicklung eines low-field MRT für Kopf",
       "notes": "",
@@ -239,6 +241,30 @@
         {
           "id": "mqyzbear7l1m",
           "text": "Meeting mit Philipe (CTO Deepspin)",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": true
+        },
+        {
+          "id": "mr3ms5no6wxb",
+          "text": "One pager schreiben und an Philipp schicken",
+          "assignee": "me",
+          "prio": "Hoch",
+          "due": "2026-07-06",
+          "done": false
+        },
+        {
+          "id": "mr3mskuzdpgk",
+          "text": "Grants suchen",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-08-30",
+          "done": false
+        },
+        {
+          "id": "mr3mt21r3z4f",
+          "text": "Meeting with the management of Deepspin",
           "assignee": "me",
           "prio": "Mittel",
           "due": "",
@@ -254,14 +280,6 @@
       "detail": "Arme A/B/C · MICCAI 2026",
       "cat": "📄 Paper",
       "date": "2026-07-10",
-      "priority": "Hoch"
-    },
-    {
-      "id": "mqwpomvar7cg",
-      "title": "DFG – KI-gestützte Neuronavigation",
-      "detail": "Sachbeihilfe · Vollantrag Aug 2026",
-      "cat": "💰 Antrag",
-      "date": "2026-08-31",
       "priority": "Hoch"
     },
     {
@@ -357,14 +375,6 @@
   ],
   "todos": [
     {
-      "id": "mqwpomvai373",
-      "text": "VLM Paper Draft finalisieren – Arm A/B/C",
-      "tag": "",
-      "due": "2026-07-05",
-      "done": false,
-      "prio": "Hoch"
-    },
-    {
       "id": "mqwpomvaf6my",
       "text": "DFG Antrag Outline erstellen (Kapitel 1-3)",
       "tag": "",
@@ -415,45 +425,12 @@
   ],
   "phds": [
     {
-      "id": "mqwpomvaz1io",
-      "name": "Doktorand/in 1",
-      "initials": "D1",
-      "photo": "",
-      "topic": "Foundation Models für Hirntumor-Seg.",
-      "year": "3. Jahr · seit Okt 2023",
-      "progress": 65,
-      "needs": "Feedback zu Kapitel 3 · GPU-Zugang",
-      "milestones": "x Literaturarbeit abgeschlossen\nx Datenbasis (BraTS + intern)\n> Kapitel 3: Modellentwicklung\n- Validierung klinische Kohorte\n- Abgabe: Q2 2027"
-    },
-    {
-      "id": "mqwpomvaecep",
-      "name": "Doktorand/in 2",
-      "initials": "D2",
-      "photo": "",
-      "topic": "VLM-basierte Neuro-Onkologie-Diagnose",
-      "year": "2. Jahr · seit Apr 2024",
-      "progress": 45,
-      "needs": "Annotierte MRT-Fälle (min. 20) · Methodenberatung",
-      "milestones": "x Exposé genehmigt\nx VLM-Pilotstudie (Arm A/B)\n> Multi-Case Erweiterung\n- Klinische Reader-Studie\n- Abgabe: Q4 2027"
-    },
-    {
-      "id": "mqwpomva41co",
-      "name": "Doktorand/in 3",
-      "initials": "D3",
-      "photo": "",
-      "topic": "Brain-Age Biomarker in Neurologie",
-      "year": "1. Jahr · seit Jan 2026",
-      "progress": 20,
-      "needs": "Zugang klinische Kohorte · Exposé-Feedback bis Ende Juli",
-      "milestones": "x Einarbeitung abgeschlossen\n> Exposé in Bearbeitung\n- Pilotstudie Brain-Age Kohorte\n- Paper #1 einreichen\n- Abgabe: Q2 2029"
-    },
-    {
       "name": "Philipe Ebert",
       "initials": "PE",
-      "topic": "Automatisierte LLM gestützte Extraktion klinischer Daten",
+      "topic": "Automated  LLM assisted exctraction of clinical data",
       "year": "03/2024",
       "progress": 63,
-      "needs": "",
+      "needs": "Dissertation soll bald zu Jawed geschickt werden",
       "milestones": "x Paper publiziert\n> Manuskript geschrieben\n- Dissertation einreichen",
       "photo": "",
       "id": "mqwpqnob5gvv"
@@ -463,8 +440,8 @@
       "initials": "LR",
       "topic": "LLM assisted Protocol Generation in Neuroradiology ",
       "year": "06/2024",
-      "progress": 0,
-      "needs": "Manuskript lesen von Michael Scheel",
+      "progress": 61,
+      "needs": "Michael Scheel soll die Dissertation lesen",
       "milestones": "x Paper publiziert\n> Dissertation einreichen",
       "photo": "",
       "id": "mqwqo2q07rx3"
@@ -577,7 +554,7 @@
       "id": "mqwpomva4rs2",
       "name": "DFG Sachbeihilfe – KI-Neuronavigation",
       "agency": "DFG",
-      "total": 420000,
+      "total": 0,
       "spent": 0,
       "start": "2026-09-01",
       "end": "2029-08-31",
@@ -587,8 +564,8 @@
       "id": "mqwpomva4hk0",
       "name": "Charité Clinician Scientist Programm",
       "agency": "Charité",
-      "total": 120000,
-      "spent": 48000,
+      "total": 0,
+      "spent": 0,
       "start": "2025-01-01",
       "end": "2027-12-31",
       "status": "Laufend"
@@ -597,8 +574,8 @@
       "id": "mqwpomvar0zh",
       "name": "BMBF Verbundprojekt NeuroAI",
       "agency": "BMBF",
-      "total": 680000,
-      "spent": 210000,
+      "total": 0,
+      "spent": 0,
       "start": "2024-04-01",
       "end": "2027-03-31",
       "status": "Laufend"
@@ -607,7 +584,7 @@
       "id": "mqwpomva14i5",
       "name": "EU Horizon – Multimodal Neuroimaging",
       "agency": "EU",
-      "total": 1500000,
+      "total": 0,
       "spent": 0,
       "start": "2027-01-01",
       "end": "2030-12-31",
@@ -823,7 +800,7 @@
       ]
     }
   ],
-  "_syncTs": 1783011589177,
+  "_syncTs": 1783162082415,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
