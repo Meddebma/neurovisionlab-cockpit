@@ -10,20 +10,20 @@
       "members": [],
       "tasks": [
         {
-          "id": "mqwpomva9c7y",
-          "text": "Paper-Methodik-Abschnitt schreiben",
+          "id": "mqwpomvary4n",
+          "text": "Fälle für die final cohort aussuchen und anschauen",
           "assignee": "me",
-          "due": "2026-07-06",
+          "due": "2026-07-12",
           "done": false,
           "prio": "Mittel"
         },
         {
-          "id": "mqwpomvary4n",
-          "text": "Pituitary ROI vorbereiten",
+          "id": "mr6s2yy2h3bv",
+          "text": "6 raters für die Studie finden",
           "assignee": "me",
+          "prio": "Mittel",
           "due": "",
-          "done": false,
-          "prio": "Mittel"
+          "done": false
         }
       ],
       "notes": "Nächste Schritte: Pituitary-Atlas ROI · Multi-Case Statistik · Deformation-field MLS. Ziel: MICCAI 2026."
@@ -762,7 +762,7 @@
       ]
     }
   ],
-  "_syncTs": 1783194645635,
+  "_syncTs": 1783194712633,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
