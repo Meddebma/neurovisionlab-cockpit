@@ -15,7 +15,7 @@
           "assignee": "me",
           "due": "2026-07-12",
           "done": false,
-          "prio": "Mittel"
+          "prio": "Hoch"
         },
         {
           "id": "mr6s2yy2h3bv",
@@ -252,7 +252,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "2026-07-06",
-          "done": false
+          "done": true
         },
         {
           "id": "mr3mskuzdpgk",
@@ -374,30 +374,6 @@
     }
   ],
   "todos": [
-    {
-      "id": "mqwpomvatgux",
-      "text": "Pituitary gland: sellar atlas ROI via MNI-Reg",
-      "tag": "Code",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
-      "id": "mqwpomvalxjt",
-      "text": "Multi-Case Statistik für VLM-Studie (≥10)",
-      "tag": "Paper",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
-      "id": "mqwpomva2zg7",
-      "text": "VS-Fall laden & VS-Seg Dice validieren",
-      "tag": "Paper",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
     {
       "id": "mqwpomvazwym",
       "text": "Arm C (Lesion Branch) implementieren",
@@ -762,7 +738,7 @@
       ]
     }
   ],
-  "_syncTs": 1783195136099,
+  "_syncTs": 1783195483650,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -773,7 +749,10 @@
     "mqwpomva14i5",
     "mqwpomva4rs2",
     "mqwpomvar0zh",
-    "mqwpomvaf6my"
+    "mqwpomvaf6my",
+    "mqwpomvatgux",
+    "mqwpomvalxjt",
+    "mqwpomva2zg7"
   ],
   "people": []
 }
