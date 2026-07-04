@@ -10,14 +10,6 @@
       "members": [],
       "tasks": [
         {
-          "id": "mqwpomvaqwp5",
-          "text": "Multi-Case Statistik auswerten",
-          "assignee": "me",
-          "due": "2026-07-03",
-          "done": false,
-          "prio": "Mittel"
-        },
-        {
           "id": "mqwpomva9c7y",
           "text": "Paper-Methodik-Abschnitt schreiben",
           "assignee": "me",
@@ -344,7 +336,7 @@
       "id": "mqwpomvaj388",
       "title": "MLS via Deformationsfeld",
       "desc": "Präzisere Midline-Shift-Quantifizierung. Validierung auf 50+ Fällen.",
-      "type": "Masterarbeit",
+      "type": "Hausarbeit",
       "status": "Prio",
       "skills": "ANTs · Python"
     },
@@ -352,7 +344,7 @@
       "id": "mqwpomvaoyzv",
       "title": "Blinded-Reader UI für VLM-Evaluation",
       "desc": "Web-Interface für verblindete Leser-Studie.",
-      "type": "Masterarbeit",
+      "type": "Hausarbeit",
       "status": "Offen",
       "skills": "React · FastAPI"
     },
@@ -558,16 +550,6 @@
       "spent": 0,
       "start": "2025-01-01",
       "end": "2027-09-01",
-      "status": "Laufend"
-    },
-    {
-      "id": "mqwpomvar0zh",
-      "name": "BMBF Verbundprojekt NeuroAI",
-      "agency": "BMBF",
-      "total": 0,
-      "spent": 0,
-      "start": "2024-04-01",
-      "end": "2027-03-31",
       "status": "Laufend"
     },
     {
@@ -780,7 +762,7 @@
       ]
     }
   ],
-  "_syncTs": 1783162150331,
+  "_syncTs": 1783194645635,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -789,6 +771,8 @@
     "mqwpomvar7cg",
     "mr3mrxunekjx",
     "mqwpomva14i5",
-    "mqwpomva4rs2"
-  ]
+    "mqwpomva4rs2",
+    "mqwpomvar0zh"
+  ],
+  "people": []
 }
