@@ -764,7 +764,10 @@ function renderToday(){const t=todayStr(),over=[],tod=[];
 function renderOverview(){
   const active=state.projects.filter(p=>p.status==='Aktiv').length;
   const secured=state.funding.filter(f=>['Bewilligt','Laufend'].includes(f.status)).reduce((a,f)=>a+(+f.total||0),0);
-  const openT=state.todos.filter(t=>!t.done).length, urg=state.todos.filter(t=>!t.done&&t.prio==='Hoch').length;
+  const myTasks=allTasks().filter(t=>t.assignee==='me'&&!t.done).map(t=>({...t,_kind:'task'}));
+  const myTodos=state.todos.filter(t=>!t.done).map(t=>({...t,_kind:'todo'}));
+  const myAll=[...myTodos,...myTasks];
+  const openT=myAll.length, urg=myAll.filter(t=>t.prio==='Hoch').length;
   const activePub=state.pubs.filter(p=>['In Arbeit','Submitted','Under Review'].includes(p.stage)).length;
   document.getElementById('ov-stats').innerHTML=`
     <div class="stat"><div class="lbl">🔬 Projekte</div><div class="val">${state.projects.length}</div><div class="sub">${active} aktiv</div></div>
@@ -773,15 +776,15 @@ function renderOverview(){
     <div class="stat"><div class="lbl">✅ Offene Todos</div><div class="val">${openT}</div><div class="sub">${urg} dringend · ${activePub} Papers aktiv</div></div>`;
   document.getElementById('ov-projects').innerHTML=state.projects.slice(0,4).map((p,i)=>`<div class="li" onclick="openProject('${p.id}')"><div class="li-top"><div><div class="li-name">${esc(p.name)}</div><div class="li-desc">${esc((p.desc||'').slice(0,64))}${(p.desc||'').length>64?'…':''}</div></div>${pill(p.status)}</div><div style="margin-top:9px"><div class="bar-lbl"><span>${esc(p.stand||'Fortschritt')}</span><span>${p.progress||0}%</span></div><div class="bar"><div style="width:${p.progress||0}%;background:${PFILL[i%4]}"></div></div></div></div>`).join('')||'<div class="empty">Noch keine Projekte</div>';
   const MIN_SLOTS=6;
-  const hochOpen=state.todos.filter(t=>!t.done&&t.prio==='Hoch');
+  const hochOpen=myAll.filter(t=>t.prio==='Hoch');
   let sh=hochOpen.slice();
   if(sh.length<MIN_SLOTS){
     const byDue=(a,b)=>{if(!a.due&&!b.due)return 0;if(!a.due)return 1;if(!b.due)return -1;return a.due.localeCompare(b.due);};
-    const mittelOpen=state.todos.filter(t=>!t.done&&t.prio==='Mittel').sort(byDue);
+    const mittelOpen=myAll.filter(t=>t.prio==='Mittel').sort(byDue);
     sh=sh.concat(mittelOpen.slice(0,MIN_SLOTS-sh.length));
   }
-  if(!sh.length)sh=state.todos.filter(t=>!t.done).slice(0,MIN_SLOTS);
-  document.getElementById('ov-todos').innerHTML=sh.map(todoRow).join('')||'<div class="empty">Alles erledigt 🎉</div>';
+  if(!sh.length)sh=myAll.slice(0,MIN_SLOTS);
+  document.getElementById('ov-todos').innerHTML=sh.map(t=>t._kind==='task'?assignedRow(t):todoRow(t)).join('')||'<div class="empty">Alles erledigt 🎉</div>';
   const up=[...state.goals].filter(g=>daysUntil(g.date)!=null).sort((a,b)=>new Date(a.date)-new Date(b.date));
   document.getElementById('ov-goals').innerHTML=up.slice(0,3).map(g=>`<div class="grow" style="padding:11px" onclick="navigate('goals')"><div class="ic">${(g.cat||'🎯').split(' ')[0]}</div><div class="body"><div class="t">${esc(g.title)}</div><div class="d">${esc((g.detail||'').slice(0,46))}</div></div><div class="right"><span class="date">${fmtDate(g.date)}</span>${pill(g.priority)}</div></div>`).join('')||'<div class="empty">Keine Deadlines</div>';
 }
