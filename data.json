@@ -220,10 +220,10 @@
       "tasks": [
         {
           "id": "mr68nwhy03h5",
-          "text": "",
+          "text": "upload 10 first patients to the sever",
           "assignee": "me",
-          "prio": "Mittel",
-          "due": "",
+          "prio": "Hoch",
+          "due": "2026-07-04",
           "done": false
         }
       ]
@@ -551,23 +551,13 @@
   ],
   "funding": [
     {
-      "id": "mqwpomva4rs2",
-      "name": "DFG Sachbeihilfe – KI-Neuronavigation",
-      "agency": "DFG",
-      "total": 0,
-      "spent": 0,
-      "start": "2026-09-01",
-      "end": "2029-08-31",
-      "status": "Beantragt"
-    },
-    {
       "id": "mqwpomva4hk0",
       "name": "Charité Clinician Scientist Programm",
       "agency": "Charité",
       "total": 0,
       "spent": 0,
       "start": "2025-01-01",
-      "end": "2027-12-31",
+      "end": "2027-09-01",
       "status": "Laufend"
     },
     {
@@ -579,16 +569,6 @@
       "start": "2024-04-01",
       "end": "2027-03-31",
       "status": "Laufend"
-    },
-    {
-      "id": "mqwpomva14i5",
-      "name": "EU Horizon – Multimodal Neuroimaging",
-      "agency": "EU",
-      "total": 0,
-      "spent": 0,
-      "start": "2027-01-01",
-      "end": "2030-12-31",
-      "status": "Beantragt"
     },
     {
       "id": "mqxi5uj83nb4",
@@ -800,13 +780,15 @@
       ]
     }
   ],
-  "_syncTs": 1783162082415,
+  "_syncTs": 1783162150331,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
     "mqwpomvaecep",
     "mqwpomvai373",
     "mqwpomvar7cg",
-    "mr3mrxunekjx"
+    "mr3mrxunekjx",
+    "mqwpomva14i5",
+    "mqwpomva4rs2"
   ]
 }
