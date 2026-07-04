@@ -18,12 +18,14 @@
     --r:12px; --r-sm:9px;
     --shadow:0 1px 2px rgba(0,0,0,.04),0 1px 3px rgba(0,0,0,.06);
     --shadow-pop:0 8px 28px rgba(0,0,0,.12);
+    --hero-bg1:#eef0fa; --hero-bg2:#dde0f0; --hero-text:#18181b; --hero-sub:#6b7094; --hero-glow:rgba(108,99,255,.28);
   }
   body.dark {
     --bg:#0d0f15; --panel:#161922; --panel2:#1b1f2a; --line:#272c3a; --hover:#1e2230;
     --text:#e8eaf0; --muted:#8b90a0; --faint:#565d70;
     --btnbg:#f4f4f5; --btntext:#18181b;
     --shadow:0 1px 2px rgba(0,0,0,.3); --shadow-pop:0 10px 34px rgba(0,0,0,.5);
+    --hero-bg1:#0e0f1a; --hero-bg2:#07070c; --hero-text:#f2f3ff; --hero-sub:#9aa3c0; --hero-glow:rgba(140,170,255,.55);
   }
   html,body{height:100%;}
   body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);display:flex;height:100vh;overflow:hidden;font-size:13px;-webkit-font-smoothing:antialiased;transition:background .2s,color .2s;}
@@ -94,15 +96,15 @@
 
   .today-box{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);margin-bottom:16px;}
 
-  .hero-vault{position:relative;height:200px;border-radius:var(--r);overflow:hidden;background:radial-gradient(ellipse at center,#0e0f1a 0%,#07070c 75%);box-shadow:var(--shadow-pop);margin-bottom:16px;}
+  .hero-vault{position:relative;height:200px;border-radius:var(--r);overflow:hidden;background:radial-gradient(ellipse at center,var(--hero-bg1) 0%,var(--hero-bg2) 75%);box-shadow:var(--shadow-pop);margin-bottom:16px;transition:background .2s;}
   .hero-vault canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
-  .hero-tag{position:absolute;top:14px;left:18px;font-size:9.5px;letter-spacing:2.2px;color:#8b90a8;text-transform:uppercase;display:flex;align-items:center;gap:7px;font-weight:700;z-index:2;}
+  .hero-tag{position:absolute;top:14px;left:18px;font-size:9.5px;letter-spacing:2.2px;color:var(--hero-sub);text-transform:uppercase;display:flex;align-items:center;gap:7px;font-weight:700;z-index:2;}
   .hero-tag .dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;animation:heropulse 2s infinite;}
   @keyframes heropulse{0%,100%{opacity:1}50%{opacity:.25}}
   .hero-clock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;z-index:2;}
-  .hero-clock .time{font-family:'SF Mono','Courier New',monospace;font-size:46px;font-weight:700;color:#f2f3ff;letter-spacing:5px;text-shadow:0 0 22px rgba(140,170,255,.55);}
-  .hero-clock .date{font-size:10.5px;color:#9aa3c0;letter-spacing:2.2px;text-transform:uppercase;margin-top:5px;font-weight:600;}
-  .hero-brand{position:absolute;bottom:14px;right:18px;font-size:9.5px;letter-spacing:1.6px;color:#666e8c;text-transform:uppercase;z-index:2;font-weight:700;}
+  .hero-clock .time{font-family:'SF Mono','Courier New',monospace;font-size:46px;font-weight:700;color:var(--hero-text);letter-spacing:5px;text-shadow:0 0 22px var(--hero-glow);}
+  .hero-clock .date{font-size:10.5px;color:var(--hero-sub);letter-spacing:2.2px;text-transform:uppercase;margin-top:5px;font-weight:600;}
+  .hero-brand{position:absolute;bottom:14px;right:18px;font-size:9.5px;letter-spacing:1.6px;color:var(--hero-sub);text-transform:uppercase;z-index:2;font-weight:700;opacity:.75;}
   .today-flag{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:12.5px;}
   .today-flag .fdot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0;}
   .today-over div:first-child{color:#dc2626;}
@@ -989,10 +991,11 @@ function heroLoop(){
     const focal=2.6,scale=focal/(focal+z2);
     return{sx:cx+x*R*scale,sy:cy+y2*R*scale,z:z2,scale,side:p.side};
   });
-  const dpr=window.devicePixelRatio||1;
+  const dpr=window.devicePixelRatio||1,dark=document.body.classList.contains('dark');
+  const lineRGB=dark?'150,180,255':'70,80,140',blueRGB=dark?'92,179,234':'40,110,180',pinkRGB=dark?'215,111,182':'170,60,150';
   heroCtx.lineWidth=dpr;
-  heroLinks.forEach(([i,j])=>{const a=proj[i],b=proj[j];const depth=(a.z+b.z)/2,op=Math.max(0,0.16+depth*0.22);heroCtx.strokeStyle=`rgba(150,180,255,${op})`;heroCtx.beginPath();heroCtx.moveTo(a.sx,a.sy);heroCtx.lineTo(b.sx,b.sy);heroCtx.stroke();});
-  proj.forEach(p=>{const op=Math.max(0.15,0.5+p.z*0.5);const col=p.side?`rgba(215,111,182,${op})`:`rgba(92,179,234,${op})`;heroCtx.fillStyle=col;heroCtx.beginPath();heroCtx.arc(p.sx,p.sy,(1.5+p.scale*1.7)*dpr,0,Math.PI*2);heroCtx.fill();});
+  heroLinks.forEach(([i,j])=>{const a=proj[i],b=proj[j];const depth=(a.z+b.z)/2,op=Math.max(0,(dark?0.16:0.10)+depth*(dark?0.22:0.14));heroCtx.strokeStyle=`rgba(${lineRGB},${op})`;heroCtx.beginPath();heroCtx.moveTo(a.sx,a.sy);heroCtx.lineTo(b.sx,b.sy);heroCtx.stroke();});
+  proj.forEach(p=>{const op=Math.max(dark?0.15:0.35,0.5+p.z*0.5);const col=`rgba(${p.side?pinkRGB:blueRGB},${op})`;heroCtx.fillStyle=col;heroCtx.beginPath();heroCtx.arc(p.sx,p.sy,(1.5+p.scale*1.7)*dpr,0,Math.PI*2);heroCtx.fill();});
 }
 function heroClockTick(){
   const te=document.getElementById('hero-time');if(!te)return;
