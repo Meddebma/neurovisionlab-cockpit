@@ -3,7 +3,7 @@
     {
       "id": "mqwpomv9kx2l",
       "name": "Agentic VLM Studie",
-      "desc": "Anatomy-augmented VLM für Neuro-Onkologie. Arm A/B/C. Endpunkte: Lateralität, Lokalisation, Mass Effect.",
+      "desc": "Anatomy-augmented VLM für Neuro-Onkologie. A/B/C/D arms. Endpunkte: Side, anatomical location, RANO measurment, Signal, Differential Diagnosis",
       "status": "Aktiv",
       "progress": 36,
       "stand": "Multi-Case-Auswertung läuft",
@@ -770,7 +770,7 @@
       ]
     }
   ],
-  "_syncTs": 1783194773232,
+  "_syncTs": 1783194907723,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
