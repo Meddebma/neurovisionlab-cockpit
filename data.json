@@ -22,11 +22,19 @@
           "text": "6 raters für die Studie finden",
           "assignee": "me",
           "prio": "Mittel",
-          "due": "",
+          "due": "2026-07-15",
+          "done": false
+        },
+        {
+          "id": "mr6s3hmn7hjz",
+          "text": "final cohort auf die rating platform uploaden",
+          "assignee": "mqwrzhu6y2ge",
+          "prio": "Mittel",
+          "due": "2026-07-16",
           "done": false
         }
       ],
-      "notes": "Nächste Schritte: Pituitary-Atlas ROI · Multi-Case Statistik · Deformation-field MLS. Ziel: MICCAI 2026."
+      "notes": "Studiendesign"
     },
     {
       "id": "mqwpomval5dv",
@@ -762,7 +770,7 @@
       ]
     }
   ],
-  "_syncTs": 1783194712633,
+  "_syncTs": 1783194773232,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
