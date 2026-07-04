@@ -260,7 +260,7 @@
           "assignee": "me",
           "prio": "Mittel",
           "due": "2026-08-30",
-          "done": false
+          "done": true
         },
         {
           "id": "mr3mt21r3z4f",
@@ -738,7 +738,7 @@
       ]
     }
   ],
-  "_syncTs": 1783195483650,
+  "_syncTs": 1783195860412,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
