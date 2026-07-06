@@ -389,6 +389,14 @@
       "due": "",
       "done": true,
       "prio": "Mittel"
+    },
+    {
+      "text": "Check results and Github of Fomo 2026 (https://fomo26.github.io/)",
+      "tag": "Code",
+      "prio": "Hoch",
+      "due": "2026-10-12",
+      "id": "mr96gsql4jiz",
+      "done": false
     }
   ],
   "phds": [
@@ -634,8 +642,8 @@
       "id": "mr96b8euxpbb",
       "type": "Tool",
       "title": "FOMO Challenge 2026",
-      "url": "",
-      "desc": ""
+      "url": "https://fomo26.github.io/",
+      "desc": "Brain foundation model trained and finetuned on different tasks"
     }
   ],
   "meetings": [
@@ -745,7 +753,7 @@
       ]
     }
   ],
-  "_syncTs": 1783339688944,
+  "_syncTs": 1783339790250,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
