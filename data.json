@@ -224,7 +224,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "2026-07-04",
-          "done": false
+          "done": true
         }
       ]
     },
@@ -738,7 +738,7 @@
       ]
     }
   ],
-  "_syncTs": 1783195860412,
+  "_syncTs": 1783322205614,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
