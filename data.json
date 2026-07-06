@@ -632,8 +632,8 @@
     },
     {
       "id": "mr96b8euxpbb",
-      "type": "Paper",
-      "title": "",
+      "type": "Tool",
+      "title": "FOMO Challenge 2026",
       "url": "",
       "desc": ""
     }
@@ -745,7 +745,7 @@
       ]
     }
   ],
-  "_syncTs": 1783339530703,
+  "_syncTs": 1783339688944,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
