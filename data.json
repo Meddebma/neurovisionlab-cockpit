@@ -393,7 +393,7 @@
     {
       "text": "Check results and Github of Fomo 2026 (https://fomo26.github.io/)",
       "tag": "Code",
-      "prio": "Hoch",
+      "prio": "Mittel",
       "due": "2026-10-12",
       "id": "mr96gsql4jiz",
       "done": false
@@ -465,6 +465,17 @@
       "milestones": "",
       "photo": "",
       "id": "mr0on6ovxihe"
+    },
+    {
+      "name": "Konoe Hasegawa",
+      "initials": "KH",
+      "topic": "Meningeoma Modelling?",
+      "year": "09/2026",
+      "progress": 0,
+      "needs": "",
+      "milestones": "",
+      "photo": "",
+      "id": "mr9af0tsjzw3"
     }
   ],
   "pubs": [
@@ -753,7 +764,7 @@
       ]
     }
   ],
-  "_syncTs": 1783342679864,
+  "_syncTs": 1783346426183,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
