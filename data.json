@@ -235,7 +235,7 @@
       "progress": 5,
       "stand": "Meeting with Phillip Brunnbauer",
       "desc": "MRT Forschung und Untwicklung eines low-field MRT für Kopf",
-      "notes": "",
+      "notes": "https://www.bmftr.bund.de/SharedDocs/Bekanntmachungen/DE/2026/02/2026-02-06-bekanntmachung-medizintechnik.html",
       "members": [],
       "tasks": [
         {
@@ -629,6 +629,13 @@
       "title": "MedSeg",
       "url": "https://www.medseg.ai/",
       "desc": "Interesting segmentation tool"
+    },
+    {
+      "id": "mr966lcapexd",
+      "type": "Paper",
+      "title": "",
+      "url": "",
+      "desc": ""
     }
   ],
   "meetings": [
@@ -738,7 +745,7 @@
       ]
     }
   ],
-  "_syncTs": 1783322205614,
+  "_syncTs": 1783339314121,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
