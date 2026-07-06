@@ -50,7 +50,7 @@
           "text": "Pituitary ROI integrieren",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         },
         {
@@ -753,7 +753,7 @@
       ]
     }
   ],
-  "_syncTs": 1783339790250,
+  "_syncTs": 1783339853100,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
