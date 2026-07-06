@@ -58,7 +58,7 @@
           "text": "Study-Panel UI bauen",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         }
       ],
@@ -78,7 +78,7 @@
           "text": "VS-Fall auf Disk laden",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         }
       ],
@@ -703,7 +703,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "",
-          "done": false
+          "done": true
         },
         {
           "id": "mqwpomvasmct",
@@ -719,7 +719,7 @@
           "assignee": "me",
           "prio": "Niedrig",
           "due": "",
-          "done": false
+          "done": true
         }
       ]
     },
@@ -753,7 +753,7 @@
       ]
     }
   ],
-  "_syncTs": 1783339853100,
+  "_syncTs": 1783342679864,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
