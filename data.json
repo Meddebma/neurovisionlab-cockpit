@@ -24,7 +24,7 @@
           "text": "Paper-Methodik-Abschnitt schreiben",
           "assignee": "me",
           "due": "2026-07-06",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         },
         {
@@ -32,7 +32,7 @@
           "text": "Pituitary ROI vorbereiten",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         }
       ],
@@ -849,7 +849,7 @@
       ]
     }
   ],
-  "_syncTs": 1783425118596,
+  "_syncTs": 1783425139392,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
