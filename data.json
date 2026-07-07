@@ -815,7 +815,7 @@
           "assignee": "me",
           "prio": "Niedrig",
           "due": "",
-          "done": false
+          "done": true
         }
       ]
     },
@@ -849,7 +849,7 @@
       ]
     }
   ],
-  "_syncTs": 1783425151767,
+  "_syncTs": 1783425152539,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
