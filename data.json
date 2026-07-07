@@ -799,7 +799,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "",
-          "done": false
+          "done": true
         },
         {
           "id": "mqwpomvasmct",
@@ -849,7 +849,7 @@
       ]
     }
   ],
-  "_syncTs": 1783425148048,
+  "_syncTs": 1783425151767,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
