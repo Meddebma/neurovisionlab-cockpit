@@ -844,12 +844,12 @@
           "assignee": "me",
           "prio": "Mittel",
           "due": "",
-          "done": false
+          "done": true
         }
       ]
     }
   ],
-  "_syncTs": 1783425152539,
+  "_syncTs": 1783425155357,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
