@@ -14,7 +14,7 @@
           "text": "Multi-Case Statistik auswerten",
           "assignee": "me",
           "due": "2026-07-03",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         },
         {
@@ -22,7 +22,7 @@
           "text": "Paper-Methodik-Abschnitt schreiben",
           "assignee": "me",
           "due": "2026-07-06",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         },
         {
@@ -30,7 +30,7 @@
           "text": "Pituitary ROI vorbereiten",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         }
       ],
@@ -50,7 +50,7 @@
           "text": "Pituitary ROI integrieren",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         },
         {
@@ -58,7 +58,7 @@
           "text": "Study-Panel UI bauen",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         }
       ],
@@ -78,7 +78,7 @@
           "text": "VS-Fall auf Disk laden",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         }
       ],
@@ -293,6 +293,17 @@
         }
       ],
       "id": "mrcem6xv444q"
+    },
+    {
+      "id": "mrchz3ppdkj6",
+      "name": "",
+      "status": "Geplant",
+      "progress": 0,
+      "stand": "",
+      "desc": "",
+      "notes": "",
+      "members": [],
+      "tasks": []
     }
   ],
   "goals": [
@@ -798,7 +809,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "",
-          "done": false
+          "done": true
         },
         {
           "id": "mqwpomvasmct",
@@ -814,7 +825,7 @@
           "assignee": "me",
           "prio": "Niedrig",
           "due": "",
-          "done": false
+          "done": true
         }
       ]
     },
@@ -843,12 +854,12 @@
           "assignee": "me",
           "prio": "Mittel",
           "due": "",
-          "done": false
+          "done": true
         }
       ]
     }
   ],
-  "_syncTs": 1783540388976,
+  "_syncTs": 1783540518741,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
