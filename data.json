@@ -592,12 +592,22 @@
     {
       "name": "LOFI-STROKE",
       "agency": "BMFTR",
-      "total": 0,
+      "total": 1500000,
       "spent": 0,
       "start": "",
       "end": "",
       "status": "Beantragt",
       "id": "mrceokrwucm6"
+    },
+    {
+      "id": "mrcep3ngvdw9",
+      "name": "DataXperiment",
+      "agency": "BMFTR",
+      "total": 50000,
+      "spent": 0,
+      "start": "2025-10-01",
+      "end": "2026-03-29",
+      "status": "Abgeschlossen"
     }
   ],
   "datasets": [
@@ -796,7 +806,7 @@
       ]
     }
   ],
-  "_syncTs": 1783534988655,
+  "_syncTs": 1783535049242,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
