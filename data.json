@@ -583,7 +583,7 @@
       "id": "mqyugque9mr2",
       "name": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
       "agency": "BFMTR",
-      "total": 0,
+      "total": 300000,
       "spent": 0,
       "start": "",
       "end": "",
@@ -592,7 +592,7 @@
     {
       "name": "LOFI-STROKE",
       "agency": "BMFTR",
-      "total": 1500000,
+      "total": 0,
       "spent": 0,
       "start": "",
       "end": "",
@@ -816,7 +816,7 @@
       ]
     }
   ],
-  "_syncTs": 1783535272798,
+  "_syncTs": 1783536174182,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
