@@ -3,38 +3,38 @@
     {
       "id": "mqwpomv9kx2l",
       "name": "Agentic VLM Studie",
-      "desc": "Anatomy-augmented VLM für Neuro-Onkologie. Arm A/B/C. Endpunkte: Lateralität, Lokalisation, Mass Effect.",
+      "desc": "Anatomy-augmented VLM für Neuro-Onkologie. A/B/C/D arms. Endpunkte: Side, anatomical location, RANO measurment, Signal, Differential Diagnosis",
       "status": "Aktiv",
       "progress": 36,
       "stand": "Multi-Case-Auswertung läuft",
       "members": [],
       "tasks": [
         {
-          "id": "mqwpomvaqwp5",
-          "text": "Multi-Case Statistik auswerten",
-          "assignee": "me",
-          "due": "2026-07-03",
-          "done": false,
-          "prio": "Mittel"
-        },
-        {
-          "id": "mqwpomva9c7y",
-          "text": "Paper-Methodik-Abschnitt schreiben",
-          "assignee": "me",
-          "due": "2026-07-06",
-          "done": false,
-          "prio": "Mittel"
-        },
-        {
           "id": "mqwpomvary4n",
-          "text": "Pituitary ROI vorbereiten",
+          "text": "Fälle für die final cohort aussuchen und anschauen",
           "assignee": "me",
-          "due": "",
+          "due": "2026-07-12",
           "done": false,
-          "prio": "Mittel"
+          "prio": "Hoch"
+        },
+        {
+          "id": "mr6s2yy2h3bv",
+          "text": "6 raters für die Studie finden",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-07-15",
+          "done": false
+        },
+        {
+          "id": "mr6s3hmn7hjz",
+          "text": "final cohort auf die rating platform uploaden",
+          "assignee": "mqwrzhu6y2ge",
+          "prio": "Mittel",
+          "due": "2026-07-16",
+          "done": false
         }
       ],
-      "notes": "Nächste Schritte: Pituitary-Atlas ROI · Multi-Case Statistik · Deformation-field MLS. Ziel: MICCAI 2026."
+      "notes": "Studiendesign"
     },
     {
       "id": "mqwpomval5dv",
@@ -50,7 +50,7 @@
           "text": "Pituitary ROI integrieren",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         },
         {
@@ -58,7 +58,7 @@
           "text": "Study-Panel UI bauen",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         }
       ],
@@ -78,7 +78,7 @@
           "text": "VS-Fall auf Disk laden",
           "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         }
       ],
@@ -91,7 +91,7 @@
       "progress": 10,
       "stand": "waiting for 2 last ratings",
       "desc": "Rating of ICANS Patients of Berlin",
-      "notes": "https://drks.de/search/de/trial/DRKS00031604\n",
+      "notes": "",
       "members": [],
       "tasks": [
         {
@@ -224,7 +224,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "2026-07-04",
-          "done": false
+          "done": true
         }
       ]
     },
@@ -235,7 +235,7 @@
       "progress": 5,
       "stand": "Meeting with Phillip Brunnbauer",
       "desc": "MRT Forschung und Untwicklung eines low-field MRT für Kopf",
-      "notes": "",
+      "notes": "https://www.bmftr.bund.de/SharedDocs/Bekanntmachungen/DE/2026/02/2026-02-06-bekanntmachung-medizintechnik.html",
       "members": [],
       "tasks": [
         {
@@ -252,7 +252,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "2026-07-06",
-          "done": false
+          "done": true
         },
         {
           "id": "mr3mskuzdpgk",
@@ -260,7 +260,7 @@
           "assignee": "me",
           "prio": "Mittel",
           "due": "2026-08-30",
-          "done": false
+          "done": true
         },
         {
           "id": "mr3mt21r3z4f",
@@ -271,6 +271,28 @@
           "done": false
         }
       ]
+    },
+    {
+      "name": "NeurovisionLab Rating Platform",
+      "desc": "We developed a rating platform where you can upload images as nifti, and upload your questionaire, and it will automatically make an easy rating workflow  for further imaging studies",
+      "status": "Aktiv",
+      "progress": 50,
+      "stand": "building the platform as Github",
+      "notes": "",
+      "members": [
+        "mqwrzhu6y2ge"
+      ],
+      "tasks": [
+        {
+          "id": "mrcem6xvd7q9",
+          "text": "prepare the rating cases for project with LIH",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-08-30",
+          "done": false
+        }
+      ],
+      "id": "mrcem6xv444q"
     }
   ],
   "goals": [
@@ -344,7 +366,7 @@
       "id": "mqwpomvaj388",
       "title": "MLS via Deformationsfeld",
       "desc": "Präzisere Midline-Shift-Quantifizierung. Validierung auf 50+ Fällen.",
-      "type": "Masterarbeit",
+      "type": "Hausarbeit",
       "status": "Prio",
       "skills": "ANTs · Python"
     },
@@ -352,7 +374,7 @@
       "id": "mqwpomvaoyzv",
       "title": "Blinded-Reader UI für VLM-Evaluation",
       "desc": "Web-Interface für verblindete Leser-Studie.",
-      "type": "Masterarbeit",
+      "type": "Hausarbeit",
       "status": "Offen",
       "skills": "React · FastAPI"
     },
@@ -374,38 +396,6 @@
     }
   ],
   "todos": [
-    {
-      "id": "mqwpomvaf6my",
-      "text": "DFG Antrag Outline erstellen (Kapitel 1-3)",
-      "tag": "",
-      "due": "2026-07-15",
-      "done": false,
-      "prio": "Hoch"
-    },
-    {
-      "id": "mqwpomvatgux",
-      "text": "Pituitary gland: sellar atlas ROI via MNI-Reg",
-      "tag": "Code",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
-      "id": "mqwpomvalxjt",
-      "text": "Multi-Case Statistik für VLM-Studie (≥10)",
-      "tag": "Paper",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
-      "id": "mqwpomva2zg7",
-      "text": "VS-Fall laden & VS-Seg Dice validieren",
-      "tag": "Paper",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
     {
       "id": "mqwpomvazwym",
       "text": "Arm C (Lesion Branch) implementieren",
@@ -746,7 +736,7 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "",
-          "done": false
+          "done": true
         },
         {
           "id": "mqwpomvasmct",
@@ -762,7 +752,7 @@
           "assignee": "me",
           "prio": "Niedrig",
           "due": "",
-          "done": false
+          "done": true
         }
       ]
     },
@@ -796,7 +786,7 @@
       ]
     }
   ],
-  "_syncTs": 1783460753523,
+  "_syncTs": 1783534877557,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -812,5 +802,6 @@
     "mqwpomvalxjt",
     "mqwpomva2zg7",
     "mr966lcapexd"
-  ]
+  ],
+  "people": []
 }
