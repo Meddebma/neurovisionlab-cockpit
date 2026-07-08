@@ -613,7 +613,7 @@
       "id": "mrceqeoh00jv",
       "name": "ICANS through Multi-Echo ASL for BBB quantificaiton ",
       "agency": "DFG",
-      "total": 0,
+      "total": 350000,
       "spent": 0,
       "start": "",
       "end": "",
@@ -816,7 +816,7 @@
       ]
     }
   ],
-  "_syncTs": 1783535193765,
+  "_syncTs": 1783535272798,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
