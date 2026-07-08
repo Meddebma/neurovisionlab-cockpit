@@ -233,7 +233,7 @@
       "name": "NeuvisionLab x Deepspin",
       "status": "Geplant",
       "progress": 5,
-      "stand": "Meeting with Phillip Brunnbauer",
+      "stand": "Meeting with Deep Spin management in August",
       "desc": "MRT Forschung und Untwicklung eines low-field MRT für Kopf",
       "notes": "https://www.bmftr.bund.de/SharedDocs/Bekanntmachungen/DE/2026/02/2026-02-06-bekanntmachung-medizintechnik.html",
       "members": [],
@@ -588,6 +588,16 @@
       "start": "",
       "end": "",
       "status": "Beantragt"
+    },
+    {
+      "name": "LOFI-STROKE",
+      "agency": "BMFTR",
+      "total": 0,
+      "spent": 0,
+      "start": "",
+      "end": "",
+      "status": "Beantragt",
+      "id": "mrceokrwucm6"
     }
   ],
   "datasets": [
@@ -786,7 +796,7 @@
       ]
     }
   ],
-  "_syncTs": 1783534877557,
+  "_syncTs": 1783534988655,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
