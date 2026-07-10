@@ -235,7 +235,7 @@
       "progress": 5,
       "stand": "Meeting with Phillip Brunnbauer",
       "desc": "MRT Forschung und Untwicklung eines low-field MRT für Kopf",
-      "notes": "",
+      "notes": "https://www.bmftr.bund.de/SharedDocs/Bekanntmachungen/DE/2026/02/2026-02-06-bekanntmachung-medizintechnik.html",
       "members": [],
       "tasks": [
         {
@@ -296,14 +296,23 @@
     },
     {
       "id": "mrchz3ppdkj6",
-      "name": "",
+      "name": "ICANS DFG Antrag",
       "status": "Geplant",
       "progress": 0,
       "stand": "",
       "desc": "",
       "notes": "",
       "members": [],
-      "tasks": []
+      "tasks": [
+        {
+          "id": "mrchzfhj7vi1",
+          "text": "August sowohl Masterarbeit als auch DFG Antrag schreiben",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        }
+      ]
     }
   ],
   "goals": [
@@ -859,7 +868,7 @@
       ]
     }
   ],
-  "_syncTs": 1783540518741,
+  "_syncTs": 1783664211906,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
