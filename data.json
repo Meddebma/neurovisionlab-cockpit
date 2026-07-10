@@ -413,6 +413,14 @@
       "type": "Bachelorarbeit",
       "status": "Offen",
       "skills": "ML · Python"
+    },
+    {
+      "title": "Factors of Endothelialisation of carotid stents",
+      "desc": "Do we need double antiaggregation? \nWhen do we stop ASS? Clopi? what is the effect of ",
+      "type": "Dissertation",
+      "status": "Offen",
+      "skills": "",
+      "id": "mrek7iytzidb"
     }
   ],
   "todos": [
@@ -868,7 +876,7 @@
       ]
     }
   ],
-  "_syncTs": 1783664211906,
+  "_syncTs": 1783665203397,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
