@@ -221,9 +221,11 @@
           "assignee": "me",
           "prio": "Mittel",
           "due": "",
-          "done": false
+          "done": true,
+          "doneAt": 1783765033160
         }
-      ]
+      ],
+      "_m": 1783765033160
     },
     {
       "id": "mqyz9zsbluvx",
@@ -789,7 +791,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1783762965369,
+  "_syncTs": 1783765033202,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
