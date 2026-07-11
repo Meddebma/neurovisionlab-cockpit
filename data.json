@@ -34,7 +34,8 @@
           "prio": "Mittel"
         }
       ],
-      "notes": "Nächste Schritte: Pituitary-Atlas ROI · Multi-Case Statistik · Deformation-field MLS. Ziel: MICCAI 2026."
+      "notes": "Nächste Schritte: Pituitary-Atlas ROI · Multi-Case Statistik · Deformation-field MLS. Ziel: MICCAI 2026.",
+      "_m": 1783762965332
     },
     {
       "id": "mqwpomval5dv",
@@ -686,6 +687,16 @@
       "start": "",
       "end": "",
       "status": "Beantragt"
+    },
+    {
+      "id": "mrg16xag1dej",
+      "name": "Digital Twin for Neurotoxicity",
+      "agency": "ERC Stg",
+      "total": 0,
+      "spent": 0,
+      "start": "",
+      "end": "",
+      "status": "Beantragt"
     }
   ],
   "datasets": [
@@ -778,7 +789,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1783754158065,
+  "_syncTs": 1783762965369,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
