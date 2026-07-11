@@ -341,36 +341,20 @@
   ],
   "goals": [
     {
-      "id": "mqwpomvaq45k",
-      "title": "VS-Seg Validierung – Schwannoma",
-      "detail": "Dice/Detection klinische Kohorte",
-      "cat": "📄 Paper",
-      "date": "2026-10-31",
-      "priority": "Mittel"
-    },
-    {
-      "id": "mqwpomvauqmz",
-      "title": "Study Panel UI – Blinded Reader",
-      "detail": "Verblindete Reader-Studie",
-      "cat": "🔬 Projekt",
-      "date": "2026-09-30",
-      "priority": "Mittel"
-    },
-    {
-      "id": "mqwpomvalkk3",
-      "title": "EU Horizon – Multimodal Neuroimaging",
-      "detail": "Konsortium · Call HORIZON-HLTH-2027",
-      "cat": "💰 Antrag",
-      "date": "2027-01-15",
-      "priority": "Niedrig"
-    },
-    {
       "title": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
       "detail": "Antrag beim BMFTR",
       "cat": "💰 Antrag",
       "date": "2026-07-31",
       "priority": "Hoch",
       "id": "mqz4vf49c9f4"
+    },
+    {
+      "title": "DFG Antrag ICANS",
+      "detail": "Warten auf Preprint",
+      "cat": "💰 Antrag",
+      "date": "2026-09-20",
+      "priority": "Hoch",
+      "id": "mrg12l04osmb"
     }
   ],
   "ideas": [
@@ -770,7 +754,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1783753894027,
+  "_syncTs": 1783753992396,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -791,7 +775,10 @@
     "mqwpomva4qou",
     "mqwpomva1z08",
     "mqwpomva7z7y",
-    "mqwpomvar9pq"
+    "mqwpomvar9pq",
+    "mqwpomvaq45k",
+    "mqwpomvauqmz",
+    "mqwpomvalkk3"
   ],
   "people": []
 }
