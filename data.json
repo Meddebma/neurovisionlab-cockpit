@@ -324,14 +324,23 @@
     },
     {
       "id": "mrg0pbwbvavd",
-      "name": "",
-      "status": "Geplant",
-      "progress": 0,
-      "stand": "",
+      "name": "Hypoxia",
+      "status": "Aktiv",
+      "progress": 72,
+      "stand": "Waiting for ViT results",
       "desc": "",
       "notes": "",
       "members": [],
-      "tasks": []
+      "tasks": [
+        {
+          "id": "mrg0s70bqs74",
+          "text": "",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        }
+      ]
     }
   ],
   "goals": [
@@ -887,7 +896,7 @@
       ]
     }
   ],
-  "_syncTs": 1783753373862,
+  "_syncTs": 1783753507522,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
