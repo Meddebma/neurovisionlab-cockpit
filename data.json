@@ -232,6 +232,14 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "2026-07-04",
+          "done": true
+        },
+        {
+          "id": "mrg0voeg8f4b",
+          "text": "wait for the results of Salah",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
           "done": false
         }
       ]
@@ -799,82 +807,6 @@
   ],
   "meetings": [
     {
-      "id": "mqwpomvaw6nz",
-      "type": "1:1",
-      "phdId": "",
-      "participants": [
-        "mqwpomvaz1io"
-      ],
-      "date": "2026-06-22",
-      "title": "Kapitel 3 – Modellentwicklung Review",
-      "notes": "Architektur des Foundation-Modells durchgesprochen. Encoder-Wahl überzeugend, Validierungsdesign schärfen. GPU-Engpass diskutiert.",
-      "items": [
-        {
-          "id": "mqwpomvab63z",
-          "text": "Draft Kapitel 3 bis 30.06. überarbeiten",
-          "assignee": "mqwpomvaz1io",
-          "prio": "Hoch",
-          "due": "2026-06-30",
-          "done": false
-        },
-        {
-          "id": "mqwpomvaas1z",
-          "text": "GPU-Kontingent beim RZ anfragen",
-          "assignee": "me",
-          "prio": "Mittel",
-          "due": "",
-          "done": false
-        },
-        {
-          "id": "mqwpomvaxt9p",
-          "text": "Baseline-Vergleich mit nnU-Net ergänzen",
-          "assignee": "mqwpomvaz1io",
-          "prio": "Mittel",
-          "due": "",
-          "done": false
-        }
-      ]
-    },
-    {
-      "id": "mqwpomva4qou",
-      "type": "Team",
-      "phdId": "",
-      "participants": [
-        "mqwpomvaz1io",
-        "mqwpomvaecep",
-        "mqwpomva41co"
-      ],
-      "date": "2026-06-18",
-      "title": "Wöchentliches Lab-Meeting",
-      "notes": "Statusrunde aller Projekte. VLM auf Kurs für MICCAI. VS-Seg wartet auf Fälle.",
-      "items": [
-        {
-          "id": "mqwpomvao9uu",
-          "text": "VLM Multi-Case-Lauf bis KW27",
-          "assignee": "me",
-          "prio": "Hoch",
-          "due": "",
-          "done": true
-        },
-        {
-          "id": "mqwpomvasmct",
-          "text": "Datensatz-Register aktualisieren",
-          "assignee": "mqwpomvaecep",
-          "prio": "Mittel",
-          "due": "",
-          "done": false
-        },
-        {
-          "id": "mqwpomvalp5b",
-          "text": "Journal-Club Thema festlegen",
-          "assignee": "me",
-          "prio": "Niedrig",
-          "due": "",
-          "done": true
-        }
-      ]
-    },
-    {
       "id": "mqwpomva1z08",
       "type": "1:1",
       "phdId": "",
@@ -904,7 +836,7 @@
       ]
     }
   ],
-  "_syncTs": 1783753659601,
+  "_syncTs": 1783753725050,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -920,7 +852,9 @@
     "mqwpomvalxjt",
     "mqwpomva2zg7",
     "mr966lcapexd",
-    "mqwpomvas99h"
+    "mqwpomvas99h",
+    "mqwpomvaw6nz",
+    "mqwpomva4qou"
   ],
   "people": []
 }
