@@ -88,7 +88,7 @@
       "id": "mqwrbhs9cw7a",
       "name": "ICANS Paper I",
       "status": "Aktiv",
-      "progress": 10,
+      "progress": 37,
       "stand": "waiting for 2 last ratings",
       "desc": "Rating of ICANS Patients of Berlin",
       "notes": "https://drks.de/search/de/trial/DRKS00031604\n",
@@ -334,10 +334,18 @@
       "tasks": [
         {
           "id": "mrg0s70bqs74",
-          "text": "",
+          "text": "ViT results",
+          "assignee": "mqwrzhu6y2ge",
+          "prio": "Mittel",
+          "due": "2026-07-19",
+          "done": false
+        },
+        {
+          "id": "mrg0sk76c9jo",
+          "text": "Ask Martin for clinical data of included patients",
           "assignee": "me",
           "prio": "Mittel",
-          "due": "",
+          "due": "2026-07-13",
           "done": false
         }
       ]
@@ -896,7 +904,7 @@
       ]
     }
   ],
-  "_syncTs": 1783753507522,
+  "_syncTs": 1783753573677,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
