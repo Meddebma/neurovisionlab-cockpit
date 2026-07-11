@@ -88,7 +88,7 @@
       "id": "mqwrbhs9cw7a",
       "name": "ICANS Paper I",
       "status": "Aktiv",
-      "progress": 37,
+      "progress": 48,
       "stand": "waiting for 2 last ratings",
       "desc": "Rating of ICANS Patients of Berlin",
       "notes": "https://drks.de/search/de/trial/DRKS00031604\n",
@@ -219,7 +219,7 @@
     {
       "id": "mqyz9r413dox",
       "name": "NeuvisionLab x LIH",
-      "status": "Geplant",
+      "status": "Aktiv",
       "progress": 27,
       "stand": "Update von Salah",
       "desc": "",
@@ -904,7 +904,7 @@
       ]
     }
   ],
-  "_syncTs": 1783753573677,
+  "_syncTs": 1783753659601,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
