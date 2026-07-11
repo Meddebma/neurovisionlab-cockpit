@@ -355,6 +355,22 @@
       "date": "2026-09-20",
       "priority": "Hoch",
       "id": "mrg12l04osmb"
+    },
+    {
+      "title": "ICANS Preprint",
+      "detail": "letzter rater, dann auswertung rating\ncalibration session\nbrain age auswertung",
+      "cat": "📄 Paper",
+      "date": "2026-09-01",
+      "priority": "Hoch",
+      "id": "mrg13jqoe5gf"
+    },
+    {
+      "title": "ERC Starting grant",
+      "detail": "Ausformulierung Idea: Digital Twin for Neurotoxicity\n",
+      "cat": "💰 Antrag",
+      "date": "2026-09-16",
+      "priority": "Hoch",
+      "id": "mrg14lhkbm9k"
     }
   ],
   "ideas": [
@@ -754,7 +770,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1783753992396,
+  "_syncTs": 1783754086140,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
