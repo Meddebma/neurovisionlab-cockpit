@@ -161,6 +161,14 @@
           "prio": "Mittel",
           "due": "2026-07-12",
           "done": true
+        },
+        {
+          "id": "mrg0nixh4c12",
+          "text": "Review framework überlegen, wie viele Reviewer, welche Metrics",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-08-23",
+          "done": false
         }
       ]
     },
@@ -313,6 +321,17 @@
           "done": false
         }
       ]
+    },
+    {
+      "id": "mrg0pbwbvavd",
+      "name": "",
+      "status": "Geplant",
+      "progress": 0,
+      "stand": "",
+      "desc": "",
+      "notes": "",
+      "members": [],
+      "tasks": []
     }
   ],
   "goals": [
@@ -868,7 +887,7 @@
       ]
     }
   ],
-  "_syncTs": 1783753286250,
+  "_syncTs": 1783753373862,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
