@@ -371,6 +371,14 @@
       "date": "2026-09-16",
       "priority": "Hoch",
       "id": "mrg14lhkbm9k"
+    },
+    {
+      "title": "Deep Spin KMU BMFTR-  LOFI Stroke",
+      "detail": "LOFI Stroke",
+      "cat": "💰 Antrag",
+      "date": "2026-10-16",
+      "priority": "Hoch",
+      "id": "mrg164z45cfa"
     }
   ],
   "ideas": [
@@ -770,7 +778,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1783754086140,
+  "_syncTs": 1783754158065,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
