@@ -64,6 +64,19 @@
   .seg-btn{padding:9px 16px;border-radius:9px;border:none;background:transparent;color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:7px;transition:all .13s;}
   .seg-btn:hover{color:var(--text);} .seg-btn.active{background:var(--btnbg);color:var(--btntext);box-shadow:var(--shadow);}
 
+  .kan{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:start;}
+  @media(max-width:1100px){.kan{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:720px){.kan{grid-template-columns:1fr;}}
+  .kan-col{background:var(--panel2);border:1px solid var(--line);border-radius:var(--r);padding:11px;min-height:120px;transition:border-color .12s,background .12s;}
+  .kan-col.over{border-color:var(--accent);background:var(--hover);}
+  .kan-col-h{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:10px;padding:0 3px;}
+  .kan-col-h .cnt{background:var(--line);color:var(--muted);border-radius:6px;padding:1px 7px;font-size:10.5px;}
+  .kan-card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:11px;margin-bottom:9px;box-shadow:var(--shadow);cursor:grab;transition:box-shadow .12s,transform .12s;}
+  .kan-card:hover{box-shadow:var(--shadow-pop);} .kan-card.drag{opacity:.4;}
+  .kan-card .kc-t{font-size:12.5px;font-weight:700;line-height:1.35;margin-bottom:5px;}
+  .kan-card .kc-m{font-size:11px;color:var(--muted);line-height:1.4;}
+  .kan-col .empty{font-size:11px;color:var(--faint);text-align:center;padding:14px 0;}
+
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px;}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);}
   .stat .lbl{font-size:12px;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:7px;}
@@ -95,6 +108,13 @@
   .section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--faint);margin:4px 0 12px;}
 
   .today-box{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);margin-bottom:16px;}
+  .weekbrief{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;box-shadow:var(--shadow);margin-bottom:16px;font-size:13px;}
+  .weekbrief .wb-lead{font-weight:700;letter-spacing:.2px;margin-right:4px;display:flex;align-items:center;gap:7px;}
+  .weekbrief .wb-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:8px;background:var(--panel2);border:1px solid var(--line);font-weight:600;font-size:12.5px;cursor:pointer;transition:all .12s;}
+  .weekbrief .wb-chip:hover{border-color:var(--faint);}
+  .weekbrief .wb-chip b{font-weight:800;}
+  .weekbrief .wb-chip.warn b{color:#dc2626;} .weekbrief .wb-sep{color:var(--faint);}
+  .weekbrief .wb-quiet{color:var(--muted);font-weight:500;}
 
   .hero-vault{position:relative;height:200px;border-radius:var(--r);overflow:hidden;background:radial-gradient(ellipse at center,var(--hero-bg1) 0%,var(--hero-bg2) 75%);box-shadow:var(--shadow-pop);margin-bottom:16px;transition:background .2s;}
   .hero-vault canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
@@ -345,6 +365,7 @@
       <div class="hero-clock"><div class="time" id="hero-time">00:00:00</div><div class="date" id="hero-date"></div></div>
       <div class="hero-brand">COCKPIT · LIVE</div>
     </div>
+    <div id="week-brief"></div>
     <div class="today-box" id="today-box"></div>
     <div class="stats" id="ov-stats"></div>
     <div class="grid-2" style="align-items:start;margin-bottom:16px">
@@ -368,8 +389,10 @@
 
   <!-- PUBLICATIONS -->
   <section class="page" id="page-pubs">
-    <div class="page-head"><div><h1>Publikationen</h1><div class="sub">Phase direkt in der Tabelle ändern</div></div><div class="head-actions"><input class="tfilter" oninput="setQ('pubs',this.value)" placeholder="🔍 Filtern…"><button class="btn btn-dark" onclick="openModal('pubs')">+ Neues Paper</button></div></div>
-    <div class="tbl-wrap"><table class="tbl" id="tbl-pubs"><thead><tr><th data-k="title" onclick="setSort('pubs','title')">Titel <span class="sar"></span></th><th data-k="authors" onclick="setSort('pubs','authors')">Autoren <span class="sar"></span></th><th data-k="journal" onclick="setSort('pubs','journal')">Journal / Konferenz <span class="sar"></span></th><th data-k="stand" onclick="setSort('pubs','stand')">Aktueller Stand <span class="sar"></span></th><th data-k="stage" onclick="setSort('pubs','stage')">Phase <span class="sar"></span></th><th></th></tr></thead><tbody id="pubs-rows"></tbody></table></div>
+    <div class="page-head"><div><h1>Publikationen</h1><div class="sub">Phase in der Tabelle ändern oder im Board ziehen</div></div><div class="head-actions"><input class="tfilter" oninput="setQ('pubs',this.value)" placeholder="🔍 Filtern…"><button class="btn btn-dark" onclick="openModal('pubs')">+ Neues Paper</button></div></div>
+    <div class="seg" id="pubs-seg"><button class="seg-btn active" onclick="setPubView('table',this)">☰ Tabelle</button><button class="seg-btn" onclick="setPubView('board',this)">▦ Board</button></div>
+    <div id="pubs-table-view"><div class="tbl-wrap"><table class="tbl" id="tbl-pubs"><thead><tr><th data-k="title" onclick="setSort('pubs','title')">Titel <span class="sar"></span></th><th data-k="authors" onclick="setSort('pubs','authors')">Autoren <span class="sar"></span></th><th data-k="journal" onclick="setSort('pubs','journal')">Journal / Konferenz <span class="sar"></span></th><th data-k="stand" onclick="setSort('pubs','stand')">Aktueller Stand <span class="sar"></span></th><th data-k="stage" onclick="setSort('pubs','stage')">Phase <span class="sar"></span></th><th></th></tr></thead><tbody id="pubs-rows"></tbody></table></div></div>
+    <div id="pubs-board-view" style="display:none"></div>
   </section>
 
   <!-- FUNDING -->
@@ -471,6 +494,20 @@ async function ghGetSha(){
 }
 
 const GH_ARR_KEYS=['projects','todos','phds','people','pubs','funding','datasets','links','ideas','goals','meetings'];
+let ghBusy=false;
+/* Skip an auto-pull if the user is mid-edit (focused field / open modal / palette) to avoid
+   yanking data out from under them. Manual saves still push immediately. */
+function ghUserBusy(){
+  const ae=document.activeElement;
+  if(ae&&/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName))return true;
+  if(document.getElementById('ov')?.classList.contains('show'))return true;
+  if(document.getElementById('cmdk-ov')?.classList.contains('show'))return true;
+  return false;
+}
+async function ghAutoPull(){
+  if(!ghPat()||ghBusy||ghUserBusy())return;
+  await syncFromGitHub();
+}
 
 function ghMerge(local,remote){
   /* Union by ID; for shared IDs the version with the newer per-item edit stamp (_m) wins,
@@ -497,6 +534,7 @@ async function ghFetchRaw(){
 
 async function ghPush(){
   const pat=ghPat();if(!pat)return;
+  ghBusy=true;
   ghSetDot('syncing');
   try{
     /* 1. Pull current GitHub state */
@@ -522,9 +560,12 @@ async function ghPush(){
       ghSetDot(r2.ok?'ok':'error');
     }else{ghSetDot(r.ok?'ok':'error');}
   }catch(e){ghSetDot('error');}
+  finally{ghBusy=false;}
 }
 
-async function syncFromGitHub(){
+async function syncFromGitHub(silent){
+  if(ghBusy)return;
+  ghBusy=true;
   ghSetDot('syncing');
   try{
     const ghData=await ghFetchRaw();
@@ -542,10 +583,12 @@ async function syncFromGitHub(){
     if(changed){
       normalize();
       try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
-      renderAll();toast('☁️ Daten synchronisiert ✓');
+      if(!ghUserBusy())renderAll();
+      toast('☁️ Daten synchronisiert ✓');
     }
     ghSetDot('ok');
   }catch(e){ghSetDot(ghPat()?'error':'idle');}
+  finally{ghBusy=false;}
 }
 
 function openGhSettings(){
@@ -778,7 +821,24 @@ function renderToday(){const t=todayStr(),over=[],tod=[];
   box.innerHTML=`<div class="card-title" style="margin-bottom:6px">☀️ Heute im Fokus${over.length?` · <span style="color:#dc2626">${over.length} überfällig</span>`:''}</div>`+items.slice(0,8).map(e=>`<div class="today-flag ${e.o?'today-over':''}">${e.act?`<div class="tck" style="margin-top:1px" title="Als erledigt markieren" onclick="${e.act}"></div>`:`<span class="fdot" style="background:${e.c}"></span>`}<div><div style="font-weight:600">${esc(e.t)}</div><div style="font-size:11px;color:var(--muted)">${esc(e.m)}</div></div></div>`).join('');
 }
 
+function renderWeekBrief(){
+  const el=document.getElementById('week-brief');if(!el)return;
+  const t=todayStr();const end=new Date();end.setDate(end.getDate()+7);const endStr=end.toISOString().slice(0,10);
+  const inWeek=d=>d&&d>=t&&d<=endStr;
+  const deadlines=state.goals.filter(g=>inWeek(g.date)).length;
+  const meetings=state.meetings.filter(m=>inWeek(m.date)).length;
+  const dueTasks=[...allTasks().filter(x=>x.assignee==='me'&&!x.done),...state.todos.filter(x=>!x.done)].filter(x=>inWeek(x.due)).length;
+  const overdue=[...allTasks().filter(x=>x.assignee==='me'&&!x.done),...state.todos.filter(x=>!x.done)].filter(x=>x.due&&x.due<t).length;
+  if(!deadlines&&!meetings&&!dueTasks&&!overdue){el.innerHTML=`<div class="weekbrief"><span class="wb-lead">🗓️ Diese Woche</span><span class="wb-quiet">Keine Deadlines, Meetings oder fälligen Aufgaben – freie Bahn.</span></div>`;return;}
+  const chips=[];
+  chips.push(`<span class="wb-chip" onclick="navigate('goals')"><b>${deadlines}</b> ${deadlines===1?'Deadline':'Deadlines'}</span>`);
+  chips.push(`<span class="wb-chip" onclick="navigate('meetings')"><b>${meetings}</b> ${meetings===1?'Meeting':'Meetings'}</span>`);
+  chips.push(`<span class="wb-chip" onclick="navigate('todos')"><b>${dueTasks}</b> fällige ${dueTasks===1?'Aufgabe':'Aufgaben'}</span>`);
+  if(overdue)chips.push(`<span class="wb-chip warn" onclick="navigate('todos')"><b>${overdue}</b> überfällig</span>`);
+  el.innerHTML=`<div class="weekbrief"><span class="wb-lead">🗓️ Diese Woche</span>${chips.join('<span class="wb-sep">·</span>')}</div>`;
+}
 function renderOverview(){
+  renderWeekBrief();
   const active=state.projects.filter(p=>p.status==='Aktiv').length;
   const secured=state.funding.filter(f=>['Bewilligt','Laufend'].includes(f.status)).reduce((a,f)=>a+(+f.total||0),0);
   const myTasks=allTasks().filter(t=>t.assignee==='me'&&!t.done).map(t=>({...t,_kind:'task'}));
@@ -865,7 +925,13 @@ function todoRow(t){const over=t.due&&!t.done&&t.due<todayStr();return `<div cla
 let dragTodo=null;
 function dragTodoStart(id,e){dragTodo=id;e.dataTransfer.effectAllowed='move';}
 function dropTodo(id,e){e.preventDefault();if(!dragTodo||dragTodo===id)return;const from=state.todos.findIndex(x=>x.id===dragTodo),to=state.todos.findIndex(x=>x.id===id);if(from<0||to<0){dragTodo=null;return;}const[m]=state.todos.splice(from,1);state.todos.splice(to,0,m);save(true);renderTodos();dragTodo=null;}
-function renderTodos(){const myTasks=allTasks().filter(t=>t.assignee==='me');const open=state.todos.filter(t=>!t.done),done=state.todos.filter(t=>t.done);
+let archiveOpen=false;
+function toggleArchive(){archiveOpen=!archiveOpen;renderTodos();}
+function renderTodos(){const myTasks=allTasks().filter(t=>t.assignee==='me');const open=state.todos.filter(t=>!t.done),doneAll=state.todos.filter(t=>t.done);
+  const ARCH_MS=30*864e5,now=Date.now();
+  const doneStamp=t=>t.doneAt||t._m||now;
+  const recentDone=doneAll.filter(t=>now-doneStamp(t)<ARCH_MS);
+  const archived=doneAll.filter(t=>now-doneStamp(t)>=ARCH_MS).sort((a,b)=>doneStamp(b)-doneStamp(a));
   const prOrd={Hoch:0,Mittel:1,Niedrig:2};const bt={};open.forEach(t=>{(bt[t.tag||'Sonstiges']=bt[t.tag||'Sonstiges']||[]).push(t);});
   Object.values(bt).forEach(arr=>arr.sort((a,b)=>(prOrd[a.prio]??1)-(prOrd[b.prio]??1)));
   const order=['Paper','Code','Admin','Sonstiges'],icn={Paper:'📄',Code:'💻',Admin:'🎓',Sonstiges:'🗂️'};
@@ -873,7 +939,8 @@ function renderTodos(){const myTasks=allTasks().filter(t=>t.assignee==='me');con
   if(myTasks.length)h+=`<div class="card" style="margin-bottom:16px"><div class="section-label">📌 Zugewiesene Aufgaben (aus Projekten & Protokollen)</div>${myTasks.map(assignedRow).join('')}</div>`;
   if(urgent.length)h+=`<div class="card" style="margin-bottom:16px"><div class="section-label">🔥 Hohe Priorität</div>${urgent.map(todoRow).join('')}</div>`;
   order.forEach(tag=>{if(!bt[tag]||!bt[tag].length)return;h+=`<div class="card" style="margin-bottom:16px"><div class="section-label">${icn[tag]} ${tag}</div>${bt[tag].map(todoRow).join('')}</div>`;});
-  if(done.length)h+=`<div class="card"><div class="section-label">✓ Erledigt (${done.length})</div>${done.map(todoRow).join('')}</div>`;
+  if(recentDone.length)h+=`<div class="card" style="margin-bottom:16px"><div class="section-label">✓ Erledigt (${recentDone.length})</div>${recentDone.map(todoRow).join('')}</div>`;
+  if(archived.length){h+=`<div class="card"><div class="section-label" style="cursor:pointer;display:flex;align-items:center;gap:7px" onclick="toggleArchive()"><span style="transition:transform .15s;display:inline-block;transform:rotate(${archiveOpen?90:0}deg)">▸</span> 📦 Archiv · älter als 30 Tage (${archived.length})</div>${archiveOpen?archived.map(todoRow).join(''):''}</div>`;}
   document.getElementById('todos-list').innerHTML=h||'<div class="card empty">Keine Todos.</div>';}
 
 function parseMs(s){return(s||'').split('\n').map(l=>l.trim()).filter(Boolean).map(l=>l.startsWith('x ')?{t:l.slice(2),s:'done'}:l.startsWith('> ')?{t:l.slice(2),s:'current'}:l.startsWith('- ')?{t:l.slice(2),s:'future'}:{t:l,s:'future'});}
@@ -882,7 +949,27 @@ function renderPhd(){document.getElementById('phd-list').innerHTML=state.phds.ma
   document.getElementById('phd-overview').innerHTML=`<div class="card-title" style="margin-bottom:16px">📊 Team-Überblick</div><div class="grid-3"><div><div style="font-size:12px;color:var(--muted);margin-bottom:8px">Ø Dissertation-Fortschritt</div><div style="font-size:34px;font-weight:800;color:var(--accent)">${avg}%</div><div style="font-size:11px;color:var(--faint)">${state.phds.length} Doktoranden</div></div><div><div style="font-size:12px;color:var(--muted);margin-bottom:8px">Doktoranden</div>${state.phds.map(p=>`<div style="font-size:12.5px;margin-bottom:5px">${esc(p.name)}: <span style="color:var(--muted)">${p.progress||0}%</span></div>`).join('')||'—'}</div><div><div style="font-size:12px;color:var(--muted);margin-bottom:8px">Offene Aktionen</div>${pend||'<div style="font-size:12px;color:var(--faint)">Keine</div>'}</div></div>`;}
 
 const STAGES=['Idee','In Arbeit','Submitted','Under Review','Accepted'];
-function renderPubs(){const arr=applyTF('pubs',state.pubs,['title','authors','journal','stand','stage']);document.getElementById('pubs-rows').innerHTML=arr.map(p=>`<tr onclick="rowClick(event,()=>openModal('pubs','${p.id}'))" style="cursor:pointer"><td style="min-width:200px">${tin('pubs',p.id,'title',p.title)}</td><td>${tin('pubs',p.id,'authors',p.authors)}</td><td>${tin('pubs',p.id,'journal',p.journal)}</td><td style="min-width:150px">${tin('pubs',p.id,'stand',p.stand)}</td><td>${sin('pubs',p.id,'stage',p.stage,STAGES)}</td><td>${ctrls('pubs',p.id)}</td></tr>`).join('')+addRowHtml('pubs',6);updateSort('pubs');}
+let pubView='table';
+function setPubView(v,btn){pubView=v;document.querySelectorAll('#pubs-seg .seg-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('pubs-table-view').style.display=v==='table'?'':'none';document.getElementById('pubs-board-view').style.display=v==='board'?'':'none';renderPubs();}
+function renderPubs(){
+  const arr=applyTF('pubs',state.pubs,['title','authors','journal','stand','stage']);
+  document.getElementById('pubs-rows').innerHTML=arr.map(p=>`<tr onclick="rowClick(event,()=>openModal('pubs','${p.id}'))" style="cursor:pointer"><td style="min-width:200px">${tin('pubs',p.id,'title',p.title)}</td><td>${tin('pubs',p.id,'authors',p.authors)}</td><td>${tin('pubs',p.id,'journal',p.journal)}</td><td style="min-width:150px">${tin('pubs',p.id,'stand',p.stand)}</td><td>${sin('pubs',p.id,'stage',p.stage,STAGES)}</td><td>${ctrls('pubs',p.id)}</td></tr>`).join('')+addRowHtml('pubs',6);updateSort('pubs');
+  if(pubView==='board')renderPubsBoard(arr);
+}
+function renderPubsBoard(arr){
+  const bv=document.getElementById('pubs-board-view');
+  const cols=STAGES.map(st=>{
+    const items=arr.filter(p=>(p.stage||'Idee')===st);
+    const cards=items.map(p=>`<div class="kan-card" draggable="true" ondragstart="dragPub('${p.id}',event)" ondragend="dragPubEnd(event)" onclick="openModal('pubs','${p.id}')"><div class="kc-t">${esc(p.title||'(ohne Titel)')}</div><div class="kc-m">${esc(p.journal||'—')}${p.stand?' · '+esc(p.stand):''}</div></div>`).join('')||'<div class="empty">—</div>';
+    return `<div class="kan-col" data-stage="${esc(st)}" ondragover="pubColOver(event,this)" ondragleave="this.classList.remove('over')" ondrop="dropPub(event,'${esc(st)}',this)"><div class="kan-col-h"><span>${esc(st)}</span><span class="cnt">${items.length}</span></div>${cards}</div>`;
+  }).join('');
+  bv.innerHTML=`<div class="kan">${cols}</div>`;
+}
+let dragPubId=null;
+function dragPub(id,e){dragPubId=id;e.dataTransfer.effectAllowed='move';e.currentTarget.classList.add('drag');}
+function dragPubEnd(e){e.currentTarget.classList.remove('drag');}
+function pubColOver(e,col){e.preventDefault();col.classList.add('over');}
+function dropPub(e,stage,col){e.preventDefault();col.classList.remove('over');const p=byId('pubs',dragPubId);if(p&&p.stage!==stage){p.stage=stage;touch(p);save(true);renderPubs();}dragPubId=null;}
 
 function renderFunding(){const secured=state.funding.filter(f=>['Bewilligt','Laufend'].includes(f.status)).reduce((a,f)=>a+(+f.total||0),0);const spent=state.funding.reduce((a,f)=>a+(+f.spent||0),0);const pending=state.funding.filter(f=>['Beantragt','In Antrag','In Planung'].includes(f.status)).reduce((a,f)=>a+(+f.total||0),0);const activeN=state.funding.filter(f=>f.status==='Laufend').length;
   document.getElementById('fund-stats').innerHTML=`<div class="stat"><div class="lbl">Gesichert</div><div class="val" style="font-size:23px">${money(secured)}</div><div class="sub">bewilligt + laufend</div></div><div class="stat"><div class="lbl">Verbraucht</div><div class="val" style="font-size:23px">${money(spent)}</div><div class="sub">über alle Projekte</div></div><div class="stat"><div class="lbl">In Beantragung</div><div class="val" style="font-size:23px">${money(pending)}</div><div class="sub">potenziell</div></div><div class="stat"><div class="lbl">Laufende Projekte</div><div class="val" style="font-size:23px">${activeN}</div><div class="sub">von ${state.funding.length}</div></div>`;
@@ -907,7 +994,7 @@ function renderMeetings(){let list=applyTF('meetings',state.meetings,['title','n
   document.getElementById('meet-rows').innerHTML=list.map(m=>{const parts=(m.participants&&m.participants.length?m.participants:(m.phdId?[m.phdId]:[]));const pav=parts.map(id=>{const ph=phdById(id);return ph?`<span title="${esc(ph.name)}" style="margin-left:-4px">${avatarHtml(ph,phdIdx(id),24)}</span>`:'';}).join('');const ni=(m.items||[]).length,nd=(m.items||[]).filter(x=>!x.done).length;return `<tr onclick="rowClick(event,()=>openModal('meetings','${m.id}'))" style="cursor:pointer"><td>${sin('meetings',m.id,'type',m.type,['1:1','Team'])}</td><td>${din('meetings',m.id,'date',m.date)}</td><td style="min-width:200px">${tin('meetings',m.id,'title',m.title)}</td><td><span style="display:inline-flex;padding-left:4px">${pav||'<span class="muted">—</span>'}</span></td><td class="muted" style="white-space:nowrap">${ni?nd+' offen / '+ni:'—'}</td><td>${ctrls('meetings',m.id)}</td></tr>`;}).join('')+addRowHtml('meetings',6);updateSort('meetings');}
 
 /* CRUD */
-function toggleTodo(id){const t=byId('todos',id);if(t){t.done=!t.done;touch(t);save(true);renderAll();}}
+function toggleTodo(id){const t=byId('todos',id);if(t){t.done=!t.done;t.doneAt=t.done?Date.now():0;touch(t);save(true);renderAll();}}
 function toggleTask(pid,id){const p=byId('projects',pid);if(!p)return;const t=(p.tasks||[]).find(x=>x.id===id);if(t){t.done=!t.done;save(true);renderAll();}}
 function delItem(type,id){if(!confirm('Wirklich löschen?'))return;if(!state._deleted)state._deleted=[];state._deleted.push(id);state[type]=state[type].filter(x=>x.id!==id);if(type==='phds'){state.projects.forEach(p=>{if(p.members)p.members=p.members.filter(m=>m!==id);if(p.tasks)p.tasks.forEach(t=>{if(t.assignee===id)t.assignee='me';});});state.meetings.forEach(m=>{if(m.phdId===id)m.phdId='';});}save();renderAll();if(modalCtx)closeModal();}
 
@@ -1030,6 +1117,9 @@ loadState();renderAll();
 heroInit();heroClockTick();setInterval(heroClockTick,1000);
 document.getElementById('gh-ov').addEventListener('click',e=>{if(e.target.id==='gh-ov')e.currentTarget.classList.remove('show');});
 if(ghPat())syncFromGitHub();else ghSetDot('idle');
+/* Auto-pull every 2 min so Handy & Laptop stay in step without a manual reload */
+setInterval(ghAutoPull,120000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)ghAutoPull();});
 document.getElementById('today').textContent=new Date().toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+' · Forschungs-Cockpit';
 document.getElementById('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeModal();});
 document.getElementById('hist-ov').addEventListener('click',e=>{if(e.target.id==='hist-ov')e.currentTarget.classList.remove('show');});
