@@ -4,7 +4,7 @@
       "id": "mqwpomv9kx2l",
       "name": "Agentic VLM Studie",
       "desc": "Anatomy-augmented VLM für Neuro-Onkologie. Arm A/B/C. Endpunkte: Lateralität, Lokalisation, Mass Effect.",
-      "status": "Aktiv",
+      "status": "Pausiert",
       "progress": 36,
       "stand": "Multi-Case-Auswertung läuft",
       "members": [],
@@ -38,7 +38,7 @@
     },
     {
       "id": "mqwpomval5dv",
-      "name": "neuro-label Plattform",
+      "name": "NeurovisionLab Annotation Platform",
       "desc": "MRI Segmentierungs- & Analyseplattform. Engines: SynthSeg+, BrainAgeNeXt, VS-Seg, GoAT/BraTS, SAM-Med3D.",
       "status": "Aktiv",
       "progress": 85,
@@ -340,14 +340,6 @@
     }
   ],
   "goals": [
-    {
-      "id": "mqwpomvar9pq",
-      "title": "Anatomy-augmented Agentic VLM – Paper",
-      "detail": "Arme A/B/C · MICCAI 2026",
-      "cat": "📄 Paper",
-      "date": "2026-07-10",
-      "priority": "Hoch"
-    },
     {
       "id": "mqwpomvaq45k",
       "title": "VS-Seg Validierung – Schwannoma",
@@ -778,7 +770,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1783753785621,
+  "_syncTs": 1783753894027,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -798,7 +790,8 @@
     "mqwpomvaw6nz",
     "mqwpomva4qou",
     "mqwpomva1z08",
-    "mqwpomva7z7y"
+    "mqwpomva7z7y",
+    "mqwpomvar9pq"
   ],
   "people": []
 }
