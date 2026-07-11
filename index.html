@@ -130,6 +130,8 @@
   .members{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:12px 0;}
   .m-lbl{font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.6px;font-weight:700;margin-right:2px;}
   .m-chip{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:3px 10px 3px 3px;font-size:11px;color:var(--text);font-weight:600;}
+  .m-chip.pick{cursor:pointer;user-select:none;transition:all .12s;} .m-chip.pick:hover{border-color:var(--faint);}
+  .m-chip.pick.off{opacity:.45;border-style:dashed;} .m-chip.pick.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;}
   .m-ava{width:20px;height:20px;border-radius:6px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;overflow:hidden;}
   .m-ava img{width:100%;height:100%;object-fit:cover;}
 
@@ -471,14 +473,20 @@ async function ghGetSha(){
 const GH_ARR_KEYS=['projects','todos','phds','people','pubs','funding','datasets','links','ideas','goals','meetings'];
 
 function ghMerge(local,remote){
-  /* Union by ID: items only on remote get added; local version wins for shared IDs.
-     Items whose ID is in state._deleted are never re-added from remote. */
+  /* Union by ID; for shared IDs the version with the newer per-item edit stamp (_m) wins,
+     so done-flags and edits propagate across devices. Items in state._deleted never come back. */
   const deleted=new Set(state._deleted||[]);
+  const remoteById=new Map((remote||[]).filter(x=>x.id).map(x=>[x.id,x]));
   const localIds=new Set((local||[]).map(x=>x.id).filter(Boolean));
-  const merged=[...(local||[])];
+  const merged=(local||[]).map(li=>{
+    const ri=li.id?remoteById.get(li.id):null;
+    if(ri&&(ri._m||0)>(li._m||0))return ri;
+    return li;
+  });
   (remote||[]).forEach(item=>{if(item.id&&!localIds.has(item.id)&&!deleted.has(item.id))merged.push(item);});
   return merged;
 }
+function touch(it){if(it)it._m=Date.now();}
 
 async function ghFetchRaw(){
   try{
@@ -687,7 +695,7 @@ function assigneeOptions(sel){return `<option value="me" ${sel==='me'?'selected'
 const PILLMAP={New:'blue','In Arbeit':'blue',Submitted:'blue',Intern:'blue',Review:'blue',Code:'blue',Tool:'blue','1:1':'blue',
 Accepted:'purple',Published:'purple',Kooperation:'purple',Paper:'purple',Team:'purple',
 Aktiv:'green',Laufend:'green',Bewilligt:'green',Konform:'green','Öffentlich':'green',Anonymisiert:'green',Empfohlen:'green',Niedrig:'green',Dataset:'green',
-Beantragt:'amber','Under Review':'amber',Ausstehend:'amber','In Antrag':'amber',Prio:'amber',Mittel:'amber','DTA nötig':'amber',Pausiert:'amber',Tutorial:'amber',
+Beantragt:'amber','Under Review':'amber',Ausstehend:'amber','In Antrag':'amber','In Planung':'gray',Prio:'amber',Mittel:'amber','DTA nötig':'amber',Pausiert:'amber',Tutorial:'amber',
 Idee:'gray',Geplant:'gray',Offen:'gray','N/A':'gray',Abgeschlossen:'gray',Blog:'gray',Sonstiges:'gray',
 Hoch:'red',Abgelehnt:'red',Admin:'amber'};
 function pcls(v){return PILLMAP[v]||'gray';}
@@ -702,9 +710,9 @@ function fixUrl(u){if(!u)return '';return /^https?:\/\//i.test(u)?u:'https://'+u
 function toast(m,k){const t=document.getElementById('toast');t.textContent=m;t.className='toast show'+(k===true?' err':k?' '+k:'');clearTimeout(t._t);t._t=setTimeout(()=>{t.className='toast';},2200);}
 
 /* INLINE EDIT */
-function setTxt(t,id,k,el){const it=byId(t,id);if(it){it[k]=el.value;save(true);softRefresh();}}
-function setSel(t,id,k,el){const it=byId(t,id);if(it){it[k]=el.value;save(true);renderAll();}}
-function setNum(t,id,k,el){const it=byId(t,id);if(it){let v=Math.max(0,+el.value||0);if(k==='progress')v=Math.min(100,v);it[k]=v;save(true);renderAll();}}
+function setTxt(t,id,k,el){const it=byId(t,id);if(it){it[k]=el.value;touch(it);save(true);softRefresh();}}
+function setSel(t,id,k,el){const it=byId(t,id);if(it){it[k]=el.value;touch(it);save(true);renderAll();}}
+function setNum(t,id,k,el){const it=byId(t,id);if(it){let v=Math.max(0,+el.value||0);if(k==='progress')v=Math.min(100,v);it[k]=v;touch(it);save(true);renderAll();}}
 function softRefresh(){renderToday();renderOverview();renderCalendar();renderTimeline();document.getElementById('nb-todos').textContent=state.todos.filter(x=>!x.done).length;}
 function tin(t,id,k,v,st){return `<input class="cell-in" value="${esc(v||'')}" onchange="setTxt('${t}','${id}','${k}',this)"${st?' style="'+st+'"':''}>`;}
 function nin(t,id,k,v){return `<input class="cell-in" type="number" value="${v||0}" onchange="setNum('${t}','${id}','${k}',this)" style="width:92px">`;}
@@ -714,7 +722,7 @@ function pin(id,v){return `<select class="cell-sel" onchange="setSel('meetings',
 /* PROGRESS SLIDER */
 function progBg(v,c){return `linear-gradient(90deg,${c} ${v}%,var(--line) ${v}%)`;}
 function slider(t,id,k,v,c){v=+v||0;return `<div style="display:flex;align-items:center;gap:9px"><input type="range" min="0" max="100" value="${v}" class="prog" style="--thumb:${c};background:${progBg(v,c)}" oninput="progInput(this,'${t}','${id}','${k}','${c}')" onchange="renderAll()"><span class="prog-val">${v}%</span></div>`;}
-function progInput(el,t,id,k,c){const v=+el.value;el.style.background=progBg(v,c);const it=byId(t,id);if(it){it[k]=v;}save(true);const s=el.parentNode.querySelector('.prog-val');if(s)s.textContent=v+'%';}
+function progInput(el,t,id,k,c){const v=+el.value;el.style.background=progBg(v,c);const it=byId(t,id);if(it){it[k]=v;touch(it);}save(true);const s=el.parentNode.querySelector('.prog-val');if(s)s.textContent=v+'%';}
 /* ADD ROW */
 const BLANK={projects:()=>({name:'',status:'Geplant',progress:0,stand:'',desc:'',notes:'',members:[],tasks:[]}),pubs:()=>({title:'',authors:'',journal:'',stand:'',stage:'Idee'}),funding:()=>({name:'',agency:'',total:0,spent:0,start:'',end:'',status:'Beantragt'}),datasets:()=>({name:'',cases:0,ethics:'Ausstehend',dsgvo:'Offen',location:'',sharing:'Geplant'}),links:()=>({type:'Paper',title:'',url:'',desc:''}),meetings:()=>({type:'Team',date:todayStr(),title:'',participants:[],phdId:'',notes:'',items:[]})};
 const ROWID={projects:'projects-rows',pubs:'pubs-rows',funding:'fund-rows',datasets:'ds-rows',links:'links-rows',meetings:'meet-rows'};
@@ -723,8 +731,8 @@ function addRow(t){const o=Object.assign({id:uid()},BLANK[t]());state[t].push(o)
 /* TASK AGGREGATION (projects + meeting items) */
 function allTasks(){const o=[];state.projects.forEach(p=>(p.tasks||[]).forEach(t=>o.push(Object.assign({},t,{_type:'projects',_pid:p.id,_src:p.name}))));state.meetings.forEach(m=>(m.items||[]).forEach(t=>o.push(Object.assign({},t,{_type:'meetings',_pid:m.id,_src:m.title}))));return o;}
 function taskContainer(type,pid){const o=byId(type,pid);if(!o)return[];if(type==='meetings'){o.items=o.items||[];return o.items;}o.tasks=o.tasks||[];return o.tasks;}
-function toggleAssigned(type,pid,tid){const t=taskContainer(type,pid).find(x=>x.id===tid);if(t){t.done=!t.done;save(true);renderAll();}}
-function updTask(type,pid,tid,key,el){const t=taskContainer(type,pid).find(x=>x.id===tid);if(t){t[key]=el.value;save(true);renderAll();}}
+function toggleAssigned(type,pid,tid){const t=taskContainer(type,pid).find(x=>x.id===tid);if(t){t.done=!t.done;touch(byId(type,pid));save(true);renderAll();}}
+function updTask(type,pid,tid,key,el){const t=taskContainer(type,pid).find(x=>x.id===tid);if(t){t[key]=el.value;touch(byId(type,pid));save(true);renderAll();}}
 function assignedRow(t){const over=t.due&&!t.done&&t.due<todayStr();const open=t._type==='projects'?`openProject('${t._pid}')`:`openModal('meetings','${t._pid}')`;return `<div class="todo ${t.done?'done':''}"><div class="tck" onclick="toggleAssigned('${t._type}','${t._pid}','${t.id}')">${t.done?'✓':''}</div><div class="ttx" onclick="${open}">${esc(t.text)} <span class="pill pill-gray" style="font-size:9px">${t._type==='meetings'?'🗒️':'📁'} ${esc(t._src)}</span></div><div class="due-col">${t.due?`<span class="due-chip ${over?'over':''}">📅 ${fmtShort(t.due)}</span>`:'<span class="muted" style="font-size:11px">—</span>'}</div><select class="cell-sel" style="font-size:11px;max-width:94px" onchange="updTask('${t._type}','${t._pid}','${t.id}','prio',this)">${['Hoch','Mittel','Niedrig'].map(o=>`<option ${o===(t.prio||'Mittel')?'selected':''}>${o}</option>`).join('')}</select></div>`;}
 
 /* SORT & FILTER */
@@ -749,16 +757,25 @@ function ctrls(type,id){return `<span class="rowctrl"><button class="ctrl del" o
 function rowClick(e,fn){let el=e.target;while(el&&el!==e.currentTarget){if(el.nodeType===1&&(el.matches('input,select,textarea,button,a')||el.hasAttribute('onclick')))return;el=el.parentElement;}fn();}
 function avatarHtml(p,i,sz){const s=sz||20;if(p.photo)return `<span class="m-ava" style="width:${s}px;height:${s}px"><img src="${esc(p.photo)}"></span>`;return `<span class="m-ava" style="width:${s}px;height:${s}px;background:${AVA[i%4]}">${esc(p.initials||p.name.slice(0,2))}</span>`;}
 function memberChips(p){if(!p.members||!p.members.length)return '';const c=p.members.map(id=>{const t=teamById(id);if(!t)return '';return `<span class="m-chip">${avatarHtml(t,t.idx)}${esc(t.name)}</span>`;}).join('');return c?`<div class="members"><span class="m-lbl">Team</span>${c}</div>`:'';}
+function pdMemberEditor(p){
+  const mem=p.members||[];
+  const chip=id=>{const t=teamById(id);if(!t)return '';const on=mem.includes(id);return `<span class="m-chip pick ${on?'on':'off'}" onclick="pdToggleMember('${p.id}','${id}')" title="${on?'Aus dem Team entfernen':'Zum Team hinzufügen'}">${avatarHtml(t,t.idx)}${esc(t.name)}${on?' ✓':''}</span>`;};
+  const all=[...state.phds.map(x=>x.id),...(state.people||[]).map(x=>x.id)];
+  return `<div class="members" style="margin-bottom:4px"><span class="m-lbl">Team</span>${all.map(chip).join('')||'<span class="muted" style="font-size:11px">Noch niemand angelegt.</span>'}</div>
+  <div class="madd" style="max-width:430px"><input type="text" id="pd-person-name" placeholder="Neue Person – Name"><input type="text" id="pd-person-role" placeholder="Rolle (optional)" style="max-width:130px"><button type="button" class="btn btn-light btn-sm" onclick="pdAddPerson('${p.id}')">+ Person</button></div>`;
+}
+function pdToggleMember(pid,mid){const p=byId('projects',pid);if(!p)return;p.members=p.members||[];const i=p.members.indexOf(mid);if(i>=0)p.members.splice(i,1);else p.members.push(mid);touch(p);save(true);renderProjectDetail();}
+function pdAddPerson(pid){const n=document.getElementById('pd-person-name'),r=document.getElementById('pd-person-role');const name=(n.value||'').trim();if(!name){toast('Bitte einen Namen eingeben',true);return;}const person={id:uid(),name,role:(r.value||'').trim()};touch(person);if(!state.people)state.people=[];state.people.push(person);const p=byId('projects',pid);p.members=p.members||[];p.members.push(person.id);touch(p);save(true);renderProjectDetail();toast(name+' zum Team hinzugefügt ✓');}
 
 /* TODAY */
 function renderToday(){const t=todayStr(),over=[],tod=[];
   state.goals.forEach(g=>{if(!g.date)return;if(g.date<t)over.push({t:g.title,m:'Deadline überfällig',c:'#dc2626',o:1});else if(g.date===t)tod.push({t:g.title,m:'Deadline heute',c:'#b45309'});});
   state.meetings.forEach(m=>{if(m.date===t)tod.push({t:m.title,m:m.type==='1:1'?'1:1 heute':'Team-Meeting heute',c:'#7c3aed'});});
-  const tasks=[];allTasks().forEach(x=>{if(x.due&&!x.done)tasks.push({text:x.text,due:x.due,proj:x._src});});state.todos.forEach(x=>{if(x.due&&!x.done)tasks.push({text:x.text,due:x.due,proj:'Todo'});});
-  tasks.forEach(x=>{if(x.due<t)over.push({t:x.text,m:'Aufgabe überfällig · '+x.proj,c:'#dc2626',o:1});else if(x.due===t)tod.push({t:x.text,m:'Aufgabe fällig · '+x.proj,c:'#2563eb'});});
+  const tasks=[];allTasks().forEach(x=>{if(x.due&&!x.done)tasks.push({text:x.text,due:x.due,proj:x._src,act:`toggleAssigned('${x._type}','${x._pid}','${x.id}')`});});state.todos.forEach(x=>{if(x.due&&!x.done)tasks.push({text:x.text,due:x.due,proj:'Todo',act:`toggleTodo('${x.id}')`});});
+  tasks.forEach(x=>{if(x.due<t)over.push({t:x.text,m:'Aufgabe überfällig · '+x.proj,c:'#dc2626',o:1,act:x.act});else if(x.due===t)tod.push({t:x.text,m:'Aufgabe fällig · '+x.proj,c:'#2563eb',act:x.act});});
   const items=[...over,...tod],box=document.getElementById('today-box');
   if(!items.length){box.innerHTML=`<div class="card-title">☀️ Heute im Fokus</div><div style="font-size:12.5px;color:var(--muted);margin-top:8px">Nichts Dringendes für heute – alles im grünen Bereich 🎉</div>`;return;}
-  box.innerHTML=`<div class="card-title" style="margin-bottom:6px">☀️ Heute im Fokus${over.length?` · <span style="color:#dc2626">${over.length} überfällig</span>`:''}</div>`+items.slice(0,8).map(e=>`<div class="today-flag ${e.o?'today-over':''}"><span class="fdot" style="background:${e.c}"></span><div><div style="font-weight:600">${esc(e.t)}</div><div style="font-size:11px;color:var(--muted)">${esc(e.m)}</div></div></div>`).join('');
+  box.innerHTML=`<div class="card-title" style="margin-bottom:6px">☀️ Heute im Fokus${over.length?` · <span style="color:#dc2626">${over.length} überfällig</span>`:''}</div>`+items.slice(0,8).map(e=>`<div class="today-flag ${e.o?'today-over':''}">${e.act?`<div class="tck" style="margin-top:1px" title="Als erledigt markieren" onclick="${e.act}"></div>`:`<span class="fdot" style="background:${e.c}"></span>`}<div><div style="font-weight:600">${esc(e.t)}</div><div style="font-size:11px;color:var(--muted)">${esc(e.m)}</div></div></div>`).join('');
 }
 
 function renderOverview(){
@@ -823,7 +840,7 @@ function renderProjectDetail(){const p=byId('projects',curProj),el=document.getE
       <div style="flex:1;min-width:200px"><div class="m-lbl">Aktueller Stand</div>${tin('projects',p.id,'stand',p.stand)}</div>
     </div>
     <div style="margin-top:12px"><div class="m-lbl" style="margin-bottom:5px">Beschreibung</div><textarea class="cell-in" style="min-height:58px;border:1px solid var(--line)" onchange="setTxt('projects','${p.id}','desc',this)">${esc(p.desc||'')}</textarea></div>
-    ${memberChips(p)}
+    ${pdMemberEditor(p)}
   </div>
   <div class="card" style="margin-bottom:16px">
     <div class="card-head"><div class="card-title">✅ Schritte / Aufgaben <span class="muted" style="font-weight:500">(${open} offen / ${steps.length})</span></div><button class="btn btn-light btn-sm" onclick="projTaskAdd('${p.id}')">+ Schritt</button></div>
@@ -832,10 +849,10 @@ function renderProjectDetail(){const p=byId('projects',curProj),el=document.getE
   </div>
   <div class="card"><div class="card-title" style="margin-bottom:10px">📋 Notizen</div><textarea class="cell-in" style="min-height:80px;border:1px solid var(--line)" onchange="setTxt('projects','${p.id}','notes',this)">${esc(p.notes||'')}</textarea></div>`;
 }
-function projTaskAdd(pid){const p=byId('projects',pid);p.tasks=p.tasks||[];p.tasks.push({id:uid(),text:'',assignee:'me',prio:'Mittel',due:'',done:false});save(true);renderProjectDetail();}
-function projTaskUpd(pid,tid,k,el){const t=(byId('projects',pid).tasks||[]).find(x=>x.id===tid);if(t){t[k]=el.value;save(true);if(k!=='text'){renderProjectDetail();}softRefresh();}}
-function projTaskDel(pid,tid){const p=byId('projects',pid);p.tasks=(p.tasks||[]).filter(x=>x.id!==tid);save(true);renderProjectDetail();softRefresh();}
-function projTaskToggle(pid,tid){const t=(byId('projects',pid).tasks||[]).find(x=>x.id===tid);if(t){t.done=!t.done;save(true);renderProjectDetail();softRefresh();}}
+function projTaskAdd(pid){const p=byId('projects',pid);p.tasks=p.tasks||[];p.tasks.push({id:uid(),text:'',assignee:'me',prio:'Mittel',due:'',done:false});touch(p);save(true);renderProjectDetail();}
+function projTaskUpd(pid,tid,k,el){const p=byId('projects',pid),t=(p.tasks||[]).find(x=>x.id===tid);if(t){t[k]=el.value;touch(p);save(true);if(k!=='text'){renderProjectDetail();}softRefresh();}}
+function projTaskDel(pid,tid){const p=byId('projects',pid);p.tasks=(p.tasks||[]).filter(x=>x.id!==tid);touch(p);save(true);renderProjectDetail();softRefresh();}
+function projTaskToggle(pid,tid){const p=byId('projects',pid),t=(p.tasks||[]).find(x=>x.id===tid);if(t){t.done=!t.done;touch(p);save(true);renderProjectDetail();softRefresh();}}
 let dragStepCtx=null;
 function dragStep(pid,tid,e){dragStepCtx={pid,tid};e.dataTransfer.effectAllowed='move';}
 function dropStep(pid,tid,e){e.preventDefault();if(!dragStepCtx||dragStepCtx.pid!==pid)return;const arr=byId('projects',pid).tasks,from=arr.findIndex(x=>x.id===dragStepCtx.tid),to=arr.findIndex(x=>x.id===tid);if(from<0||to<0||from===to){dragStepCtx=null;return;}const[m]=arr.splice(from,1);arr.splice(to,0,m);save(true);renderProjectDetail();dragStepCtx=null;}
@@ -867,9 +884,9 @@ function renderPhd(){document.getElementById('phd-list').innerHTML=state.phds.ma
 const STAGES=['Idee','In Arbeit','Submitted','Under Review','Accepted'];
 function renderPubs(){const arr=applyTF('pubs',state.pubs,['title','authors','journal','stand','stage']);document.getElementById('pubs-rows').innerHTML=arr.map(p=>`<tr onclick="rowClick(event,()=>openModal('pubs','${p.id}'))" style="cursor:pointer"><td style="min-width:200px">${tin('pubs',p.id,'title',p.title)}</td><td>${tin('pubs',p.id,'authors',p.authors)}</td><td>${tin('pubs',p.id,'journal',p.journal)}</td><td style="min-width:150px">${tin('pubs',p.id,'stand',p.stand)}</td><td>${sin('pubs',p.id,'stage',p.stage,STAGES)}</td><td>${ctrls('pubs',p.id)}</td></tr>`).join('')+addRowHtml('pubs',6);updateSort('pubs');}
 
-function renderFunding(){const secured=state.funding.filter(f=>['Bewilligt','Laufend'].includes(f.status)).reduce((a,f)=>a+(+f.total||0),0);const spent=state.funding.reduce((a,f)=>a+(+f.spent||0),0);const pending=state.funding.filter(f=>['Beantragt','In Antrag'].includes(f.status)).reduce((a,f)=>a+(+f.total||0),0);const activeN=state.funding.filter(f=>f.status==='Laufend').length;
+function renderFunding(){const secured=state.funding.filter(f=>['Bewilligt','Laufend'].includes(f.status)).reduce((a,f)=>a+(+f.total||0),0);const spent=state.funding.reduce((a,f)=>a+(+f.spent||0),0);const pending=state.funding.filter(f=>['Beantragt','In Antrag','In Planung'].includes(f.status)).reduce((a,f)=>a+(+f.total||0),0);const activeN=state.funding.filter(f=>f.status==='Laufend').length;
   document.getElementById('fund-stats').innerHTML=`<div class="stat"><div class="lbl">Gesichert</div><div class="val" style="font-size:23px">${money(secured)}</div><div class="sub">bewilligt + laufend</div></div><div class="stat"><div class="lbl">Verbraucht</div><div class="val" style="font-size:23px">${money(spent)}</div><div class="sub">über alle Projekte</div></div><div class="stat"><div class="lbl">In Beantragung</div><div class="val" style="font-size:23px">${money(pending)}</div><div class="sub">potenziell</div></div><div class="stat"><div class="lbl">Laufende Projekte</div><div class="val" style="font-size:23px">${activeN}</div><div class="sub">von ${state.funding.length}</div></div>`;
-  const arr=applyTF('funding',state.funding,['name','agency','status']);document.getElementById('fund-rows').innerHTML=arr.map(f=>{const pct=f.total?Math.round((+f.spent||0)/f.total*100):0;return `<tr onclick="rowClick(event,()=>openModal('funding','${f.id}'))" style="cursor:pointer"><td style="min-width:190px">${tin('funding',f.id,'name',f.name)}</td><td>${tin('funding',f.id,'agency',f.agency,'width:90px')}</td><td>${nin('funding',f.id,'total',f.total)}</td><td style="min-width:150px">${nin('funding',f.id,'spent',f.spent)}<div class="bar" style="margin-top:7px"><div style="width:${pct}%;background:${FILL.teal}"></div></div></td><td>${din('funding',f.id,'start',f.start)}<div style="margin-top:4px">${din('funding',f.id,'end',f.end)}</div></td><td>${sin('funding',f.id,'status',f.status,['Beantragt','Bewilligt','Laufend','Abgeschlossen','Abgelehnt'])}</td><td>${ctrls('funding',f.id)}</td></tr>`;}).join('')+addRowHtml('funding',7);updateSort('funding');}
+  const arr=applyTF('funding',state.funding,['name','agency','status']);document.getElementById('fund-rows').innerHTML=arr.map(f=>{const pct=f.total?Math.round((+f.spent||0)/f.total*100):0;return `<tr onclick="rowClick(event,()=>openModal('funding','${f.id}'))" style="cursor:pointer"><td style="min-width:190px">${tin('funding',f.id,'name',f.name)}</td><td>${tin('funding',f.id,'agency',f.agency,'width:90px')}</td><td>${nin('funding',f.id,'total',f.total)}</td><td style="min-width:150px">${nin('funding',f.id,'spent',f.spent)}<div class="bar" style="margin-top:7px"><div style="width:${pct}%;background:${FILL.teal}"></div></div></td><td>${din('funding',f.id,'start',f.start)}<div style="margin-top:4px">${din('funding',f.id,'end',f.end)}</div></td><td>${sin('funding',f.id,'status',f.status,['In Planung','Beantragt','Bewilligt','Laufend','Abgeschlossen','Abgelehnt'])}</td><td>${ctrls('funding',f.id)}</td></tr>`;}).join('')+addRowHtml('funding',7);updateSort('funding');}
 
 function renderDatasets(){const arr=applyTF('datasets',state.datasets,['name','ethics','dsgvo','location','sharing']);document.getElementById('ds-rows').innerHTML=arr.map(d=>`<tr onclick="rowClick(event,()=>openModal('datasets','${d.id}'))" style="cursor:pointer"><td style="min-width:180px">${tin('datasets',d.id,'name',d.name)}</td><td>${nin('datasets',d.id,'cases',d.cases)}</td><td>${sin('datasets',d.id,'ethics',d.ethics,['Bewilligt','In Antrag','Ausstehend','N/A'])}</td><td>${sin('datasets',d.id,'dsgvo',d.dsgvo,['Konform','Anonymisiert','DTA nötig','Offen'])}</td><td>${tin('datasets',d.id,'location',d.location)}</td><td>${sin('datasets',d.id,'sharing',d.sharing,['Intern','Öffentlich','Kooperation','Geplant'])}</td><td>${ctrls('datasets',d.id)}</td></tr>`).join('')+addRowHtml('datasets',7);updateSort('datasets');}
 
@@ -890,7 +907,7 @@ function renderMeetings(){let list=applyTF('meetings',state.meetings,['title','n
   document.getElementById('meet-rows').innerHTML=list.map(m=>{const parts=(m.participants&&m.participants.length?m.participants:(m.phdId?[m.phdId]:[]));const pav=parts.map(id=>{const ph=phdById(id);return ph?`<span title="${esc(ph.name)}" style="margin-left:-4px">${avatarHtml(ph,phdIdx(id),24)}</span>`:'';}).join('');const ni=(m.items||[]).length,nd=(m.items||[]).filter(x=>!x.done).length;return `<tr onclick="rowClick(event,()=>openModal('meetings','${m.id}'))" style="cursor:pointer"><td>${sin('meetings',m.id,'type',m.type,['1:1','Team'])}</td><td>${din('meetings',m.id,'date',m.date)}</td><td style="min-width:200px">${tin('meetings',m.id,'title',m.title)}</td><td><span style="display:inline-flex;padding-left:4px">${pav||'<span class="muted">—</span>'}</span></td><td class="muted" style="white-space:nowrap">${ni?nd+' offen / '+ni:'—'}</td><td>${ctrls('meetings',m.id)}</td></tr>`;}).join('')+addRowHtml('meetings',6);updateSort('meetings');}
 
 /* CRUD */
-function toggleTodo(id){const t=byId('todos',id);if(t){t.done=!t.done;save(true);renderAll();}}
+function toggleTodo(id){const t=byId('todos',id);if(t){t.done=!t.done;touch(t);save(true);renderAll();}}
 function toggleTask(pid,id){const p=byId('projects',pid);if(!p)return;const t=(p.tasks||[]).find(x=>x.id===id);if(t){t.done=!t.done;save(true);renderAll();}}
 function delItem(type,id){if(!confirm('Wirklich löschen?'))return;if(!state._deleted)state._deleted=[];state._deleted.push(id);state[type]=state[type].filter(x=>x.id!==id);if(type==='phds'){state.projects.forEach(p=>{if(p.members)p.members=p.members.filter(m=>m!==id);if(p.tasks)p.tasks.forEach(t=>{if(t.assignee===id)t.assignee='me';});});state.meetings.forEach(m=>{if(m.phdId===id)m.phdId='';});}save();renderAll();if(modalCtx)closeModal();}
 
@@ -907,7 +924,7 @@ const SCHEMAS={
   todos:{title:'Todo',fields:[{k:'text',l:'Aufgabe',t:'text',req:1},{k:'tag',l:'Kategorie',t:'sel',opts:['Paper','Code','Admin','Sonstiges']},{k:'prio',l:'Dringlichkeit',t:'sel',opts:['Hoch','Mittel','Niedrig']},{k:'due',l:'Fällig am (optional)',t:'date'}]},
   phds:{title:'Doktorand/in',fields:[{k:'name',l:'Name',t:'text',req:1},{k:'photo',l:'Foto',t:'image'},{k:'initials',l:'Initialen (falls kein Foto)',t:'text'},{k:'topic',l:'Thema der Dissertation',t:'text'},{k:'year',l:'Jahr / Start',t:'text'},{k:'progress',l:'Fortschritt %',t:'pct'},{k:'needs',l:'Was wird gerade gebraucht?',t:'ta'},{k:'milestones',l:'Meilensteine',t:'ta',hint:'Eine pro Zeile · „x " erledigt, „> " aktuell, „- " geplant'}]},
   pubs:{title:'Publikation',fields:[{k:'title',l:'Titel',t:'text',req:1},{k:'authors',l:'Autoren',t:'text'},{k:'journal',l:'Journal / Konferenz',t:'text'},{k:'stand',l:'Aktueller Stand',t:'text'},{k:'stage',l:'Phase',t:'sel',opts:STAGES}]},
-  funding:{title:'Förderung',fields:[{k:'name',l:'Name',t:'text',req:1},{k:'agency',l:'Geldgeber',t:'text'},{k:'total',l:'Gesamtvolumen (€)',t:'num'},{k:'spent',l:'Verbraucht (€)',t:'num'},{k:'start',l:'Beginn',t:'date'},{k:'end',l:'Ende',t:'date'},{k:'status',l:'Status',t:'sel',opts:['Beantragt','Bewilligt','Laufend','Abgeschlossen','Abgelehnt']}]},
+  funding:{title:'Förderung',fields:[{k:'name',l:'Name',t:'text',req:1},{k:'agency',l:'Geldgeber',t:'text'},{k:'total',l:'Gesamtvolumen (€)',t:'num'},{k:'spent',l:'Verbraucht (€)',t:'num'},{k:'start',l:'Beginn',t:'date'},{k:'end',l:'Ende',t:'date'},{k:'status',l:'Status',t:'sel',opts:['In Planung','Beantragt','Bewilligt','Laufend','Abgeschlossen','Abgelehnt']}]},
   datasets:{title:'Datensatz',fields:[{k:'name',l:'Name / Kohorte',t:'text',req:1},{k:'cases',l:'Anzahl Fälle',t:'num'},{k:'ethics',l:'Ethikvotum',t:'sel',opts:['Bewilligt','In Antrag','Ausstehend','N/A']},{k:'dsgvo',l:'DSGVO-Status',t:'sel',opts:['Konform','Anonymisiert','DTA nötig','Offen']},{k:'location',l:'Speicherort',t:'text'},{k:'sharing',l:'Sharing',t:'sel',opts:['Intern','Öffentlich','Kooperation','Geplant']}]},
   links:{title:'Studie / Link',fields:[{k:'type',l:'Art',t:'sel',opts:['Paper','Dataset','Tool','Tutorial','Blog','Sonstiges']},{k:'title',l:'Titel',t:'text',req:1},{k:'url',l:'Link (URL)',t:'text'},{k:'desc',l:'Kurze Beschreibung',t:'ta'}]},
   meetings:{title:'Protokoll',wide:1,fields:[{k:'type',l:'Art',t:'sel',opts:['1:1','Team']},{k:'date',l:'Datum',t:'date'},{k:'title',l:'Titel / Thema',t:'text',req:1},{k:'participants',l:'Teilnehmer',t:'members'},{k:'notes',l:'Notizen / Protokoll',t:'ta'},{k:'items',l:'Action Items (jeweils Verantwortliche/n setzen → erscheint in deren Todos)',t:'tasks'}]},
@@ -935,7 +952,7 @@ function saveModal(){if(!modalCtx)return;const{type,id}=modalCtx,fields=SCHEMAS[
   const te=document.querySelector('#m-body [data-tk]');if(te)data[te.dataset.tk]=[...te.querySelectorAll('.task-row')].map(r=>({id:r.dataset.id||uid(),text:r.querySelector('.t-text').value.trim(),assignee:r.querySelector('.t-asg').value,prio:r.querySelector('.t-prio').value,due:r.querySelector('.t-due').value,done:r.dataset.done==='1'})).filter(t=>t.text);
   const ip=document.querySelector('#m-body [data-img]');if(ip){const prev=document.getElementById('img-prev');data[ip.dataset.img]=(prev&&prev.style.display!=='none'&&prev.src&&prev.src.indexOf('data:')===0)?prev.src:'';}
   const rf=fields.find(f=>f.req);if(rf&&!String(data[rf.k]||'').trim()){toast('Bitte „'+rf.l+'" ausfüllen',true);return;}
-  if(id){Object.assign(byId(type,id),data);}else{data.id=uid();if(type==='todos')data.done=false;state[type].push(data);}
+  if(id){const it=byId(type,id);Object.assign(it,data);touch(it);}else{data.id=uid();if(type==='todos')data.done=false;touch(data);state[type].push(data);}
   save();renderAll();closeModal();}
 
 /* COMMAND PALETTE */
