@@ -81,7 +81,8 @@
           "assignee": "me",
           "prio": "Hoch",
           "due": "2026-07-05",
-          "done": false
+          "done": true,
+          "doneAt": 1783840059775
         },
         {
           "id": "mqwrd4pv75e2",
@@ -91,7 +92,8 @@
           "due": "2026-07-12",
           "done": false
         }
-      ]
+      ],
+      "_m": 1783840059775
     },
     {
       "id": "mqybplev7ivk",
@@ -221,11 +223,11 @@
           "assignee": "me",
           "prio": "Mittel",
           "due": "",
-          "done": true,
-          "doneAt": 1783765033160
+          "done": false,
+          "doneAt": 0
         }
       ],
-      "_m": 1783765033160
+      "_m": 1783765037634
     },
     {
       "id": "mqyz9zsbluvx",
@@ -791,7 +793,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1783765033202,
+  "_syncTs": 1783840059875,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
