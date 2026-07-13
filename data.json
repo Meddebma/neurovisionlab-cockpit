@@ -489,14 +489,6 @@
       "_m": 1783970209563
     },
     {
-      "id": "mqwpomvaf6my",
-      "text": "DFG Antrag Outline erstellen (Kapitel 1-3)",
-      "tag": "",
-      "due": "2026-07-15",
-      "done": false,
-      "prio": "Hoch"
-    },
-    {
       "id": "mqwpomvatgux",
       "text": "Pituitary gland: sellar atlas ROI via MNI-Reg",
       "tag": "Code",
@@ -997,7 +989,7 @@
       ]
     }
   ],
-  "_syncTs": 1783970220841,
+  "_syncTs": 1783970261708,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
