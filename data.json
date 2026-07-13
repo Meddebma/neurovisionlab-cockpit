@@ -505,14 +505,6 @@
       "prio": "Mittel"
     },
     {
-      "id": "mqwpomvalxjt",
-      "text": "Multi-Case Statistik für VLM-Studie (≥10)",
-      "tag": "Paper",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
       "id": "mqwpomva2zg7",
       "text": "VS-Fall laden & VS-Seg Dice validieren",
       "tag": "Paper",
@@ -1013,7 +1005,7 @@
       ]
     }
   ],
-  "_syncTs": 1783970209599,
+  "_syncTs": 1783970218028,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
