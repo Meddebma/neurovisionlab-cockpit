@@ -505,14 +505,6 @@
       "prio": "Mittel"
     },
     {
-      "id": "mqwpomva2zg7",
-      "text": "VS-Fall laden & VS-Seg Dice validieren",
-      "tag": "Paper",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
       "id": "mqwpomvazwym",
       "text": "Arm C (Lesion Branch) implementieren",
       "tag": "Code",
@@ -1005,7 +997,7 @@
       ]
     }
   ],
-  "_syncTs": 1783970218028,
+  "_syncTs": 1783970220841,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
