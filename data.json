@@ -72,7 +72,7 @@
       "progress": 48,
       "stand": "waiting for 2 last ratings",
       "desc": "Rating of ICANS Patients of Berlin",
-      "notes": "https://drks.de/search/de/trial/DRKS00031604\nLiteratur:\nhttps://link.springer.com/article/10.1007/s00415-026-13638-y\n",
+      "notes": "https://drks.de/search/de/trial/DRKS00031604\nLiteratur:\nhttps://link.springer.com/article/10.1007/s00415-026-13638-y\nhttps://www.neurology.org/doi/10.1212/WNL.0000000000214086\nhttps://onlinelibrary.wiley.com/doi/10.1111/jon.70115\n",
       "members": [],
       "tasks": [
         {
@@ -93,7 +93,7 @@
           "done": false
         }
       ],
-      "_m": 1784016916334
+      "_m": 1784017021927
     },
     {
       "id": "mqybplev7ivk",
@@ -793,7 +793,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1784016916368,
+  "_syncTs": 1784017021947,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
