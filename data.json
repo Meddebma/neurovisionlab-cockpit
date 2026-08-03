@@ -91,9 +91,17 @@
           "prio": "Mittel",
           "due": "2026-07-12",
           "done": false
+        },
+        {
+          "id": "mscvyk31b76w",
+          "text": "",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
         }
       ],
-      "_m": 1784017021927
+      "_m": 1785740790062
     },
     {
       "id": "mqybplev7ivk",
@@ -352,9 +360,10 @@
       "title": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
       "detail": "Antrag beim BMFTR",
       "cat": "💰 Antrag",
-      "date": "2026-07-31",
+      "date": "2026-08-06",
       "priority": "Hoch",
-      "id": "mqz4vf49c9f4"
+      "id": "mqz4vf49c9f4",
+      "_m": 1785740715007
     },
     {
       "title": "DFG Antrag ICANS",
@@ -796,7 +805,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1785740692798,
+  "_syncTs": 1785740790096,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
