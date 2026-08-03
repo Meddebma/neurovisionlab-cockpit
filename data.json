@@ -85,23 +85,31 @@
           "doneAt": 1783840059775
         },
         {
+          "id": "mscvyk31b76w",
+          "text": "Neue Patienten einschließen",
+          "assignee": "mqwpqnob5gvv",
+          "prio": "Mittel",
+          "due": "2026-08-09",
+          "done": false
+        },
+        {
+          "id": "mscvz4t2bw6f",
+          "text": "Skript Brain Age für die Gesamtkohorte",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-08-21",
+          "done": false
+        },
+        {
           "id": "mqwrd4pv75e2",
           "text": "Calibration session",
           "assignee": "me",
           "prio": "Mittel",
-          "due": "2026-07-12",
-          "done": false
-        },
-        {
-          "id": "mscvyk31b76w",
-          "text": "",
-          "assignee": "me",
-          "prio": "Mittel",
-          "due": "",
+          "due": "2026-08-23",
           "done": false
         }
       ],
-      "_m": 1785740790062
+      "_m": 1785740844881
     },
     {
       "id": "mqybplev7ivk",
@@ -805,7 +813,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1785740790096,
+  "_syncTs": 1785740972919,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
