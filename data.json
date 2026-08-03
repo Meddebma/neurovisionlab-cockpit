@@ -331,7 +331,8 @@
           "assignee": "mqwrzhu6y2ge",
           "prio": "Mittel",
           "due": "2026-07-19",
-          "done": false
+          "done": true,
+          "doneAt": 1785740692761
         },
         {
           "id": "mrg0sk76c9jo",
@@ -343,7 +344,7 @@
           "doneAt": 1784096878058
         }
       ],
-      "_m": 1784096878058
+      "_m": 1785740692761
     }
   ],
   "goals": [
@@ -795,7 +796,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1784096878096,
+  "_syncTs": 1785740692798,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
