@@ -323,7 +323,7 @@
       "id": "mrchz3ppdkj6",
       "name": "ICANS DFG Antrag",
       "status": "Geplant",
-      "progress": 0,
+      "progress": 23,
       "stand": "",
       "desc": "",
       "notes": "",
@@ -337,7 +337,8 @@
           "due": "",
           "done": false
         }
-      ]
+      ],
+      "_m": 1785741142036
     },
     {
       "id": "mrg0pbwbvavd",
@@ -698,8 +699,9 @@
       "spent": 0,
       "start": "",
       "end": "",
-      "status": "Beantragt",
-      "id": "mrceokrwucm6"
+      "status": "In Planung",
+      "id": "mrceokrwucm6",
+      "_m": 1785741092163
     },
     {
       "id": "mrcep3ngvdw9",
@@ -719,7 +721,8 @@
       "spent": 0,
       "start": "",
       "end": "",
-      "status": "Beantragt"
+      "status": "In Planung",
+      "_m": 1785741094799
     },
     {
       "id": "mrg16xag1dej",
@@ -729,7 +732,8 @@
       "spent": 0,
       "start": "",
       "end": "",
-      "status": "Beantragt"
+      "status": "In Planung",
+      "_m": 1785741096714
     }
   ],
   "datasets": [
@@ -822,7 +826,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1785741078626,
+  "_syncTs": 1785741142116,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
