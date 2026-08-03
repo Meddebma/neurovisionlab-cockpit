@@ -107,9 +107,17 @@
           "prio": "Mittel",
           "due": "2026-08-23",
           "done": false
+        },
+        {
+          "id": "mscw2pj7hgee",
+          "text": "Fertige 2. Runde",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-09-06",
+          "done": false
         }
       ],
-      "_m": 1785740844881
+      "_m": 1785741003642
     },
     {
       "id": "mqybplev7ivk",
@@ -680,7 +688,8 @@
       "spent": 0,
       "start": "",
       "end": "",
-      "status": "Beantragt"
+      "status": "In Planung",
+      "_m": 1785741078571
     },
     {
       "name": "LOFI-STROKE",
@@ -813,7 +822,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1785740972919,
+  "_syncTs": 1785741078626,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
