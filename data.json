@@ -829,9 +829,31 @@
       "phdId": "",
       "notes": "",
       "items": []
+    },
+    {
+      "id": "mshfafpc4t3p",
+      "type": "Team",
+      "date": "2026-08-06",
+      "title": "",
+      "participants": [],
+      "phdId": "",
+      "notes": "",
+      "items": []
+    },
+    {
+      "type": "1:1",
+      "date": "2026-08-06",
+      "title": "ICANS Update",
+      "notes": "8-16.08 Urlaub\n17-23. In Berlin\n23.08-06.09 nochmal Urlaub\nAb Oktober 10. Semester, und PJ ab 2027",
+      "participants": [
+        "mqwpqnob5gvv"
+      ],
+      "items": [],
+      "id": "mshgfrz4tamc",
+      "_m": 1786017050464
     }
   ],
-  "_syncTs": 1786015119103,
+  "_syncTs": 1786017050904,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
