@@ -285,7 +285,8 @@
           "assignee": "me",
           "prio": "Mittel",
           "due": "2026-08-30",
-          "done": false
+          "done": true,
+          "doneAt": 1786009830615
         },
         {
           "id": "mr3mt21r3z4f",
@@ -295,7 +296,8 @@
           "due": "",
           "done": false
         }
-      ]
+      ],
+      "_m": 1786009830615
     },
     {
       "name": "NeurovisionLab Rating Platform",
@@ -817,8 +819,19 @@
       "desc": "Brain foundation model trained and finetuned on different tasks"
     }
   ],
-  "meetings": [],
-  "_syncTs": 1786009802574,
+  "meetings": [
+    {
+      "id": "mshfadp2ioqp",
+      "type": "Team",
+      "date": "2026-08-06",
+      "title": "",
+      "participants": [],
+      "phdId": "",
+      "notes": "",
+      "items": []
+    }
+  ],
+  "_syncTs": 1786015119103,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
