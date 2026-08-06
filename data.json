@@ -334,11 +334,11 @@
           "text": "August sowohl Masterarbeit als auch DFG Antrag schreiben",
           "assignee": "me",
           "prio": "Mittel",
-          "due": "",
+          "due": "2026-08-20",
           "done": false
         }
       ],
-      "_m": 1785741142036
+      "_m": 1785741157624
     },
     {
       "id": "mrg0pbwbvavd",
@@ -690,7 +690,7 @@
       "start": "",
       "end": "",
       "status": "In Planung",
-      "_m": 1785741078571
+      "_m": 1786009670328
     },
     {
       "name": "LOFI-STROKE",
@@ -826,7 +826,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1785741142116,
+  "_syncTs": 1786009670371,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
