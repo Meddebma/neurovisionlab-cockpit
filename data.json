@@ -399,14 +399,6 @@
       "id": "mrg13jqoe5gf"
     },
     {
-      "title": "ERC Starting grant",
-      "detail": "Ausformulierung Idea: Digital Twin for Neurotoxicity\n",
-      "cat": "💰 Antrag",
-      "date": "2026-09-16",
-      "priority": "Hoch",
-      "id": "mrg14lhkbm9k"
-    },
-    {
       "title": "Deep Spin KMU BMFTR-  LOFI Stroke",
       "detail": "LOFI Stroke",
       "cat": "💰 Antrag",
@@ -685,12 +677,12 @@
       "id": "mqyugque9mr2",
       "name": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
       "agency": "BFMTR",
-      "total": 0,
+      "total": 355120,
       "spent": 0,
       "start": "",
       "end": "",
-      "status": "In Planung",
-      "_m": 1786009670328
+      "status": "Beantragt",
+      "_m": 1786009712244
     },
     {
       "name": "LOFI-STROKE",
@@ -826,7 +818,7 @@
     }
   ],
   "meetings": [],
-  "_syncTs": 1786009670371,
+  "_syncTs": 1786009802574,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -850,7 +842,8 @@
     "mqwpomvar9pq",
     "mqwpomvaq45k",
     "mqwpomvauqmz",
-    "mqwpomvalkk3"
+    "mqwpomvalkk3",
+    "mrg14lhkbm9k"
   ],
   "people": []
 }
