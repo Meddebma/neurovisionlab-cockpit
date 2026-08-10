@@ -404,14 +404,6 @@
       "priority": "Hoch"
     },
     {
-      "id": "mqwpomvar7cg",
-      "title": "DFG – KI-gestützte Neuronavigation",
-      "detail": "Sachbeihilfe · Vollantrag Aug 2026",
-      "cat": "💰 Antrag",
-      "date": "2026-08-31",
-      "priority": "Hoch"
-    },
-    {
       "id": "mqwpomvaq45k",
       "title": "VS-Seg Validierung – Schwannoma",
       "detail": "Dice/Detection klinische Kohorte",
@@ -1083,7 +1075,7 @@
       "_m": 1786017050464
     }
   ],
-  "_syncTs": 1786376544256,
+  "_syncTs": 1786386694042,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
