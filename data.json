@@ -463,30 +463,6 @@
   ],
   "todos": [
     {
-      "id": "mqwpomvatgux",
-      "text": "Pituitary gland: sellar atlas ROI via MNI-Reg",
-      "tag": "Code",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
-      "id": "mqwpomvalxjt",
-      "text": "Multi-Case Statistik für VLM-Studie (≥10)",
-      "tag": "Paper",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
-      "id": "mqwpomva2zg7",
-      "text": "VS-Fall laden & VS-Seg Dice validieren",
-      "tag": "Paper",
-      "due": "",
-      "done": false,
-      "prio": "Mittel"
-    },
-    {
       "id": "mqwpomvazwym",
       "text": "Arm C (Lesion Branch) implementieren",
       "tag": "Code",
@@ -830,14 +806,27 @@
       "id": "mt1cg3rqfaqj",
       "type": "Team",
       "date": "2026-08-20",
-      "title": "",
-      "participants": [],
+      "title": "Meeting with Deepspin",
+      "participants": [
+        "mt1cgq5dwp34",
+        "mt1clv6ig3kz"
+      ],
       "phdId": "",
-      "notes": "",
-      "items": []
+      "notes": "Sehr nettes Treffen, Vision von Deepspin ist im Segment der interventionellen Radiologie\nAymen hat den Schwerpunkt eher auf die Diagnostik gelegt. \nDeepspin wird sich entscheiden, ob sie KMU mit Neuroradiologie oder mit Brustmedizin sich wieder bewerben, chancen sind jedoch nicht so hoch, weil sie schonmal KMU hatten. \n",
+      "items": [
+        {
+          "id": "mt1cmgknjjld",
+          "text": "Deepspin kontaktiert Aymen wegen KMU Antrag",
+          "assignee": "mt1clv6ig3kz",
+          "prio": "Mittel",
+          "due": "2026-09-07",
+          "done": false
+        }
+      ],
+      "_m": 1787219967335
     }
   ],
-  "_syncTs": 1787219940503,
+  "_syncTs": 1787220000170,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
