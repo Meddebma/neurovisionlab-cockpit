@@ -39,15 +39,12 @@
     },
     {
       "id": "mqwpomval5dv",
-      "name": "neuro-label Plattform",
+      "name": "NeurovisionLab Annotation Platform",
       "desc": "MRI Segmentierungs- & Analyseplattform. Engines: SynthSeg+, BrainAgeNeXt, VS-Seg, GoAT/BraTS, SAM-Med3D.",
       "status": "Aktiv",
       "progress": 85,
       "stand": "Pituitary-ROI in Integration",
-      "members": [
-        "mqwpomvaz1io",
-        "mqwpomva41co"
-      ],
+      "members": [],
       "tasks": [
         {
           "id": "mqwpomvauk6f",
@@ -60,35 +57,13 @@
         {
           "id": "mqwpomvajjzv",
           "text": "Study-Panel UI bauen",
-          "assignee": "mqwpomva41co",
+          "assignee": "me",
           "due": "",
-          "done": false,
+          "done": true,
           "prio": "Mittel"
         }
       ],
       "notes": "Stack: FastAPI · React/TS · PyTorch · FreeSurfer · ANTs."
-    },
-    {
-      "id": "mqwpomva7z7y",
-      "name": "VS-Seg Validierung",
-      "desc": "Klinische Validierung des VS-Seg UNet2d5 Modells auf vestibulären Schwannomen.",
-      "status": "Review",
-      "progress": 40,
-      "stand": "Wartet auf VS-Fälle",
-      "members": [
-        "mqwpomvaz1io"
-      ],
-      "tasks": [
-        {
-          "id": "mqwpomvah77i",
-          "text": "VS-Fall auf Disk laden",
-          "assignee": "mqwpomvaz1io",
-          "due": "",
-          "done": false,
-          "prio": "Mittel"
-        }
-      ],
-      "notes": "Nächste Schritte: VS-Fall laden · Dice/Detection."
     },
     {
       "id": "mqwrbhs9cw7a",
@@ -192,6 +167,14 @@
           "assignee": "mqwrae6zh407",
           "prio": "Mittel",
           "due": "2026-07-12",
+          "done": true
+        },
+        {
+          "id": "mrg0nixh4c12",
+          "text": "Review framework überlegen, wie viele Reviewer, welche Metrics",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-08-23",
           "done": false
         }
       ]
@@ -396,47 +379,6 @@
   ],
   "goals": [
     {
-      "id": "mqwpomvar9pq",
-      "title": "Anatomy-augmented Agentic VLM – Paper",
-      "detail": "Arme A/B/C · MICCAI 2026",
-      "cat": "📄 Paper",
-      "date": "2026-07-10",
-      "priority": "Hoch"
-    },
-    {
-      "id": "mqwpomvaq45k",
-      "title": "VS-Seg Validierung – Schwannoma",
-      "detail": "Dice/Detection klinische Kohorte",
-      "cat": "📄 Paper",
-      "date": "2026-10-31",
-      "priority": "Mittel"
-    },
-    {
-      "id": "mqwpomvauqmz",
-      "title": "Study Panel UI – Blinded Reader",
-      "detail": "Verblindete Reader-Studie",
-      "cat": "🔬 Projekt",
-      "date": "2026-09-30",
-      "priority": "Mittel"
-    },
-    {
-      "id": "mqwpomvalkk3",
-      "title": "EU Horizon – Multimodal Neuroimaging",
-      "detail": "Konsortium · Call HORIZON-HLTH-2027",
-      "cat": "💰 Antrag",
-      "date": "2027-01-15",
-      "priority": "Niedrig"
-    },
-    {
-      "title": "HOMAGE: Hormonal and Molecular Advancements in Gender-sensitive Meningioma Research",
-      "detail": "Antrag beim BMFTR",
-      "cat": "💰 Antrag",
-      "date": "2026-08-06",
-      "priority": "Hoch",
-      "id": "mqz4vf49c9f4",
-      "_m": 1785740715007
-    },
-    {
       "title": "DFG Antrag ICANS",
       "detail": "Warten auf Preprint",
       "cat": "💰 Antrag",
@@ -451,14 +393,6 @@
       "date": "2026-09-01",
       "priority": "Hoch",
       "id": "mrg13jqoe5gf"
-    },
-    {
-      "title": "ERC Starting grant",
-      "detail": "Ausformulierung Idea: Digital Twin for Neurotoxicity\n",
-      "cat": "💰 Antrag",
-      "date": "2026-09-16",
-      "priority": "Hoch",
-      "id": "mrg14lhkbm9k"
     },
     {
       "title": "Deep Spin KMU BMFTR-  LOFI Stroke",
@@ -529,19 +463,25 @@
   ],
   "todos": [
     {
-      "id": "mqwpomvai373",
-      "text": "VLM Paper Draft finalisieren – Arm A/B/C",
-      "tag": "",
-      "due": "2026-07-05",
-      "done": true,
-      "prio": "Hoch",
-      "doneAt": 1783970209563,
-      "_m": 1783970209563
-    },
-    {
       "id": "mqwpomvatgux",
       "text": "Pituitary gland: sellar atlas ROI via MNI-Reg",
       "tag": "Code",
+      "due": "",
+      "done": false,
+      "prio": "Mittel"
+    },
+    {
+      "id": "mqwpomvalxjt",
+      "text": "Multi-Case Statistik für VLM-Studie (≥10)",
+      "tag": "Paper",
+      "due": "",
+      "done": false,
+      "prio": "Mittel"
+    },
+    {
+      "id": "mqwpomva2zg7",
+      "text": "VS-Fall laden & VS-Seg Dice validieren",
+      "tag": "Paper",
       "due": "",
       "done": false,
       "prio": "Mittel"
@@ -573,45 +513,12 @@
   ],
   "phds": [
     {
-      "id": "mqwpomvaz1io",
-      "name": "Doktorand/in 1",
-      "initials": "D1",
-      "photo": "",
-      "topic": "Foundation Models für Hirntumor-Seg.",
-      "year": "3. Jahr · seit Okt 2023",
-      "progress": 65,
-      "needs": "Feedback zu Kapitel 3 · GPU-Zugang",
-      "milestones": "x Literaturarbeit abgeschlossen\nx Datenbasis (BraTS + intern)\n> Kapitel 3: Modellentwicklung\n- Validierung klinische Kohorte\n- Abgabe: Q2 2027"
-    },
-    {
-      "id": "mqwpomvaecep",
-      "name": "Doktorand/in 2",
-      "initials": "D2",
-      "photo": "",
-      "topic": "VLM-basierte Neuro-Onkologie-Diagnose",
-      "year": "2. Jahr · seit Apr 2024",
-      "progress": 45,
-      "needs": "Annotierte MRT-Fälle (min. 20) · Methodenberatung",
-      "milestones": "x Exposé genehmigt\nx VLM-Pilotstudie (Arm A/B)\n> Multi-Case Erweiterung\n- Klinische Reader-Studie\n- Abgabe: Q4 2027"
-    },
-    {
-      "id": "mqwpomva41co",
-      "name": "Doktorand/in 3",
-      "initials": "D3",
-      "photo": "",
-      "topic": "Brain-Age Biomarker in Neurologie",
-      "year": "1. Jahr · seit Jan 2026",
-      "progress": 20,
-      "needs": "Zugang klinische Kohorte · Exposé-Feedback bis Ende Juli",
-      "milestones": "x Einarbeitung abgeschlossen\n> Exposé in Bearbeitung\n- Pilotstudie Brain-Age Kohorte\n- Paper #1 einreichen\n- Abgabe: Q2 2029"
-    },
-    {
       "name": "Philipe Ebert",
       "initials": "PE",
-      "topic": "Automatisierte LLM gestützte Extraktion klinischer Daten",
+      "topic": "Automated  LLM assisted exctraction of clinical data",
       "year": "03/2024",
       "progress": 63,
-      "needs": "",
+      "needs": "Dissertation soll bald zu Jawed geschickt werden",
       "milestones": "x Paper publiziert\n> Manuskript geschrieben\n- Dissertation einreichen",
       "photo": "",
       "id": "mqwpqnob5gvv"
@@ -621,8 +528,8 @@
       "initials": "LR",
       "topic": "LLM assisted Protocol Generation in Neuroradiology ",
       "year": "06/2024",
-      "progress": 0,
-      "needs": "Manuskript lesen von Michael Scheel",
+      "progress": 61,
+      "needs": "Michael Scheel soll die Dissertation lesen",
       "milestones": "x Paper publiziert\n> Dissertation einreichen",
       "photo": "",
       "id": "mqwqo2q07rx3"
@@ -743,44 +650,14 @@
   ],
   "funding": [
     {
-      "id": "mqwpomva4rs2",
-      "name": "DFG Sachbeihilfe – KI-Neuronavigation",
-      "agency": "DFG",
-      "total": 420000,
-      "spent": 0,
-      "start": "2026-09-01",
-      "end": "2029-08-31",
-      "status": "Beantragt"
-    },
-    {
       "id": "mqwpomva4hk0",
       "name": "Charité Clinician Scientist Programm",
       "agency": "Charité",
-      "total": 120000,
-      "spent": 48000,
-      "start": "2025-01-01",
-      "end": "2027-12-31",
-      "status": "Laufend"
-    },
-    {
-      "id": "mqwpomvar0zh",
-      "name": "BMBF Verbundprojekt NeuroAI",
-      "agency": "BMBF",
-      "total": 680000,
-      "spent": 210000,
-      "start": "2024-04-01",
-      "end": "2027-03-31",
-      "status": "Laufend"
-    },
-    {
-      "id": "mqwpomva14i5",
-      "name": "EU Horizon – Multimodal Neuroimaging",
-      "agency": "EU",
-      "total": 1500000,
+      "total": 0,
       "spent": 0,
-      "start": "2027-01-01",
-      "end": "2030-12-31",
-      "status": "Beantragt"
+      "start": "2025-01-01",
+      "end": "2027-09-01",
+      "status": "Laufend"
     },
     {
       "id": "mqxi5uj83nb4",
@@ -938,111 +815,6 @@
   ],
   "meetings": [
     {
-      "id": "mqwpomvaw6nz",
-      "type": "1:1",
-      "phdId": "",
-      "participants": [
-        "mqwpomvaz1io"
-      ],
-      "date": "2026-06-22",
-      "title": "Kapitel 3 – Modellentwicklung Review",
-      "notes": "Architektur des Foundation-Modells durchgesprochen. Encoder-Wahl überzeugend, Validierungsdesign schärfen. GPU-Engpass diskutiert.",
-      "items": [
-        {
-          "id": "mqwpomvab63z",
-          "text": "Draft Kapitel 3 bis 30.06. überarbeiten",
-          "assignee": "mqwpomvaz1io",
-          "prio": "Hoch",
-          "due": "2026-06-30",
-          "done": false
-        },
-        {
-          "id": "mqwpomvaas1z",
-          "text": "GPU-Kontingent beim RZ anfragen",
-          "assignee": "me",
-          "prio": "Mittel",
-          "due": "",
-          "done": true
-        },
-        {
-          "id": "mqwpomvaxt9p",
-          "text": "Baseline-Vergleich mit nnU-Net ergänzen",
-          "assignee": "mqwpomvaz1io",
-          "prio": "Mittel",
-          "due": "",
-          "done": false
-        }
-      ]
-    },
-    {
-      "id": "mqwpomva4qou",
-      "type": "Team",
-      "phdId": "",
-      "participants": [
-        "mqwpomvaz1io",
-        "mqwpomvaecep",
-        "mqwpomva41co"
-      ],
-      "date": "2026-06-18",
-      "title": "Wöchentliches Lab-Meeting",
-      "notes": "Statusrunde aller Projekte. VLM auf Kurs für MICCAI. VS-Seg wartet auf Fälle.",
-      "items": [
-        {
-          "id": "mqwpomvao9uu",
-          "text": "VLM Multi-Case-Lauf bis KW27",
-          "assignee": "me",
-          "prio": "Hoch",
-          "due": "",
-          "done": true
-        },
-        {
-          "id": "mqwpomvasmct",
-          "text": "Datensatz-Register aktualisieren",
-          "assignee": "mqwpomvaecep",
-          "prio": "Mittel",
-          "due": "",
-          "done": false
-        },
-        {
-          "id": "mqwpomvalp5b",
-          "text": "Journal-Club Thema festlegen",
-          "assignee": "me",
-          "prio": "Niedrig",
-          "due": "",
-          "done": true
-        }
-      ]
-    },
-    {
-      "id": "mqwpomva1z08",
-      "type": "1:1",
-      "phdId": "",
-      "participants": [
-        "mqwpomva41co"
-      ],
-      "date": "2026-06-15",
-      "title": "Exposé-Besprechung",
-      "notes": "Forschungsfrage Brain-Age als Biomarker konkretisiert. Kohortenzugang klären.",
-      "items": [
-        {
-          "id": "mqwpomvakbm1",
-          "text": "Exposé-Entwurf bis Ende Juli",
-          "assignee": "mqwpomva41co",
-          "prio": "Hoch",
-          "due": "2026-07-31",
-          "done": false
-        },
-        {
-          "id": "mqwpomvarexc",
-          "text": "Datenzugang klinische Kohorte beantragen",
-          "assignee": "me",
-          "prio": "Mittel",
-          "due": "",
-          "done": true
-        }
-      ]
-    },
-    {
       "id": "mshfadp2ioqp",
       "type": "Team",
       "date": "2026-08-06",
@@ -1075,7 +847,7 @@
       "_m": 1786017050464
     }
   ],
-  "_syncTs": 1786386694042,
+  "_syncTs": 1787219637995,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -1100,7 +872,8 @@
     "mqwpomvaq45k",
     "mqwpomvauqmz",
     "mqwpomvalkk3",
-    "mrg14lhkbm9k"
+    "mrg14lhkbm9k",
+    "mqz4vf49c9f4"
   ],
   "people": []
 }
