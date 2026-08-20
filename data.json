@@ -815,26 +815,6 @@
   ],
   "meetings": [
     {
-      "id": "mshfadp2ioqp",
-      "type": "Team",
-      "date": "2026-08-06",
-      "title": "",
-      "participants": [],
-      "phdId": "",
-      "notes": "",
-      "items": []
-    },
-    {
-      "id": "mshfafpc4t3p",
-      "type": "Team",
-      "date": "2026-08-06",
-      "title": "",
-      "participants": [],
-      "phdId": "",
-      "notes": "",
-      "items": []
-    },
-    {
       "type": "1:1",
       "date": "2026-08-06",
       "title": "ICANS Update",
@@ -845,9 +825,19 @@
       "items": [],
       "id": "mshgfrz4tamc",
       "_m": 1786017050464
+    },
+    {
+      "id": "mt1cg3rqfaqj",
+      "type": "Team",
+      "date": "2026-08-20",
+      "title": "",
+      "participants": [],
+      "phdId": "",
+      "notes": "",
+      "items": []
     }
   ],
-  "_syncTs": 1787219637995,
+  "_syncTs": 1787219699846,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -873,7 +863,16 @@
     "mqwpomvauqmz",
     "mqwpomvalkk3",
     "mrg14lhkbm9k",
-    "mqz4vf49c9f4"
+    "mqz4vf49c9f4",
+    "mshfadp2ioqp",
+    "mt1cflszr6xt",
+    "mshfafpc4t3p"
   ],
-  "people": []
+  "people": [
+    {
+      "id": "mt1cgq5dwp34",
+      "name": "Clemens Tepel",
+      "role": "CEO"
+    }
+  ]
 }
