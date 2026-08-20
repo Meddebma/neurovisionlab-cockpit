@@ -837,7 +837,7 @@
       "items": []
     }
   ],
-  "_syncTs": 1787219699846,
+  "_syncTs": 1787219940503,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -873,6 +873,11 @@
       "id": "mt1cgq5dwp34",
       "name": "Clemens Tepel",
       "role": "CEO"
+    },
+    {
+      "id": "mt1clv6ig3kz",
+      "name": "Philipp Brunnen",
+      "role": "CMO"
     }
   ]
 }
