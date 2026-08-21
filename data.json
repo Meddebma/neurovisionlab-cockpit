@@ -824,9 +824,19 @@
         }
       ],
       "_m": 1787219967335
+    },
+    {
+      "id": "mt2vaodwj3bc",
+      "type": "Team",
+      "date": "2026-08-21",
+      "title": "",
+      "participants": [],
+      "phdId": "",
+      "notes": "",
+      "items": []
     }
   ],
-  "_syncTs": 1787220000170,
+  "_syncTs": 1787311796532,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
