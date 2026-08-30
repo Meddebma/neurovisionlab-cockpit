@@ -404,9 +404,9 @@
       "id": "mtfntpxd6ql6",
       "name": "Hypoxia: aut_GWR vs AI_based GWR",
       "status": "Geplant",
-      "progress": 13,
+      "progress": 11,
       "stand": "",
-      "desc": "",
+      "desc": "To evaluate whether AI could make better ",
       "notes": "",
       "members": [],
       "tasks": [
@@ -416,10 +416,10 @@
           "assignee": "mqwrzhu6y2ge",
           "prio": "Mittel",
           "due": "",
-          "done": false
+          "done": true
         }
       ],
-      "_m": 1788085908909
+      "_m": 1788086077633
     }
   ],
   "goals": [
@@ -882,7 +882,7 @@
       "_m": 1787312074858
     }
   ],
-  "_syncTs": 1788085908946,
+  "_syncTs": 1788086077880,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
