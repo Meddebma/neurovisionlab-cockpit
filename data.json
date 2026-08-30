@@ -380,9 +380,25 @@
           "prio": "Mittel",
           "due": "2026-09-13",
           "done": false
+        },
+        {
+          "id": "mtfnslnmcwtt",
+          "text": "ROC AUC DenseNET vs GWR from Martin",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-09-13",
+          "done": false
+        },
+        {
+          "id": "mtfnrw942qd0",
+          "text": "Comment the manuscript",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-09-20",
+          "done": false
         }
       ],
-      "_m": 1788085217356
+      "_m": 1788085276616
     }
   ],
   "goals": [
@@ -845,7 +861,7 @@
       "_m": 1787312074858
     }
   ],
-  "_syncTs": 1788085217402,
+  "_syncTs": 1788085276663,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
