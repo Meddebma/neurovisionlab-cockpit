@@ -347,10 +347,10 @@
     },
     {
       "id": "mrg0pbwbvavd",
-      "name": "Hypoxia Outcome Prediction",
+      "name": "Hypoxia: DenseNET for Outcome Prediction",
       "status": "Aktiv",
-      "progress": 72,
-      "stand": "Waiting for ViT results",
+      "progress": 74,
+      "stand": "Getting the new results from DenseNET with the new slice batch ",
       "desc": "",
       "notes": "",
       "members": [],
@@ -398,7 +398,28 @@
           "done": false
         }
       ],
-      "_m": 1788085276616
+      "_m": 1788085302704
+    },
+    {
+      "id": "mtfntpxd6ql6",
+      "name": "Hypoxia: aut_GWR vs AI_based GWR",
+      "status": "Geplant",
+      "progress": 7,
+      "stand": "",
+      "desc": "",
+      "notes": "",
+      "members": [],
+      "tasks": [
+        {
+          "id": "mtfnu89kj9jv",
+          "text": "Prepare rating platform",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
+        }
+      ],
+      "_m": 1788085402451
     }
   ],
   "goals": [
@@ -861,7 +882,7 @@
       "_m": 1787312074858
     }
   ],
-  "_syncTs": 1788085276663,
+  "_syncTs": 1788085402783,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
