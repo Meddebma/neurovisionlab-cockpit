@@ -425,9 +425,17 @@
           "prio": "Mittel",
           "due": "2026-10-31",
           "done": false
+        },
+        {
+          "id": "mtfobsefkavd",
+          "text": "find a doctoral student for the topic",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "2026-09-13",
+          "done": false
         }
       ],
-      "_m": 1788086149746
+      "_m": 1788086422444
     }
   ],
   "goals": [
@@ -890,7 +898,7 @@
       "_m": 1787312074858
     }
   ],
-  "_syncTs": 1788086149785,
+  "_syncTs": 1788086422490,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
