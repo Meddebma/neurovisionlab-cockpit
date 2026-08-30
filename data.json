@@ -347,7 +347,7 @@
     },
     {
       "id": "mrg0pbwbvavd",
-      "name": "Hypoxia",
+      "name": "Hypoxia Outcome Prediction",
       "status": "Aktiv",
       "progress": 72,
       "stand": "Waiting for ViT results",
@@ -375,14 +375,14 @@
         },
         {
           "id": "mtfnqfp7mp1z",
-          "text": "",
-          "assignee": "me",
+          "text": "Getting the new results from DenseNET with the new slice batch ",
+          "assignee": "mqwrzhu6y2ge",
           "prio": "Mittel",
-          "due": "",
+          "due": "2026-09-13",
           "done": false
         }
       ],
-      "_m": 1788085155067
+      "_m": 1788085217356
     }
   ],
   "goals": [
@@ -845,7 +845,7 @@
       "_m": 1787312074858
     }
   ],
-  "_syncTs": 1788085155104,
+  "_syncTs": 1788085217402,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
