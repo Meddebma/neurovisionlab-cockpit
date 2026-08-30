@@ -372,9 +372,17 @@
           "due": "2026-07-13",
           "done": true,
           "doneAt": 1784096878058
+        },
+        {
+          "id": "mtfnqfp7mp1z",
+          "text": "",
+          "assignee": "me",
+          "prio": "Mittel",
+          "due": "",
+          "done": false
         }
       ],
-      "_m": 1785740692761
+      "_m": 1788085155067
     }
   ],
   "goals": [
@@ -837,7 +845,7 @@
       "_m": 1787312074858
     }
   ],
-  "_syncTs": 1787312074917,
+  "_syncTs": 1788085155104,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
