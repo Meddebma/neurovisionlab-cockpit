@@ -404,7 +404,7 @@
       "id": "mtfntpxd6ql6",
       "name": "Hypoxia: aut_GWR vs AI_based GWR",
       "status": "Geplant",
-      "progress": 7,
+      "progress": 13,
       "stand": "",
       "desc": "",
       "notes": "",
@@ -419,7 +419,7 @@
           "done": false
         }
       ],
-      "_m": 1788085732714
+      "_m": 1788085908909
     }
   ],
   "goals": [
@@ -882,7 +882,7 @@
       "_m": 1787312074858
     }
   ],
-  "_syncTs": 1788085732751,
+  "_syncTs": 1788085908946,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
