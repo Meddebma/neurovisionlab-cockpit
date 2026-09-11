@@ -405,7 +405,7 @@
       "name": "Hypoxia: aut_GWR vs AI_based GWR",
       "status": "Geplant",
       "progress": 11,
-      "stand": "",
+      "stand": "Find a doctoral student for the topic",
       "desc": "To evaluate whether AI could make better ROI placement for GWR measurment than atlas based methods",
       "notes": "",
       "members": [],
@@ -431,11 +431,11 @@
           "text": "find a doctoral student for the topic",
           "assignee": "me",
           "prio": "Mittel",
-          "due": "2026-09-13",
+          "due": "2026-09-20",
           "done": false
         }
       ],
-      "_m": 1788086422444
+      "_m": 1788086437689
     }
   ],
   "goals": [
@@ -520,6 +520,15 @@
       "status": "Offen",
       "skills": "",
       "id": "mrek7iytzidb"
+    },
+    {
+      "title": "Preoperative grading of meningioma aggressiveness using microvascular shunting and oxygen-metabolism maps",
+      "desc": "Projektidee für Konoe",
+      "type": "Dissertation",
+      "status": "Offen",
+      "skills": "",
+      "id": "mtwzz8fval4g",
+      "_m": 1789133645947
     }
   ],
   "todos": [
@@ -898,7 +907,7 @@
       "_m": 1787312074858
     }
   ],
-  "_syncTs": 1788086422490,
+  "_syncTs": 1789133646490,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
