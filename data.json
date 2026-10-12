@@ -908,16 +908,19 @@
     },
     {
       "id": "mv5ae4yc6whs",
-      "type": "Team",
+      "type": "1:1",
       "date": "2026-10-12",
-      "title": "",
-      "participants": [],
+      "title": "Meeting with Moudather",
+      "participants": [
+        "mqwrzhu6y2ge"
+      ],
       "phdId": "",
-      "notes": "",
-      "items": []
+      "notes": "Hypoxia\n- Paperwork for BIH HPC for Moudather\n- Moudather searches for an alternative to lightning\n- AI-GWR new project, Amelie & Moudather\n- Aymen introduces Amelie\n- Moudather searches the best way to apply AI-GWR\nTumor Board\n- Moudather sends the GPT results to Rama for first check\nJEV \n- Moudather and Lara works on JEV for MRI Protocoling\n",
+      "items": [],
+      "_m": 1791812653356
     }
   ],
-  "_syncTs": 1791811649227,
+  "_syncTs": 1791812653787,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
