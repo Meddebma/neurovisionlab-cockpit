@@ -923,14 +923,15 @@
       "id": "mv6hpxoaaro5",
       "type": "Team",
       "date": "2026-10-13",
-      "title": "",
+      "title": "Meeting with Foo Wei",
       "participants": [],
       "phdId": "",
       "notes": "",
-      "items": []
+      "items": [],
+      "_m": 1791886305546
     }
   ],
-  "_syncTs": 1791884423160,
+  "_syncTs": 1791886305656,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
