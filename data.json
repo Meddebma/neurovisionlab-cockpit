@@ -931,9 +931,19 @@
       "notes": "- Neurovfm\n- JEV\n- LLM for AI agents in Neuroradiology\n- ",
       "items": [],
       "_m": 1791886432560
+    },
+    {
+      "id": "mv86gj9s378v",
+      "type": "Team",
+      "date": "2026-10-14",
+      "title": "",
+      "participants": [],
+      "phdId": "",
+      "notes": "",
+      "items": []
     }
   ],
-  "_syncTs": 1791886432601,
+  "_syncTs": 1791986441178,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
