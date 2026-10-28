@@ -943,16 +943,17 @@
     },
     {
       "id": "mvs4h2qqg8x9",
-      "type": "Team",
+      "type": "1:1",
       "date": "2026-10-28",
-      "title": "",
+      "title": "Hausarbeit",
       "participants": [],
       "phdId": "",
-      "notes": "",
-      "items": []
+      "notes": "- Antrag stellen für VPN/RIS/PACS\n- Mit Konoe verbinden für einen Termin\n-  Mit Jakob Seeman verbinden für die weitere Betreuung",
+      "items": [],
+      "_m": 1793199742509
     }
   ],
-  "_syncTs": 1793192430688,
+  "_syncTs": 1793199742572,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
