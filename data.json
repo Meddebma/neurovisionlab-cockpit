@@ -951,9 +951,19 @@
       "notes": "- Antrag stellen für VPN/RIS/PACS\n- Mit Konoe verbinden für einen Termin\n-  Mit Jakob Seeman verbinden für die weitere Betreuung",
       "items": [],
       "_m": 1793199742509
+    },
+    {
+      "id": "mwc8ugww1pjh",
+      "type": "Team",
+      "date": "2026-11-11",
+      "title": "",
+      "participants": [],
+      "phdId": "",
+      "notes": "",
+      "items": []
     }
   ],
-  "_syncTs": 1793637695957,
+  "_syncTs": 1794409097549,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
