@@ -466,14 +466,6 @@
   ],
   "ideas": [
     {
-      "id": "mqwpomvah8kx",
-      "title": "Agentic VLM für Neurochirurgie-Planung",
-      "desc": "OP-Planung: Resektion, fMRI, DTI. Radiologen vs. VLM.",
-      "type": "Dissertation",
-      "status": "Empfohlen",
-      "skills": "Python · ML · MRT"
-    },
-    {
       "id": "mqwpomvauq82",
       "title": "Foundation Model für Hirntumor-Segmentierung",
       "desc": "Universelles Modell auf allen BraTS Tasks + klinische Validierung.",
@@ -963,7 +955,7 @@
       "items": []
     }
   ],
-  "_syncTs": 1794409097549,
+  "_syncTs": 1795100939987,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -992,7 +984,8 @@
     "mqz4vf49c9f4",
     "mshfadp2ioqp",
     "mt1cflszr6xt",
-    "mshfafpc4t3p"
+    "mshfafpc4t3p",
+    "mqwpomvah8kx"
   ],
   "people": [
     {
