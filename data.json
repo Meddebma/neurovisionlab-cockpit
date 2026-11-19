@@ -466,14 +466,6 @@
   ],
   "ideas": [
     {
-      "id": "mqwpomvauq82",
-      "title": "Foundation Model für Hirntumor-Segmentierung",
-      "desc": "Universelles Modell auf allen BraTS Tasks + klinische Validierung.",
-      "type": "Dissertation",
-      "status": "Offen",
-      "skills": "Deep Learning · CUDA"
-    },
-    {
       "id": "mqwpomvaj388",
       "title": "MLS via Deformationsfeld",
       "desc": "Präzisere Midline-Shift-Quantifizierung. Validierung auf 50+ Fällen.",
@@ -521,6 +513,15 @@
       "skills": "",
       "id": "mtwzz8fval4g",
       "_m": 1789133645947
+    },
+    {
+      "title": "Establishing TEX values for Lymphoma",
+      "desc": "Ktrans is well established for lymphoma, but not ASL, in this project we intend to establish cutoff values for TEX in lymphomas",
+      "type": "Dissertation",
+      "status": "Offen",
+      "skills": "",
+      "id": "mwnotmjl03ge",
+      "_m": 1795101059937
     }
   ],
   "todos": [
@@ -955,7 +956,7 @@
       "items": []
     }
   ],
-  "_syncTs": 1795100939987,
+  "_syncTs": 1795101060265,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -985,7 +986,8 @@
     "mshfadp2ioqp",
     "mt1cflszr6xt",
     "mshfafpc4t3p",
-    "mqwpomvah8kx"
+    "mqwpomvah8kx",
+    "mqwpomvauq82"
   ],
   "people": [
     {
