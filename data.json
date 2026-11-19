@@ -498,14 +498,6 @@
       "skills": "ML · Python"
     },
     {
-      "title": "Factors of Endothelialisation of carotid stents",
-      "desc": "Do we need double antiaggregation? \nWhen do we stop ASS? Clopi? what is the effect of ",
-      "type": "Dissertation",
-      "status": "Offen",
-      "skills": "",
-      "id": "mrek7iytzidb"
-    },
-    {
       "title": "Preoperative grading of meningioma aggressiveness using microvascular shunting and oxygen-metabolism maps",
       "desc": "Projektidee für Konoe",
       "type": "Dissertation",
@@ -522,6 +514,15 @@
       "skills": "",
       "id": "mwnotmjl03ge",
       "_m": 1795101059937
+    },
+    {
+      "title": "Differentiation between Recidive and radiation necrosis using MPM and BBB-ASL",
+      "desc": "MPM + BBB-ASL für Rezidiv vs. Strahlennekrose (Nawras Doktorarbeit?)",
+      "type": "Dissertation",
+      "status": "Offen",
+      "skills": "",
+      "id": "mwnqwuoz1a4o",
+      "_m": 1795104569699
     }
   ],
   "todos": [
@@ -956,7 +957,7 @@
       "items": []
     }
   ],
-  "_syncTs": 1795101060265,
+  "_syncTs": 1795104569753,
   "_deleted": [
     "mqwpomvaz1io",
     "mqwpomva41co",
@@ -987,7 +988,8 @@
     "mt1cflszr6xt",
     "mshfafpc4t3p",
     "mqwpomvah8kx",
-    "mqwpomvauq82"
+    "mqwpomvauq82",
+    "mrek7iytzidb"
   ],
   "people": [
     {
